@@ -167,10 +167,13 @@ def main():
         rows.append({"file": fname, "theorem": name, "axioms": axioms, "status": status})
 
     build_log = ROOT / "build.log"
+    # The workflow records `lake build`'s exit code in build.exit; without it, fall back to the log.
     build_ok = True
-    if build_log.exists():
-        txt = build_log.read_text(errors="replace")
-        build_ok = "error:" not in txt and "Build completed successfully" in txt
+    exit_file = ROOT / "build.exit"
+    if exit_file.exists():
+        build_ok = exit_file.read_text().strip() == "0"
+    elif build_log.exists():
+        build_ok = not re.search(r"^error", build_log.read_text(errors="replace"), re.M)
     hatches, taut = escape_hatches(), tautologies()
     ok = build_ok and proc.returncode == 0 and not bad and not hatches and not taut
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
