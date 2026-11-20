@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 04:16 UTC",
-  "commit": "4f37666509007829c90e5f37092c0e967db85378",
+  "checked_at": "2026-11-20 15:11 UTC",
+  "commit": "43d02d69c84436b48af10aaa78f1b2b113558223",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 11,
-  "verified": 11,
+  "theorems": 15,
+  "verified": 15,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,46 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.transl_modul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.transl_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.dftU_sub",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.diffOp_dftU",
       "axioms": [
         "propext",
         "Classical.choice",
