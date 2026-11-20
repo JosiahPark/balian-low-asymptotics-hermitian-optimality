@@ -31,7 +31,6 @@ theorem log_stopTime {d S₀ : ℝ} (hd : 1 < d) (hS₀ : 0 < S₀) :
   have hsq : 0 < Real.sqrt (Real.log d) := Real.sqrt_pos.mpr hl
   rw [Real.log_div (div_pos hd0 hsq).ne' hS₀.ne', Real.log_div hd0.ne' hsq.ne',
     Real.log_sqrt hl.le]
-  ring
 
 /-- **E5, (L17)–(L19).** The final arithmetic of Theorem 4.1, from named real hypotheses. -/
 theorem lower_bound_arithmetic {d C C₀ C₂ K A S₀ T : ℝ} (hd : 3 ≤ d) (hC : 0 ≤ C)

@@ -23,7 +23,7 @@ variable {N : ℕ} [NeZero N]
 
 /-- **A2.** `T M = e^{2πi/N} M T`. -/
 theorem transl_modul (f : ZMod N → ℂ) (j : ZMod N) :
-    transl (modul f) j = ZMod.stdAddChar 1 * modul (transl f) j := by
+    transl (modul f) j = ZMod.stdAddChar (1 : ZMod N) * modul (transl f) j := by
   simp only [transl_apply, modul_apply, AddChar.map_add_eq_mul]
   ring
 

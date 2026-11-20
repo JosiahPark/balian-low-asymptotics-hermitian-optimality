@@ -74,8 +74,13 @@ theorem ip_dftU (f g : ZMod N → ℂ) : ip (dftU f) (dftU g) = ip f g := by
         ∑ j : ZMod N, ∑ l : ZMod N, c * c * (conj (f j) * g l) *
           (conj (ZMod.stdAddChar (j * k)) * ZMod.stdAddChar (l * k)) := by
     intro k
-    rw [map_mul, hcc, map_sum, mul_assoc, Finset.mul_sum, Finset.mul_sum, Finset.sum_mul_sum,
-      Finset.mul_sum]
+    have h1 : conj (c * ∑ j : ZMod N, ZMod.stdAddChar (j * k) * f j) *
+        (c * ∑ l : ZMod N, ZMod.stdAddChar (l * k) * g l) =
+        c * c * (conj (∑ j : ZMod N, ZMod.stdAddChar (j * k) * f j) *
+          ∑ l : ZMod N, ZMod.stdAddChar (l * k) * g l) := by
+      rw [map_mul, hcc]
+      ring
+    rw [h1, map_sum, Finset.sum_mul_sum, Finset.mul_sum]
     refine Finset.sum_congr rfl fun j _ => ?_
     rw [Finset.mul_sum]
     refine Finset.sum_congr rfl fun l _ => ?_

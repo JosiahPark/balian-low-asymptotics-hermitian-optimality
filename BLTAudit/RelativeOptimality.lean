@@ -52,7 +52,7 @@ theorem relative_optimality (A a : ℕ → ℝ) (C₁ C₂ : ℝ)
       linarith
     · have : C₁ ≤ C := le_max_left _ _
       linarith
-  have hpi : (2 * π : ℝ) ≠ 0 := by positivity
+  have hpi : (2 * π : ℝ) ≠ 0 := mul_ne_zero two_ne_zero Real.pi_ne_zero
   have hdiv := hA.div ha hpi
   rw [div_self hpi] at hdiv
   have hN : Tendsto (fun d : ℕ => (d : ℝ)) atTop atTop := tendsto_natCast_atTop_atTop

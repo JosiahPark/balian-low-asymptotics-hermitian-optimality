@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Order.Filter.AtTopBot.Archimedean
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 /-!
 # F3. The limit constant `2π` from the two-sided bound
