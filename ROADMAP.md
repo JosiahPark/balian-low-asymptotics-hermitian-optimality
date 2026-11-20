@@ -92,9 +92,28 @@ systems and no Zak transform.
   `fun p : Fin d × Fin d => gabor f p.1 p.2` is linearly independent and spans `ZMod (d * d) → ℂ`
   (it has `d * d = finrank` members; uses A4d). File `BLTAudit/GaborBasis.lean`.
   - Done 2026-11-20 20:22 UTC at 81f9fe1: `linearIndependent_gabor`, `span_gabor_eq_top`, `linearIndependent_of_ip_orthonormal`, `ip_sum_smul_right`, `ip_zero_right`. Linear independence and `span = ⊤` are two theorems; the family is not packaged as a Mathlib `Basis`.
-- [ ] A5. Critical Gabor criterion, necessity: orthonormality of `{gabor f n m : n m < d}` forces
+- [-] A5. Critical Gabor criterion, necessity: orthonormality of `{gabor f n m : n m < d}` forces
   `‖zak f q r‖ = 1 / d` for all `q r`, so admissible vectors correspond exactly to unit-modulus arrays
-  `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`.
+  `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`. (split into A5a, A5b, A5c)
+  - Split 2026-11-20: three separate steps (Gabor inner products through `‖zak f q r‖ ^ 2`, a two-variable Fourier uniqueness statement on `ZMod d`, the conclusion with the equivalence), about 200 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakCriterionConverse.lean` is now the file of A5c. The three statements below passed a numerical check for `d ≤ 5` on 2026-11-20.
+- [ ] A5a. Gabor inner products through the Zak modulus, with no hypothesis on `f`: for
+  `f : ZMod (d * d) → ℂ` and all `n m n' m' : ℕ`, `ip (gabor f n m) (gabor f n' m')`
+  `= ∑ r, conj (ZMod.stdAddChar ((m : ZMod d) * r)) * ZMod.stdAddChar ((m' : ZMod d) * r)`
+  `* ∑ q, ZMod.stdAddChar (((n : ZMod d) - n') * q) * ‖zak f q r‖ ^ 2` (`ip_gabor_eq_sum` of A4d, then
+  `zak_correlation` of A4c); hence for `a c : ZMod d`, `ip (gabor f a.val 0) (gabor f 0 c.val)`
+  `= ∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * ‖zak f q r‖ ^ 2`.
+  File `BLTAudit/GaborZakModulus.lean`.
+- [ ] A5b. Two-variable Fourier uniqueness on `ZMod d`: if `W : ZMod d → ZMod d → ℂ` satisfies
+  `∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * W q r = if a = 0 ∧ c = 0 then 1 else 0`
+  for all `a c : ZMod d`, then `W q r = 1 / d ^ 2` for all `q r` (multiply by
+  `ZMod.stdAddChar (-(c * r₀)) * ZMod.stdAddChar (-(a * q₀))`, sum over `a c`, and use
+  `sum_stdAddChar_mul` of A1 in each variable). File `BLTAudit/FourierUniqueness.lean`.
+- [ ] A5c. Necessity, the statement of A5: if
+  `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` for all `n m n' m' < d`, then
+  `‖zak f q r‖ = 1 / d` for all `q r` (A5a at `n = a.val`, `m = 0`, `n' = 0`, `m' = c.val`, then A5b
+  with `W q r = ‖zak f q r‖ ^ 2`); hence, with A4d, orthonormality of the Gabor vectors is equivalent to
+  `‖zak f q r‖ = 1 / d` for all `q r`, that is, to `‖d * zak f q r‖ = 1` for all `q r` (unit modulus of
+  `ζ = d • zak f`). File `BLTAudit/ZakCriterionConverse.lean`.
 - [ ] A6. Standard form of `G_N` (§1): `energy f = (ip f (gStd f)).re` and `(ip f (gStd f)).im = 0`,
   that is, `D*D + F*D*DF` acts as `(4 − 2cos(2πj/N)) f(j) − f(j−1) − f(j+1)` (uses A1, A2).
   File `BLTAudit/GStandardForm.lean`.
