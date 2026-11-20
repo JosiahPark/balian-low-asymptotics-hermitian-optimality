@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 18:21 UTC at commit `9c7a63dce38c`.
+Checked 2026-11-20 18:37 UTC at commit `8735e2c2f93c`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 27 of 27
+- Theorems verified with standard axioms only: 31 of 31
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -27,6 +27,10 @@ Checked 2026-11-20 18:21 UTC at commit `9c7a63dce38c`.
 | BLTAudit/GaborFormula.lean | `BLT.transl_iterate_apply` | verified (standard axioms only) |
 | BLTAudit/GaborFormula.lean | `BLT.modul_iterate_apply` | verified (standard axioms only) |
 | BLTAudit/GaborFormula.lean | `BLT.gabor_apply` | verified (standard axioms only) |
+| BLTAudit/GaborZakCoordinates.lean | `BLT.zakIndex_add_natCast_mul` | verified (standard axioms only) |
+| BLTAudit/GaborZakCoordinates.lean | `BLT.stdAddChar_natCast_mul_self` | verified (standard axioms only) |
+| BLTAudit/GaborZakCoordinates.lean | `BLT.stdAddChar_mul_zakIndex` | verified (standard axioms only) |
+| BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |
