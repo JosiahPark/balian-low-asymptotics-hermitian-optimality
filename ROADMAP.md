@@ -43,10 +43,11 @@ systems and no Zak transform.
   `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`.
   File `BLTAudit/FiniteZak.lean`. (split into A3a, A3b, A3c)
   - Split 2026-11-20: three separate index computations in `ZMod (d * d)`, too large for one file of about 150 lines. Nothing was attempted and `BLTAudit/FiniteZak.lean` was not written.
-- [ ] A3a. The finite Zak transform is unitary: for `f : ZMod (d * d) → ℂ`,
+- [x] A3a. The finite Zak transform is unitary: for `f : ZMod (d * d) → ℂ`,
   `∑ q, ∑ r, ‖zak f q r‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`, by Parseval (A1) on `ZMod d` in the variable `b` for
   each fixed `r`, and the bijection `(b, r) ↦ b.val * d + r.val` from `ZMod d × ZMod d` onto
   `ZMod (d * d)`. File `BLTAudit/FiniteZakUnitary.lean`.
+  - Done 2026-11-20 17:37 UTC at 3403199: `parseval_zak`, `zak_eq_dftU`, `zakIndex_bijective`, `zakIndex_injective`, `zakIndex_lt`
 - [ ] A3b. Zak transform of a translate: for `f : ZMod (d * d) → ℂ` and `q r : ZMod d`,
   `zak (transl f) q r = zak f q (r + 1)` when `r.val + 1 < d`, and
   `zak (transl f) q r = ZMod.stdAddChar (-q) * zak f q 0` when `r.val + 1 = d` (the seam: reindex
