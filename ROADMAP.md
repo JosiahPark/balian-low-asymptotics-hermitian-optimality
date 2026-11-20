@@ -87,10 +87,11 @@ systems and no Zak transform.
   over `ZMod (d * d)` through the bijection of A3a, then A4b, A4c, and orthogonality of characters in
   `r`). File `BLTAudit/ZakCriterion.lean`.
   - Done 2026-11-20 19:57 UTC at c24ed5d: `ip_gabor_of_zak_norm`, `ip_gabor_eq_sum`, `ip_eq_sum_zakIndex`, `natCast_zmod_eq_iff_of_lt`
-- [ ] A4e. Basis: a family `v : ι → ZMod N → ℂ` with `ip (v i) (v j) = if i = j then 1 else 0` is
+- [x] A4e. Basis: a family `v : ι → ZMod N → ℂ` with `ip (v i) (v j) = if i = j then 1 else 0` is
   linearly independent over `ℂ`; hence, under the hypothesis of A4, the family
   `fun p : Fin d × Fin d => gabor f p.1 p.2` is linearly independent and spans `ZMod (d * d) → ℂ`
   (it has `d * d = finrank` members; uses A4d). File `BLTAudit/GaborBasis.lean`.
+  - Done 2026-11-20 20:22 UTC at 81f9fe1: `linearIndependent_gabor`, `span_gabor_eq_top`, `linearIndependent_of_ip_orthonormal`, `ip_sum_smul_right`, `ip_zero_right`. Linear independence and `span = ⊤` are two theorems; the family is not packaged as a Mathlib `Basis`.
 - [ ] A5. Critical Gabor criterion, necessity: orthonormality of `{gabor f n m : n m < d}` forces
   `‖zak f q r‖ = 1 / d` for all `q r`, so admissible vectors correspond exactly to unit-modulus arrays
   `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`.
