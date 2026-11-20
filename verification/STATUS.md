@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 18:40 UTC at commit `c181a2aa064a`.
+Checked 2026-11-20 18:46 UTC at commit `0014bf4c8490`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 31 of 31
+- Theorems verified with standard axioms only: 34 of 34
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -41,3 +41,6 @@ Checked 2026-11-20 18:40 UTC at commit `c181a2aa064a`.
 | BLTAudit/UnitaryDFT.lean | `BLT.sum_conj_stdAddChar_mul` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.ip_dftU` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.parseval_dftU` | verified (standard axioms only) |
+| BLTAudit/ZakCorrelation.lean | `BLT.dftU_shift` | verified (standard axioms only) |
+| BLTAudit/ZakCorrelation.lean | `BLT.zak_correlation` | verified (standard axioms only) |
+| BLTAudit/ZakCorrelation.lean | `BLT.zak_correlation_of_norm` | verified (standard axioms only) |

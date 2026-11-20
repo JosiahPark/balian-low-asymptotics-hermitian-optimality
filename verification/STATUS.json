@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 18:40 UTC",
-  "commit": "c181a2aa064acb532839a166b96fbbd2001f6f86",
+  "checked_at": "2026-11-20 18:46 UTC",
+  "commit": "0014bf4c849056308983f6a1d278b94f58362c79",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 31,
-  "verified": 31,
+  "theorems": 34,
+  "verified": 34,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -314,6 +314,36 @@
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.parseval_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCorrelation.lean",
+      "theorem": "BLT.dftU_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCorrelation.lean",
+      "theorem": "BLT.zak_correlation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCorrelation.lean",
+      "theorem": "BLT.zak_correlation_of_norm",
       "axioms": [
         "propext",
         "Classical.choice",
