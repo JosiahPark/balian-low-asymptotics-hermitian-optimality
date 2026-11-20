@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 18:15 UTC at commit `e0278c0160e4`.
+Checked 2026-11-20 18:19 UTC at commit `b615ca4d04d2`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 24 of 24
+- Theorems verified with standard axioms only: 27 of 27
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -24,6 +24,9 @@ Checked 2026-11-20 18:15 UTC at commit `e0278c0160e4`.
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zakIndex_bijective` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zak_eq_dftU` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.parseval_zak` | verified (standard axioms only) |
+| BLTAudit/GaborFormula.lean | `BLT.transl_iterate_apply` | verified (standard axioms only) |
+| BLTAudit/GaborFormula.lean | `BLT.modul_iterate_apply` | verified (standard axioms only) |
+| BLTAudit/GaborFormula.lean | `BLT.gabor_apply` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |

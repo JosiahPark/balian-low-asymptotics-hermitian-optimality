@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 18:15 UTC",
-  "commit": "e0278c0160e4766abcd761c409512352ff1659de",
+  "checked_at": "2026-11-20 18:19 UTC",
+  "commit": "b615ca4d04d257f224f609e12404313c319ba597",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 24,
-  "verified": 24,
+  "theorems": 27,
+  "verified": 27,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -144,6 +144,36 @@
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.parseval_zak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaborFormula.lean",
+      "theorem": "BLT.transl_iterate_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaborFormula.lean",
+      "theorem": "BLT.modul_iterate_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaborFormula.lean",
+      "theorem": "BLT.gabor_apply",
       "axioms": [
         "propext",
         "Classical.choice",
