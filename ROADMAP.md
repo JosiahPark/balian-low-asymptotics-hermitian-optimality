@@ -69,11 +69,12 @@ systems and no Zak transform.
   `gabor f n m j = ZMod.stdAddChar ((m * d : ℕ) * j) * f (j + (n * d : ℕ))` (the cross term
   `(m d)(n d)` vanishes because `d * d = 0` in `ZMod (d * d)`). File `BLTAudit/GaborFormula.lean`.
   - Done 2026-11-20 18:19 UTC at b615ca4: `gabor_apply`, `transl_iterate_apply`, `modul_iterate_apply`
-- [ ] A4b. Gabor vectors in Zak coordinates: for `b r : ZMod d` and `n m : ℕ`,
+- [x] A4b. Gabor vectors in Zak coordinates: for `b r : ZMod d` and `n m : ℕ`,
   `gabor f n m (zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r) * f (zakIndex d (b + n, r))`,
   from A4a and the two index facts `zakIndex d (b, r) + (n * d : ℕ) = zakIndex d (b + n, r)` and
   `ZMod.stdAddChar ((m * d : ℕ) * zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r)` (the first
   character is on `ZMod (d * d)`, the second on `ZMod d`). File `BLTAudit/GaborZakCoordinates.lean`.
+  - Done 2026-11-20 18:37 UTC at 8735e2c: `gabor_zakIndex`, `zakIndex_add_natCast_mul`, `stdAddChar_mul_zakIndex`, `stdAddChar_natCast_mul_self`
 - [ ] A4c. Zak correlation identity: for `f : ZMod (d * d) → ℂ` and `r s t : ZMod d`, in `ℂ`,
   `∑ b, conj (f (zakIndex d (b + s, r))) * f (zakIndex d (b + t, r))`
   `= ∑ q, ZMod.stdAddChar ((s - t) * q) * ‖zak f q r‖ ^ 2`; hence, if `‖zak f q r‖ = 1 / d` for all
