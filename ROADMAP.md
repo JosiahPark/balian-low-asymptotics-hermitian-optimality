@@ -29,9 +29,10 @@ such hypothesis.
 Exact finite statements of §1–§2. Mathlib has the discrete Fourier transform on `ZMod N` but no Gabor
 systems and no Zak transform.
 
-- [ ] A1. Unitary DFT: `ip (dftU f) (dftU g) = ip f g` for all `f g : ZMod N → ℂ`, hence Parseval
+- [x] A1. Unitary DFT: `ip (dftU f) (dftU g) = ip f g` for all `f g : ZMod N → ℂ`, hence Parseval
   `∑ k, ‖dftU f k‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`, by orthogonality of the characters `ZMod.stdAddChar`.
   File `BLTAudit/UnitaryDFT.lean`.
+  - Done 2026-11-20 04:12 UTC at 4f24a6c: `ip_dftU`, `parseval_dftU`, `sum_stdAddChar_mul`, `conj_stdAddChar`, `dft_norm_sq`, `sum_conj_stdAddChar_mul`
 - [ ] A2. Time–frequency relations: `transl (modul f) j = ZMod.stdAddChar 1 * modul (transl f) j`
   (that is, `T M = e^{2πi/N} M T`) and `transl (dftU f) = dftU (modul f)` (that is, `F* T F = M`).
   File `BLTAudit/TimeFrequency.lean`.
