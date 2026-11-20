@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 17:14 UTC",
-  "commit": "edc109ec599ae1dd425881d9bcce4aed68de4790",
+  "checked_at": "2026-11-20 17:37 UTC",
+  "commit": "34031996acd93c9b59cfb85ba4fdc822b18f4a9d",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 15,
-  "verified": 15,
+  "theorems": 20,
+  "verified": 20,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,56 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakUnitary.lean",
+      "theorem": "BLT.zakIndex_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakUnitary.lean",
+      "theorem": "BLT.zakIndex_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakUnitary.lean",
+      "theorem": "BLT.zakIndex_bijective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakUnitary.lean",
+      "theorem": "BLT.zak_eq_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakUnitary.lean",
+      "theorem": "BLT.parseval_zak",
       "axioms": [
         "propext",
         "Classical.choice",
