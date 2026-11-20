@@ -48,11 +48,12 @@ systems and no Zak transform.
   each fixed `r`, and the bijection `(b, r) ↦ b.val * d + r.val` from `ZMod d × ZMod d` onto
   `ZMod (d * d)`. File `BLTAudit/FiniteZakUnitary.lean`.
   - Done 2026-11-20 17:37 UTC at 3403199: `parseval_zak`, `zak_eq_dftU`, `zakIndex_bijective`, `zakIndex_injective`, `zakIndex_lt`
-- [ ] A3b. Zak transform of a translate: for `f : ZMod (d * d) → ℂ` and `q r : ZMod d`,
+- [x] A3b. Zak transform of a translate: for `f : ZMod (d * d) → ℂ` and `q r : ZMod d`,
   `zak (transl f) q r = zak f q (r + 1)` when `r.val + 1 < d`, and
   `zak (transl f) q r = ZMod.stdAddChar (-q) * zak f q 0` when `r.val + 1 = d` (the seam: reindex
   `b ↦ b + 1`; the term with `b.val + 1 = d` wraps around because `d * d = 0` in `ZMod (d * d)`).
   File `BLTAudit/FiniteZakTranslation.lean`.
+  - Done 2026-11-20 17:50 UTC at 3579b28: `zak_transl_of_lt`, `zak_transl_seam`
 - [ ] A3c. Zak transform of a modulate:
   `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`, where the factor is
   `mag d r.val` (the character of `ZMod (d * d)` at `b.val * d + r.val` is
