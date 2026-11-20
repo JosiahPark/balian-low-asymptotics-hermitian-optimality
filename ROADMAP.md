@@ -63,11 +63,12 @@ systems and no Zak transform.
   `d²` vectors `gabor f n m` (`n m < d`) are orthonormal for `ip`, hence a basis of `ℂ^{d²}`.
   File `BLTAudit/ZakCriterion.lean`. (split into A4a, A4b, A4c, A4d, A4e)
   - Split 2026-11-20: five separate steps (closed form of `gabor`, two index computations in `ZMod (d * d)`, a correlation identity on `ZMod d`, the orthonormality sum, linear independence with span), about 220 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakCriterion.lean` is now the file of A4d. The five statements below passed a numerical check for `d ≤ 5` on 2026-11-20.
-- [ ] A4a. Closed form of the Gabor vectors: for `f : ZMod N → ℂ`, `k : ℕ` and `j : ZMod N`,
+- [x] A4a. Closed form of the Gabor vectors: for `f : ZMod N → ℂ`, `k : ℕ` and `j : ZMod N`,
   `(transl^[k] f) j = f (j + k)` and `(modul^[k] f) j = ZMod.stdAddChar (k * j) * f j`; hence for
   `f : ZMod (d * d) → ℂ` and all `n m : ℕ`,
   `gabor f n m j = ZMod.stdAddChar ((m * d : ℕ) * j) * f (j + (n * d : ℕ))` (the cross term
   `(m d)(n d)` vanishes because `d * d = 0` in `ZMod (d * d)`). File `BLTAudit/GaborFormula.lean`.
+  - Done 2026-11-20 18:19 UTC at b615ca4: `gabor_apply`, `transl_iterate_apply`, `modul_iterate_apply`
 - [ ] A4b. Gabor vectors in Zak coordinates: for `b r : ZMod d` and `n m : ℕ`,
   `gabor f n m (zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r) * f (zakIndex d (b + n, r))`,
   from A4a and the two index facts `zakIndex d (b, r) + (n * d : ℕ) = zakIndex d (b + n, r)` and
