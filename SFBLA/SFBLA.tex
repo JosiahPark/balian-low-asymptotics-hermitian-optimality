@@ -1,0 +1,189 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage{amsmath,amssymb,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\ph}{\operatorname{ph}}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\e}{\mathrm e}
+\title[Sharp finite Balian--Low asymptotics]{Sharp finite Balian--Low asymptotics\\for finite Hermite Gabor windows}
+\author{Josiah Park}
+\date{November 20, 2026}
+\subjclass[2020]{Primary 42C15. Secondary 42A38, 65T50, 82B20.}
+\keywords{Finite Balian--Low theorem, critical Gabor basis, Zak transform, discrete harmonic oscillator, vortex energy}
+\begin{document}
+\begin{abstract}
+On a cyclic group of order $d^2$, consider the sum of the squared first differences of a critical orthonormal Gabor window and its unitary Fourier transform. After rescaling by $d^2$, the minimum along odd $d$ is asymptotic to $2\pi\log d$. In Zak coordinates the problem becomes a magnetic phase energy on a square torus. Its boundary conditions force one net unit of winding. Circular annuli around clusters of defects give a lower bound of $2\pi\log d-7\pi\log\log d-O(1)$. The normalized Zak phase of the finite oscillator ground state attains $2\pi\log d+O(1)$. A fourth-order quasimode controls its phase at the lattice sites closest to the Gaussian Zak zero.
+\end{abstract}
+\maketitle
+\section{The critical problem}
+A vector on a finite cyclic group always has finite time and frequency differences. The Balian--Low obstruction appears as the group grows. Nitzan and Olsen established the logarithmic order of the critical localization cost \cite{NO}. The finite Hermite construction studied by Lammers and Stampe \cite{LS} suggests a particular window. The question addressed in \cite{Park} is how its cost compares with the least cost among \emph{all} orthonormal generators.
+
+Set $N=d^2$ and use the counting-measure norm on $\C^{\Z/N\Z}$. Write
+\[
+ Tf(j)=f(j+1),\; Mf(j)=\e^{2\pi\ii j/N}f(j),\;
+ \mathcal F f(k)=N^{-1/2}\sum_{j=0}^{N-1}\e^{2\pi\ii jk/N}f(j)
+\]
+With $D=I-T$, define
+\[
+ G=D^*D+\mathcal F^*D^*D\mathcal F,\qquad
+ A_d(f)=d^2\langle f,Gf\rangle
+\]
+Call $f$ admissible when $\{T^{nd}M^{md}f:0\le n,m<d\}$ is an orthonormal basis. Let $a_d$ be the minimum of $A_d$ on this class. The ground vector $g_d$ of $G$ is chosen positive and of unit norm. Indeed,
+\[
+ (Gf)(j)=(4-2\cos(2\pi j/N))f(j)-f(j-1)-f(j+1),
+\]
+so a sufficiently large scalar shift of $-G$ is an irreducible nonnegative matrix. Define the unitary finite Zak transform and the phase map by
+\[
+ Zf(q,r)=d^{-1/2}\sum_{b=0}^{d-1}\e^{2\pi\ii qb/d}f(bd+r),
+ \qquad \ph(w)=w/|w|\quad(w\ne0)
+\]
+The candidate is $f_d=Z^*(d^{-1}\ph(Zg_d))$, with phase taken entrywise.
+\begin{theorem}[{\cite[Thm.~1.1]{Park}}]\label{thm:main}
+For all sufficiently large odd $d$, $f_d$ is defined and admissible. Along these integers,
+\begin{align*}
+ A_d(f_d)&=2\pi\log d+O(1),\\
+ 2\pi\log d-7\pi\log\log d-C&\le a_d\le 2\pi\log d+C
+\end{align*}
+In particular $0\le A_d(f_d)/a_d-1=O(\log\log d/\log d)$.
+\end{theorem}
+All logarithms are natural. The normalization counts each positive-direction edge once with its full squared length. The result gives a relative comparison. The bounds leave open whether the additive gap $A_d(f_d)-a_d$ stays bounded.
+
+\section{From a Gabor basis to a twisted phase}
+The transform $Z$ is a unitary $d$-point Fourier transform in each residue class $r$. It sends $T^d$ and $M^d$ to multiplication by $\e^{-2\pi\ii q/d}$ and $\e^{2\pi\ii r/d}$, respectively. Thus the inner products with the critical translates and modulates of $f$ are the unnormalized Fourier coefficients of $|Zf|^2$ on the square. Orthonormality makes the constant coefficient one and every other coefficient zero. Fourier inversion gives $|Zf|=1/d$. Conversely, this identity gives $d^2$ orthonormal vectors in dimension $d^2$.
+
+Consequently $\zeta=dZf$ ranges over the full product of $d^2$ unit circles. Extend it from the fundamental square by
+\[
+ \zeta(q+d,r)=\zeta(q,r),\qquad
+ \zeta(q,r+d)=\e^{-2\pi\ii q/d}\zeta(q,r)
+\]
+The minimum exists by compactness. Under $Z$, translation advances $r$ with the displayed seam factor, and modulation advances $q$ with multiplier $\e^{2\pi\ii r/d^2}$. Since $T\mathcal F=\mathcal F M$, Parseval gives
+\begin{equation}\label{eq:energy}
+ A_d(f)=\sum_{q,r=0}^{d-1}\left(
+ |\zeta(q,r+1)-\zeta(q,r)|^2+
+ |\e^{2\pi\ii r/d^2}\zeta(q+1,r)-\zeta(q,r)|^2\right)
+\end{equation}
+The twist makes the product of the covariant phase ratios around each elementary square equal to $\e^{-2\pi\ii/d^2}$. It is this small discrepancy on every square that fixes the total winding.
+
+\section{The Hermite upper bound}
+Put $h=1/d$, $\phi(x)=2^{1/4}\e^{-\pi x^2}$, and
+\[
+ F(x,y)=\sum_{k\in\Z}\phi(x-k)\e^{2\pi\ii ky}
+\]
+It satisfies $F(x+1,y)=\e^{2\pi\ii y}F(x,y)$ and $F(x,y+1)=F(x,y)$. With $m=r$, $n=-q\pmod d$, the energy of $v_{m,n}=\zeta(-n,m)$ is
+\begin{equation}\label{eq:gauge}
+ E_h(v)=\sum_{m,n=0}^{d-1}\bigl(|v_{m+1,n}-v_{m,n}|^2+
+ |v_{m,n+1}-\e^{2\pi\ii m/d^2}v_{m,n}|^2\bigr)
+\end{equation}
+The extension of $v$ obeys the same gluing laws as the samples of $F$.
+
+\subsection{The Gaussian phase}
+Set $z_0=(1/2,1/2)$. To locate the zeros, write $w=\e^{2\pi(x+\ii y)}$ and $p=\e^{-\pi}$. Apart from a nonzero scalar and the Gaussian prefactor, $F$ is $\sum_k p^{k^2}w^k$. By the Jacobi triple product this is proportional to
+\[
+ \prod_{k\ge1}(1+p^{2k-1}w)(1+p^{2k-1}w^{-1})
+\]
+In the fundamental square the only vanishing factor has $w=-p^{-1}$. It has a simple zero. Consequently $F(z_0+(s,t))=a(s+\ii t)+O(s^2+t^2)$ with $a\ne0$, and $|F(z)|\ge c|z-z_0|$ on the square. An odd grid stays at distance at least $h/\sqrt2$ from $z_0$.
+
+Let $U_{m,n}=\ph(F(mh,nh))$. Near $z_0$, writing $z-z_0=s+\ii t$ and $r=|z-z_0|$, the function $F/[a(s+\ii t)]$ differs from $1$ by $O(r)$ and has bounded derivative on the punctured disk. Therefore, up to a constant phase, $U$ differs from $V=(s+\ii t)/r$ by a function with bounded derivative. On $4h\le r<R$ for fixed small $R$, each covariant increment differs from the corresponding increment of $V$ by $O(h)$, including the magnetic correction in \eqref{eq:gauge}. The error in squared length is $O(h^2/r+h^2)$. Its sum is bounded since a dyadic shell $r\asymp\rho$ contains $O((\rho/h)^2)$ sites. The inner core contains $O(1)$ sites, and outside the disk smoothness and the gluing laws bound each increment by $O(h)$.
+
+Since $|\nabla V|^2=r^{-2}$ and $|\nabla^2 V|=O(r^{-2})$, replacing the two squared increments by $h^2/r^2$ costs $O(h^3/r^3)$ per site. The same error bounds the replacement of $h^2/r^2$ by the integral over its centered grid cell. The shell errors sum to $O(1)$, as do the boundary strips of the annulus. Thus
+\begin{equation}\label{eq:vortex}
+ E_h(U)=\int_{4h}^R\frac{2\pi}{r}\,dr+O(1)=2\pi\log d+O(1)
+\end{equation}
+
+\subsection{Approximating the finite oscillator}
+For odd $d$, use centered indices on the circle of length $d$, with $x_j=jh$ and $\|b\|_h^2=h\sum_j|b_j|^2$. In this norm $b_d=\sqrt d\,g_d$ is the unit ground state of $Q_d=d^2G$. Its potential is $V_d(x)=4h^{-2}\sin^2(\pi hx)$ and its kinetic term is the negative centered second difference divided by $h^2$. Let $S_df(j)=\sum_{k\in\Z}f(x_j+kd)$.
+\begin{lemma}\label{lem:osc}
+There is a fixed Schwartz function $\psi$ and a positive $c_d\to1$ such that
+\[
+ \|b_d-c_d S_d(\phi+h^2\psi)\|_h=O(h^4)
+\]
+\end{lemma}
+\begin{proof}
+The first two eigenvalues of $Q_d$ tend to $2\pi$ and $6\pi$, those of $H=-\partial_x^2+4\pi^2x^2$ at the bottom of its spectrum. Here are the compactness details behind this gap estimate. On the centered interval $V_d(x)\ge16x^2$. Bounded form energy therefore gives a uniform second moment for the piecewise constant samples and a uniform derivative bound for their piecewise linear interpolants. The two interpolants differ in $L^2$ by at most $Ch$ for bounded energy, by integration on each edge, including the periodic seam. Local compactness and the $O(R^{-2})$ bound on squared mass outside $[-R,R]$ yield strong $L^2(\R)$ compactness of the zero-extended step functions. Weak lower semicontinuity on bounded intervals and local uniform convergence of the potentials give the limiting oscillator form as a lower bound. Applying this to the span of the first two eigenvectors preserves orthogonality. For the matching min--max upper bounds use periodized samples of $\phi$ and $x\phi$, whose form and mass matrices converge by Schwartz decay.
+
+On fixed Schwartz functions Taylor expansion gives
+\[
+ Q_d S_df=S_d(Hf+h^2Bf)+O_{\|\cdot\|_h}(h^4),\qquad
+ Bf=-\tfrac1{12}f^{(4)}-\tfrac43\pi^4 x^4 f
+\]
+Indeed the sixth derivative controls the kinetic remainder, and the potential remainder is bounded by $Ch^4|x|^6$ before periodization. Schwartz decay bounds the periodized remainders uniformly in sampled norm. Choose
+\[
+ \psi=\left(\tfrac{\pi^3}6x^4-\tfrac{\pi^2}4x^2+\tfrac\pi{32}\right)\phi
+\]
+Differentiation gives $(H-2\pi)\psi=-(B+\pi^2/2)\phi$. Hence $S_d(\phi+h^2\psi)$ has residual $O(h^4)$ at $2\pi-h^2\pi^2/2$, and norm tending to one. Divide by its norm, setting $c_d$ equal to the reciprocal. The spectral gap bounds the component perpendicular to $b_d$ by $O(h^4)$. The sampled trial vector is positive for small $h$ since $\psi/\phi$ is bounded below. Its positive projection onto $b_d$ fixes the sign and gives the asserted norm estimate.
+\end{proof}
+
+Define $\mathcal Z_db(m,n)=\sum_{k=0}^{d-1}b(m-dk)\e^{2\pi\ii nk/d}$. Unfolding the periodization gives $\mathcal Z_d S_d\phi(m,n)=F(mh,nh)$. By Cauchy--Schwarz, $\|\mathcal Z_de\|_\infty\le d\|e\|_h$. Lemma~\ref{lem:osc} and boundedness of the Zak transform of $\psi$ imply
+\[
+ \|c_d^{-1}\mathcal Z_db_d-F|_{\rm grid}\|_\infty=O(h^2)
+\]
+The lower bound $|F|\ge ch/\sqrt2$ proves nonvanishing for sufficiently large odd $d$. Moreover $\mathcal Z_db_d(m,n)=dZg_d(-n,m)$, so $W=\ph(\mathcal Z_db_d)$ represents $f_d$. At distance $r$ from $z_0$ one has $|W-U|\le Ch^2/r$. Dyadic summation yields $\|W-U\|_{\ell^2}=O(h\sqrt{\log d})$ in counting measure. The pair of covariant differences in \eqref{eq:gauge} has operator norm at most $2\sqrt2$, since both shifts are unitary even across the seams. Polarization and \eqref{eq:vortex} give
+\[
+ |E_h(W)-E_h(U)|=O(h\log d)
+\]
+This proves the upper estimate in Theorem~\ref{thm:main}.
+
+\section{The lower bound for arbitrary defects}
+Use the $(q,r)$ coordinates of \eqref{eq:energy} on the flat torus of side $d$, with unit grid spacing. On each positive edge let $a_e\in(-\pi,\pi]$ be the principal argument of its covariant phase ratio. On a reversed edge use the negative of the assigned value. The energy is $A=\sum_e4\sin^2(a_e/2)$. In the orientation $(+q,+r,-q,-r)$ the plaquette identity gives integers $n_p$ with
+\begin{equation}\label{eq:degree}
+ \sum_{\partial p}a_e=-2\pi/d^2+2\pi n_p,\qquad \sum_p n_p=1
+\end{equation}
+The second identity follows because the covariant edge numbers are periodic and cancel in the sum. It permits an arbitrary number of oppositely signed defects.
+
+Fix $K$ and suppose $A\le K\log d$. Set $\eta=(\log d)^{-1}$. Mark a square bad if one of its edges has $|a_e|\ge\eta$. There are $O_K((\log d)^3)$ bad squares since each marked edge costs at least $4\sin^2(\eta/2)$. All squares with $n_p\ne0$ are bad by \eqref{eq:degree}.
+
+\subsection{Interpolation with a common energy density}
+Let $R=d/\sqrt{\log d}$. On a lifted disk of radius at most $R+2$ centered at $(q_0,r_0)$, multiply $\zeta$ by $\e^{2\pi\ii qr_0/d^2}$. The local magnetic potential is $A'_q=2\pi(r-r_0)/d^2$, $A'_r=0$, so $|A'_e|\le\delta=C(R+2)/d^2$. On a good square the ordinary phase increments are $b_e=a_e-A'_e$, and their circulation vanishes. Lift the four vertex phases to real numbers, interpolate bilinearly, and exponentiate. Adjacent interpolants agree on edges because they use the same increments there.
+
+For square coordinates $(x,y)\in[0,1]^2$ let
+\[
+ P=(1-y)a_{\rm bottom}^2+ya_{\rm top}^2+
+ (1-x)a_{\rm left}^2+xa_{\rm right}^2
+\]
+Each partial derivative of the interpolated angle $\theta$ is a convex combination of the corresponding $b$'s. Jensen's inequality followed by Young's inequality gives
+\[
+ |\nabla\theta|^2\le (1+\eta)P+C\eta^{-1}\delta^2
+\]
+Integration of $P$ over a square assigns weight $1/2$ to each edge. On good edges $a_e^2\le(1+C\eta^2)4\sin^2(a_e/2)$, so $\int_{\rm good}P\le(1+C\eta^2)A$. The gauge error integrated over area $d^2$ is $O(1)$. In particular disjoint subsets can be estimated in different local gauges with a single total bound $(1+C\eta)A+O(1)$.
+
+\subsection{Degree on a growing circle}
+Suppose the boundary of a disk has a two-unit good collar and is contained in a local gauge as above. Its interpolated phase has degree $Q=\sum_{p\ {\rm inside}} n_p$, where inclusion is determined by the square centers. Indeed, the union of cells with centers inside the disk differs from the disk only within the collar. Its oriented cellular boundary and the circle are homologous there. On boundary edges the ordinary phase increments are $a_e-A'_e$. Summing around the cellular boundary and using discrete Stokes cancels the flux terms $-2\pi/d^2$ in \eqref{eq:degree} against the circulation of $A'$. What remains is $2\pi Q$. Perturbing the radius avoids ties. On a concentric annulus with this degree on almost every circle, angular Cauchy--Schwarz gives
+\begin{equation}\label{eq:ann}
+ \int_{u<|x-c|<v}|\nabla\theta|^2\,dx
+ \ge \int_u^v\frac{(2\pi Q)^2}{2\pi s}\,ds
+ =2\pi Q^2\log(v/u)
+\end{equation}
+
+\subsection{Counting disjoint annuli}
+Start with a radius-ten disk about each bad-square center. Merge touching disks into a containing disk of radius equal to the sum of their radii, repeating until disjoint. Such a center can be chosen on the segment between the old centers, at distances at most the opposite radii. The initial sum of radii is $S=O_K((\log d)^3)$. Increase all radii at the same proportional rate and repeat the merger rule at collisions. At growth factor $t$ the sum of radii is exactly $tS$. Stop at $t=R/S$. All disks lift isometrically for large $d$.
+
+A bad-square center begins ten units inside its assigned disk and keeps this margin through growth and mergers by the triangle inequality. Disjointness puts other assigned centers at least ten units outside. Thus every growing circle has the good collar required above. At a merger add the integer labels $Q$. Their sum stays one, so $\sum Q^2\ge1$ at every collision-free time. Annuli swept out in one such interval are disjoint. Earlier annuli remain inside the union of disks at each merger, and later annuli lie outside the union at the start of their interval. Hence annuli from different intervals have disjoint interiors as well. Regions engulfed at collisions can simply be omitted.
+
+Integrate \eqref{eq:ann} over these growth intervals and use the common density estimate. This yields
+\[
+ (1+C\eta)A+O(1)\ge 2\pi\int_1^{R/S}\sum Q^2\,\frac{dt}{t}
+ \ge 2\pi\log(R/S)
+\]
+The stopping radius costs $\tfrac12\log\log d$ in the logarithm, and the initial radius sum costs at most $3\log\log d+O_K(1)$. Since $\eta A\le K$, it follows that
+\[
+ A\ge 2\pi\log d-7\pi\log\log d-O_K(1)
+\]
+This estimate holds for either parity under the stated logarithmic energy bound. Along odd $d$, the Hermite trial supplies that bound for minimizers. Subtracting the minimum from the trial upper bound and dividing by $a_d\sim2\pi\log d$ proves Theorem~\ref{thm:main}. In the unscaled energy the common leading term is $2\pi d^{-2}\log d$.
+
+\section*{Lean formalization}
+The companion repository~\cite{Lean} contains the ongoing Lean formalization.
+
+\section*{Acknowledgment}
+The original note acknowledges OpenAI Astra for assistance with proof search, verification, and preparation. OpenAI Astra 6.2 was used to revise the wording and equation formatting of this exposition.
+\begin{thebibliography}{9}
+\bibitem{LS} M. Lammers and S. Stampe, The finite Balian--Low conjecture, in \emph{2015 International Conference on Sampling Theory and Applications}, IEEE, 2015, 139--143. \href{https://doi.org/10.1109/SAMPTA.2015.7148867}{doi:10.1109/SAMPTA.2015.7148867}.
+\bibitem{NO} S. Nitzan and J.-F. Olsen, Balian--Low type theorems in finite dimensions, \emph{Math. Ann.} \textbf{373} (2019), 643--677. \href{https://arxiv.org/abs/1707.06449}{arXiv:1707.06449}.
+\bibitem{Park} J. Park, \emph{Relative asymptotic optimality of finite Hermite Gabor windows}, research note, 25 September 2026. \href{https://github.com/JosiahPark/balian-low-asymptotics-hermitian-optimality/blob/e0278c0160e4766abcd761c409512352ff1659de/relative_asymptotic_optimality.pdf}{Manuscript}.
+\bibitem{Lean} J. Park, \emph{Finite Balian--Low: Lean formalization}, ongoing software project. \href{https://github.com/JosiahPark/balian-low-asymptotics-hermitian-optimality}{GitHub repository}.
+\end{thebibliography}
+\end{document}
