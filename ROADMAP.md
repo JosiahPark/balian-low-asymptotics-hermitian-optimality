@@ -82,10 +82,11 @@ systems and no Zak transform.
   `q ↦ ZMod.stdAddChar (-(s * q)) * dftU g q`; then A1 and the identification of `zak` with `dftU`
   in A3a). File `BLTAudit/ZakCorrelation.lean`.
   - Done 2026-11-20 18:46 UTC at 0014bf4: `zak_correlation`, `zak_correlation_of_norm`, `dftU_shift`. The right side is stated with `(‖zak f q r‖ : ℂ) ^ 2`.
-- [ ] A4d. Orthonormality, the statement of A4 without "basis": if `‖zak f q r‖ = 1 / d` for all `q r`,
+- [x] A4d. Orthonormality, the statement of A4 without "basis": if `‖zak f q r‖ = 1 / d` for all `q r`,
   then for `n m n' m' < d`, `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` (sum
   over `ZMod (d * d)` through the bijection of A3a, then A4b, A4c, and orthogonality of characters in
   `r`). File `BLTAudit/ZakCriterion.lean`.
+  - Done 2026-11-20 19:57 UTC at c24ed5d: `ip_gabor_of_zak_norm`, `ip_gabor_eq_sum`, `ip_eq_sum_zakIndex`, `natCast_zmod_eq_iff_of_lt`
 - [ ] A4e. Basis: a family `v : ι → ZMod N → ℂ` with `ip (v i) (v j) = if i = j then 1 else 0` is
   linearly independent over `ℂ`; hence, under the hypothesis of A4, the family
   `fun p : Fin d × Fin d => gabor f p.1 p.2` is linearly independent and spans `ZMod (d * d) → ℂ`
