@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-20 03:43 UTC",
+  "commit": "cdc6578e431e1aa14a40946d45f6724292677bf4",
+  "all_verified": true,
+  "build_ok": true,
+  "lean_exit_code": 0,
+  "theorems": 5,
+  "verified": 5,
+  "problems": [],
+  "skipped_private": [],
+  "escape_hatches": [],
+  "tautologies": [],
+  "results": [
+    {
+      "file": "BLTAudit/Basic.lean",
+      "theorem": "BLT.transl_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Basic.lean",
+      "theorem": "BLT.diffOp_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Basic.lean",
+      "theorem": "BLT.modul_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Basic.lean",
+      "theorem": "BLT.energy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Basic.lean",
+      "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    }
+  ]
+}
