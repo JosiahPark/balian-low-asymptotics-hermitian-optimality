@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 03:43 UTC",
-  "commit": "cdc6578e431e1aa14a40946d45f6724292677bf4",
+  "checked_at": "2026-11-20 04:12 UTC",
+  "commit": "4f24a6c4dbc202a45e5f54a38ad4ea6ba7d4a603",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 5,
-  "verified": 5,
+  "theorems": 11,
+  "verified": 11,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,66 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.sum_stdAddChar_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.conj_stdAddChar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.dft_norm_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.sum_conj_stdAddChar_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.ip_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.parseval_dftU",
       "axioms": [
         "propext",
         "Classical.choice",

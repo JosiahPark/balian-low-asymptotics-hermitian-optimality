@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 03:43 UTC at commit `cdc6578e431e`.
+Checked 2026-11-20 04:12 UTC at commit `4f24a6c4dbc2`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 5 of 5
+- Theorems verified with standard axioms only: 11 of 11
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -15,3 +15,9 @@ Checked 2026-11-20 03:43 UTC at commit `cdc6578e431e`.
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.energy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.zakEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.sum_stdAddChar_mul` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.conj_stdAddChar` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.dft_norm_sq` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.sum_conj_stdAddChar_mul` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.ip_dftU` | verified (standard axioms only) |
+| BLTAudit/UnitaryDFT.lean | `BLT.parseval_dftU` | verified (standard axioms only) |
