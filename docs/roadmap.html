@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} *,*::before,*::after{box-sizing:border-box} body{margin:0;font:14px system-ui,sans-serif} [hidden]{display:none!important}</style>
+<title>Finite Balian–Low Roadmap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+/* Layout (same language as the steklov-lean map and the entropy-quotients-lean roadmap): header strip, then a pannable SVG map (roadmap sections as horizontal bands, paper results as a spine at right), detail drawer at right / bottom on phones */
+:root{
+  --bg:#f3f4f1; --panel:#fbfbf9; --ink:#1d2430; --muted:#5d6675; --rule:#d6d9d2; --band:#e9ebe5;
+  --paper:#2e8a57; --paperbg:#d7eedf; --cond:#c48413; --condbg:#f7e6c2; --supp:#8b93a1; --suppbg:#e3e6ea;
+  --open:#c0392f; --openbg:#f6dcd8; --ext:#1f5fa8; --extbg:#dbe9f7; --accent:#2b4a7a; --edge:#7b8698;
+  --given:#6a3fb5; --givenbg:#e8def8;
+  --display:"Newsreader", Georgia, serif; --body:"IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181f; --panel:#1b2029; --ink:#e4e7ec; --muted:#9aa3b2; --rule:#2e3542; --band:#1a1f27;
+  --paper:#5cc08a; --paperbg:#1e3a2b; --cond:#e6a93c; --condbg:#3d3018; --supp:#8e97a6; --suppbg:#262c36;
+  --open:#ef6b5f; --openbg:#3e2220; --ext:#7fb0ec; --extbg:#1c2c40; --accent:#8fb0e6; --edge:#7f8aa0; --given:#b79cf0; --givenbg:#2d2440; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181f; --panel:#1b2029; --ink:#e4e7ec; --muted:#9aa3b2; --rule:#2e3542; --band:#1a1f27;
+  --paper:#5cc08a; --paperbg:#1e3a2b; --cond:#e6a93c; --condbg:#3d3018; --supp:#8e97a6; --suppbg:#262c36;
+  --open:#ef6b5f; --openbg:#3e2220; --ext:#7fb0ec; --extbg:#1c2c40; --accent:#8fb0e6; --edge:#7f8aa0; --given:#b79cf0; --givenbg:#2d2440; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;display:flex;flex-direction:column}
+header{padding-block:14px 10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-end}
+header>div{min-width:0}
+h1{font-family:var(--display);font-weight:600;font-size:26px;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px;margin-top:2px;max-width:66ch}
+.sub a{color:inherit}
+.stats{display:flex;gap:18px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--mono);font-size:18px;font-weight:500}
+.stat span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stat.link{cursor:pointer}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--rule)}
+.chip{font:inherit;font-size:12.5px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip[aria-pressed="true"]{border-color:var(--ink)}
+.chip[aria-pressed="false"]{opacity:.5}
+.chip:focus-visible,.btn:focus-visible,input:focus-visible,.tl:focus-visible,.ref:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+input[type=search]{font:inherit;font-size:13px;padding:5px 9px;border:1px solid var(--rule);border-radius:6px;background:var(--panel);color:var(--ink);min-width:0;width:200px}
+.btn{font:inherit;font-size:12.5px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:6px;padding:4px 9px;cursor:pointer}
+.spacer{flex:1}
+main{flex:1;display:flex;min-height:0;position:relative}
+#wrap{flex:1;overflow:auto;min-width:0;cursor:grab}
+#wrap.drag{cursor:grabbing}
+svg{display:block}
+.bandlbl{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;fill:var(--muted)}
+.bandref{font-family:var(--mono);font-size:10.5px;fill:var(--muted)}
+.node rect.box{fill:var(--panel);stroke:var(--rule);stroke-width:1}
+.node.next rect.box{stroke:var(--accent);stroke-width:2}
+.node.skipped rect.box,.node.decision rect.box{stroke-dasharray:4 3}
+.node text.id{font-family:var(--mono);font-size:11px;font-weight:500;fill:var(--ink)}
+.node text.nm{font-family:var(--mono);font-size:10.5px;fill:var(--ink)}
+.node text.ct{font-family:var(--body);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;fill:var(--muted)}
+.node text.ct.nx{fill:var(--accent);font-weight:600}
+.node{cursor:pointer}
+.node:hover rect.box,.node.sel rect.box{stroke:var(--ink);stroke-width:2}
+.node.dim,.rnode.dim{opacity:.18}
+.edge{fill:none;stroke:var(--edge);stroke-width:1;opacity:.45}
+.edge.hot{stroke:var(--accent);opacity:1;stroke-width:2}
+.edge.dim,.redge.dim{opacity:.06}
+.redge{fill:none;stroke-dasharray:4 3;stroke-width:1.2;opacity:.6}
+.redge.hot{opacity:1;stroke-width:2}
+.rnode{cursor:pointer}
+.rnode rect{stroke-width:1.5}
+.rnode.proved rect{fill:var(--paperbg);stroke:var(--paper)}
+.rnode.stated rect{fill:var(--condbg);stroke:var(--cond)}
+.rnode.conditional rect{fill:var(--givenbg);stroke:var(--given)}
+.rnode.missing rect{fill:var(--suppbg);stroke:var(--supp);stroke-dasharray:4 3}
+.rnode.external rect{fill:var(--extbg);stroke:var(--ext);stroke-dasharray:4 3}
+.rnode.main rect{stroke-width:2.5}
+.rnode:hover rect,.rnode.sel rect{stroke:var(--ink)}
+.rnode text.rt{font-family:var(--display);font-size:14px;font-weight:600;fill:var(--ink)}
+.rnode text{font-family:var(--body);font-size:11.5px;fill:var(--ink)}
+.small{font-family:var(--body);font-size:11px;fill:var(--muted)}
+aside{width:380px;max-width:100%;border-left:1px solid var(--rule);background:var(--panel);overflow:auto;padding-block:14px 24px;padding-left:16px;padding-right:max(16px,env(safe-area-inset-right,0px))}
+aside h2{font-family:var(--display);font-size:20px;margin:0 0 2px;font-weight:600;word-break:break-word}
+aside h3{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px;font-weight:600}
+aside .area{color:var(--muted);font-size:12px;margin-bottom:10px}
+aside p{line-height:1.45;margin:0 0 8px}
+aside code,.hint code{font-family:var(--mono);font-size:11.5px;background:var(--band);padding:0 3px;border-radius:2px;word-break:break-word}
+aside a{color:var(--accent)}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--band);margin:6px 0 12px}
+.pill{display:inline-block;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;border-radius:3px;padding:1px 5px;margin-right:6px;vertical-align:1px}
+.p-done,.p-proved{background:var(--paperbg);color:var(--paper)} .p-written,.p-stated{background:var(--condbg);color:var(--cond)} .p-open,.p-missing{background:var(--suppbg);color:var(--supp)} .p-skipped,.p-decision{background:var(--band);color:var(--muted);outline:1px dashed var(--muted)} .p-next{background:var(--accent);color:var(--panel)} .p-external{background:var(--extbg);color:var(--ext)} .p-conditional{background:var(--givenbg);color:var(--given)} .p-failing{background:var(--openbg);color:var(--open)}
+.note{border-left:3px solid var(--cond);background:var(--condbg);padding:6px 9px;margin:8px 0;font-size:13px;line-height:1.4;border-radius:0 4px 4px 0}
+.note.plain{border-left-color:var(--rule);background:var(--band)}
+.step{margin:12px 0 4px;font-size:13px;line-height:1.4}
+.step .mk{color:var(--paper);font-weight:700}
+.refs{display:flex;flex-wrap:wrap;gap:6px}
+.ref{font:inherit;font-family:var(--mono);font-size:11.5px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:4px;padding:2px 7px;cursor:pointer;display:inline-flex;gap:5px;align-items:center}
+.hint{color:var(--muted);font-size:13px;line-height:1.45}
+.hint ul{padding-left:18px;margin:4px 0}
+.src{font-size:12px;color:var(--muted);margin-top:14px;border-top:1px solid var(--rule);padding-top:8px}
+@media (max-width:760px){main{flex-direction:column} #wrap{flex:none;height:55vh} aside{width:auto;border-left:0;border-top:1px solid var(--rule);max-height:45vh;padding-left:max(16px,env(safe-area-inset-left,0px))} input[type=search]{width:140px}}
+@media (prefers-reduced-motion:no-preference){.node rect.box,.edge,.redge{transition:opacity .15s,stroke .15s}}
+</style>
+
+</head>
+<body>
+<header>
+  <div>
+    <h1>Finite Balian–Low Roadmap</h1>
+    <div class="sub">Every item of <a href="https://github.com/JosiahPark/balian-low-asymptotics-hermitian-optimality/blob/main/ROADMAP.md">ROADMAP.md</a> placed in its roadmap section, with the results of <a href="https://github.com/JosiahPark/balian-low-asymptotics-hermitian-optimality/blob/main/relative_asymptotic_optimality.pdf"><em>Relative asymptotic optimality of finite Hermite Gabor windows</em></a> it feeds on the right-hand spine. Lines join items to the items they need. Every theorem that compiled is in the <a href="https://github.com/JosiahPark/balian-low-asymptotics-hermitian-optimality/blob/main/verification/STATUS.md">verification status</a>. <span id="built"></span></div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+<div class="controls">
+  <button class="chip" data-f="done" aria-pressed="true"><span class="dot" style="background:var(--paper)"></span>Done, compiled</button>
+  <button class="chip" data-f="written" aria-pressed="true"><span class="dot" style="background:var(--cond)"></span>Written, not yet ticked</button>
+  <button class="chip" data-f="open" aria-pressed="true"><span class="dot" style="background:var(--supp)"></span>Open</button>
+  <button class="chip" data-f="skipped" aria-pressed="true"><span class="dot" style="background:var(--band);border:1px dashed var(--muted)"></span>Skipped</button>
+  <span class="chip" id="nextchip" style="cursor:default"><span class="dot" style="background:var(--panel);border:2px solid var(--accent)"></span>Next for the hourly task</span>
+  <span class="spacer"></span>
+  <input type="search" id="q" placeholder="Find item or theorem" aria-label="Find item or theorem">
+  <button class="btn" id="zin" aria-label="Zoom in">+</button><button class="btn" id="zout" aria-label="Zoom out">−</button><button class="btn" id="zfit">Fit</button>
+</div>
+<main>
+  <div id="wrap"><svg id="map" role="img" aria-label="Roadmap items by section, with the paper results they feed"></svg></div>
+  <aside id="side"></aside>
+</main>
+<script>
+const SNAPSHOT = {"roadmap": "# Roadmap: Lean companion to \"Relative asymptotic optimality of finite Hermite Gabor windows\"\n\nPaper: J. Park, 25 Sep 2026, [`relative_asymptotic_optimality.pdf`](relative_asymptotic_optimality.pdf).\nTheorem 1.1 says that the minimal rescaled critical Gabor energy satisfies\n`2π log d − 7π log log d − C ≤ a_d ≤ 2π log d + C`, so the optimal discrete limit constant is\n`lim a_d / log d = 2π`, and the finite-Hermite window `f_d` attains it to relative order\n`O(log log d / log d)` along odd `d`.\n\nThe hourly formalize task takes the FIRST unchecked item (`- [ ]`), writes it in the file the item\nnames, and ticks it (`- [x]`) only after CI shows it compiled. `- [-]` marks an item that is skipped.\n[docs/roadmap.html](docs/roadmap.html) is an interactive map of this file; CI redraws its snapshot after\nevery verification run, and the page also reads this file live from main when opened in a browser.\n[verification/STATUS.md](verification/STATUS.md) lists every theorem with its axioms.\n\nLayout: `BLTAudit.lean` (root, imports Mathlib only), `BLTAudit/Basic.lean` (shared definitions:\n`transl`, `modul`, `dftU`, `diffOp`, `ip`, `energy`, `gStd`, `zak`, `gabor`, `IsTwisted`, `mag`, `aQ`,\n`aR`, `zakEnergy`, `gauss`, `gaussZak`), then one file per item, `BLTAudit/<Name>.lean`. Every file\nunder `BLTAudit/` is built automatically. CI (`.github/workflows/lean.yml`) runs `lake build` with\nLean 4.35.0 + Mathlib v4.35.0, then `axiom_audit.py`.\n\nRules: no `sorry`, `admit`, `axiom`, `opaque`, `unsafe`, `native_decide`, `implemented_by`, `extern` or\nheartbeat options. Each file starts with a `/-! ... -/` docstring saying what it proves and what it does\nNOT prove. An estimate of the paper that is not proved in Lean may enter only as an explicit, named\nhypothesis. Nothing here may be described as a proof of Theorem 1.1 or Theorem 4.1 unless it has no\nsuch hypothesis.\n\n## A. Finite Gabor and Zak analysis\n\nExact finite statements of §1–§2. Mathlib has the discrete Fourier transform on `ZMod N` but no Gabor\nsystems and no Zak transform.\n\n- [ ] A1. Unitary DFT: `ip (dftU f) (dftU g) = ip f g` for all `f g : ZMod N → ℂ`, hence Parseval\n  `∑ k, ‖dftU f k‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`, by orthogonality of the characters `ZMod.stdAddChar`.\n  File `BLTAudit/UnitaryDFT.lean`.\n- [ ] A2. Time–frequency relations: `transl (modul f) j = ZMod.stdAddChar 1 * modul (transl f) j`\n  (that is, `T M = e^{2πi/N} M T`) and `transl (dftU f) = dftU (modul f)` (that is, `F* T F = M`).\n  File `BLTAudit/TimeFrequency.lean`.\n- [ ] A3. Finite Zak transform for `N = d²`: `∑ q, ∑ r, ‖zak f q r‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`;\n  `zak (transl f) q r = zak f q (r + 1)` when `r.val + 1 < d`, and\n  `zak (transl f) q r = ZMod.stdAddChar (-q) * zak f q 0` when `r.val + 1 = d` (the seam);\n  `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`.\n  File `BLTAudit/FiniteZak.lean`.\n- [ ] A4. Critical Gabor criterion, sufficiency (§2): if `‖zak f q r‖ = 1 / d` for all `q r`, then the\n  `d²` vectors `gabor f n m` (`n m < d`) are orthonormal for `ip`, hence a basis of `ℂ^{d²}`.\n  File `BLTAudit/ZakCriterion.lean`.\n- [ ] A5. Critical Gabor criterion, necessity: orthonormality of `{gabor f n m : n m < d}` forces\n  `‖zak f q r‖ = 1 / d` for all `q r`, so admissible vectors correspond exactly to unit-modulus arrays\n  `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`.\n- [ ] A6. Standard form of `G_N` (§1): `energy f = (ip f (gStd f)).re` and `(ip f (gStd f)).im = 0`,\n  that is, `D*D + F*D*DF` acts as `(4 − 2cos(2πj/N)) f(j) − f(j−1) − f(j+1)` (uses A1, A2).\n  File `BLTAudit/GStandardForm.lean`.\n- [ ] A7. Zak energy identity (§2): for `f : ZMod (d * d) → ℂ` and any `ζ : ℤ × ℤ → ℂ` with\n  `ζ (q, r) = d * zak f q r` on `0 ≤ q, r < d` and the gluing `shift_q`, `shift_r` of `IsTwisted`,\n  `d ^ 2 * energy f = zakEnergy d ζ` (uses A1–A3). Unit modulus is not needed. A numerical check of\n  this identity for `d ≤ 7` passed on 2026-11-19; if a convention still fails in Lean, prove the\n  corrected identity and record the difference in the docstring and in a note under this item.\n  File `BLTAudit/ZakEnergyIdentity.lean`.\n\n## B. Discrete phase topology\n\n§4.1: the twisted boundary condition forces total integer charge one. Nothing like this is in Mathlib.\n\n- [ ] B1. Edge energy (L1): for `‖u‖ = ‖v‖ = 1`, `‖v − u‖ ^ 2 = 4 * sin (arg (v * conj u) / 2) ^ 2`;\n  hence for unit-modulus `ζ`,\n  `zakEnergy d ζ = ∑ q r < d, (4 sin²(aR ζ q r / 2) + 4 sin²(aQ d ζ q r / 2))`.\n  File `BLTAudit/EdgeEnergy.lean`.\n- [ ] B2. Plaquette identity (L3): for `IsTwisted d ζ` with `0 < d`, the edge numbers `aQ d ζ` and\n  `aR ζ` are `d`-periodic in `q` and in `r`, and\n  `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` for some `n : ℤ`.\n  File `BLTAudit/PlaquetteCharge.lean`.\n- [ ] B3. Total charge one (L4): for `IsTwisted d ζ` with `0 < d`, the plaquette integers of B2 over\n  `0 ≤ q, r < d` sum to `1` (the oriented edge sums telescope by the periodicity of B2).\n  File `BLTAudit/TotalCharge.lean`.\n- [ ] B4. Good plaquettes are neutral and large edges are few (§4.1, (L5)): if the four edge numbers of\n  a plaquette have modulus `< η` and `4η + 2π/d² < 2π`, its integer is `0`; and for `0 < η ≤ π`,\n  `#{edges with |a| ≥ η} * (4 sin²(η/2)) ≤ zakEnergy d ζ`. File `BLTAudit/GoodPlaquette.lean`.\n\n## C. The Zak transform of the Gaussian\n\n§3.1 and Appendix A.3. Mathlib has `jacobiTheta₂`; it has no Zak transform.\n\n- [ ] C1. Theta representation: `r ↦ gauss (x − r) * exp (2πi r y)` is summable over `ℤ`, and\n  `gaussZak x y = 2^{1/4} e^{−πx²} * jacobiTheta₂ (y − x * I) I` (Mathlib's convention is\n  `jacobiTheta₂ z τ = ∑ exp (2πi n z + πi n² τ)`). File `BLTAudit/ZakTheta.lean`.\n- [ ] C2. Quasi-periodicity (U1): `gaussZak (x + 1) y = exp (2πi y) * gaussZak x y` and\n  `gaussZak x (y + 1) = gaussZak x y`. File `BLTAudit/ZakGluing.lean`.\n- [ ] C3. The Zak zero (A10, first part): `gaussZak (1/2) (1/2) = 0`, by pairing `r ↔ 1 − r` in the sum.\n  File `BLTAudit/ZakZero.lean`.\n- [ ] C4. Conformality at the zero (A10): `exp (πx²) * gaussZak x y` is a holomorphic function of\n  `y − x * I` (from C1), hence `∂_y gaussZak = I * ∂_x gaussZak` at `(1/2, 1/2)`.\n  File `BLTAudit/ZakConformal.lean`.\n- [ ] C5. Nonvanishing derivative (A10): with `A₀ = ∂ₓ gaussZak` at `(1/2, 1/2)`,\n  `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)`, and this alternating series has strictly\n  decreasing terms, so `A₀ ≠ 0`. File `BLTAudit/ZakDerivNonzero.lean`.\n\n## D. The finite oscillator and its ground state\n\n§1 and Appendix A.1: `G_N` has a simple, strictly positive ground vector.\n\n- [ ] D1. Gaussian eigenfunctions of `H₀ = −∂² + 4π²x²` (Appendix A.1): `φ(x) = exp (−πx²)` satisfies\n  `−φ'' + 4π²x²φ = 2πφ`, and `ψ = xφ` satisfies `−ψ'' + 4π²x²ψ = 6πψ`, as `HasDerivAt` statements.\n  File `BLTAudit/OscillatorGaussian.lean`.\n- [ ] D2. Perron–Frobenius step: for a real symmetric matrix `A` with nonpositive off-diagonal entries\n  and `v : ι → ℂ`, `∑ i j, A i j * ‖v i‖ * ‖v j‖ ≤ (∑ i j, A i j * conj (v i) * v j).re`; so replacing\n  a vector by its entrywise modulus does not raise the quadratic form. File `BLTAudit/PerronStep.lean`.\n- [ ] D3. Positivity on the cycle: if `v : ZMod N → ℝ` is nonzero, entrywise nonnegative and\n  `gStd` (applied to `v` as a complex vector) equals `λ • v` for a real `λ`, then `0 < v j` for every\n  `j` (a zero entry forces its two neighbours to vanish, all the way around `ZMod N`).\n  File `BLTAudit/GStdPositive.lean`.\n- [ ] D4. Simple positive ground state (§1): among real vectors, the minimizers of `energy` on the unit\n  sphere form a line spanned by an entrywise strictly positive vector (a minimizer's modulus is a\n  minimizer by D2 and A6, hence strictly positive by D3; two orthogonal vectors cannot both have\n  constant sign). File `BLTAudit/GroundState.lean`.\n\n## E. Tools for the vortex lower bound\n\n§4.2–§4.3. One-variable and model versions of the steps of Theorem 4.1; the degree lemma on the twisted\ntorus and the ball growth as a whole are listed under \"Not attempted here\".\n\n- [ ] E1. Circle energy: if `θ` is `C¹` on `[0, 2π]` and `θ (2π) − θ 0 = 2π Q`, then\n  `2π Q² ≤ ∫ φ in 0..2π, (deriv θ φ) ^ 2` (expand `∫ (θ' − Q)² ≥ 0`). File `BLTAudit/CircleEnergy.lean`.\n- [ ] E2. Annulus logarithm (L13): for `0 < r < s` and `g` interval-integrable on `[r, s]` with\n  `2π Q² ≤ g ρ` there, `2π Q² * log (s / r) ≤ ∫ ρ in r..s, g ρ / ρ`. File `BLTAudit/AnnulusEnergy.lean`.\n- [ ] E3. Bilinear interpolation (L8)–(L10) with zero gauge error: for corner values\n  `θ₀₀ θ₁₀ θ₀₁ θ₁₁` and the bilinear interpolant `θ` on `[0,1]²`,\n  `(∂ₓθ)² + (∂ᵧθ)² ≤ W x y := (1−y) b_bot² + y b_top² + (1−x) b_left² + x b_right²`, and\n  `∫∫ W = (b_bot² + b_top² + b_left² + b_right²) / 2`. File `BLTAudit/BilinearInterp.lean`.\n- [ ] E4. Ball merging (§4.3): in a real normed space, if `‖c₁ − c₂‖ ≤ r₁ + r₂` with `0 < r₁`, `0 < r₂`,\n  then `c = c₁ + (r₂ / (r₁ + r₂)) • (c₂ − c₁)` has `‖c − c₁‖ ≤ r₂`, `‖c − c₂‖ ≤ r₁`,\n  `ball c₁ r₁ ∪ ball c₂ r₂ ⊆ ball c (r₁ + r₂)`, and `r₁ − ‖x − c₁‖ ≤ (r₁ + r₂) − ‖x − c‖` for all `x`.\n  File `BLTAudit/BallMerge.lean`.\n- [ ] E5. Final arithmetic of Theorem 4.1, (L17)–(L19), from named real hypotheses only: for real\n  `d ≥ 3` and `0 ≤ C`, if `2π log T ≤ (1 + C / log d) * A + K`, `T = d / √(log d) / S₀`,\n  `0 < S₀ ≤ C₂ (log d)³` and `A ≤ C₀ log d`, then\n  `2π log d − 7π log (log d) − (2π log C₂ + C * C₀ + K) ≤ A`. File `BLTAudit/LowerBoundArithmetic.lean`.\n\n## F. Assembly: Theorem 1.1 from named hypotheses\n\n§5. The statement layer and the last step of the proof, in the style of a hypothesis ledger: the two\nanalytic halves enter as named hypotheses, and Lean checks what follows from them.\n\n- [ ] F1. Statement layer: `Admissible f` (the vectors `gabor f n m`, `n m < d`, are orthonormal for\n  `ip`), `scaledEnergy f = d ^ 2 * energy f` and `aMin d = ⨅ f : {f // Admissible f}, scaledEnergy f`,\n  with `0 ≤ aMin d` and `aMin d ≤ scaledEnergy f` for admissible `f`. Definitions and these two facts\n  only. File `BLTAudit/Statements.lean`.\n- [ ] F2. Relative optimality from two named bounds (§5): for real sequences `A a : ℕ → ℝ` with\n  `a d ≤ A d`, `[HU] A d ≤ 2π log d + C₁` and `[HL] 2π log d − 7π log (log d) − C₂ ≤ a d` for all large\n  `d`, conclude `0 ≤ A d − a d ≤ 7π log (log d) + C₁ + C₂` eventually and\n  `Tendsto (fun d => A d / a d) atTop (𝓝 1)`. File `BLTAudit/RelativeOptimality.lean`.\n- [ ] F3. The limit constant from the same two bounds: if eventually\n  `2π log d − 7π log (log d) − C ≤ a d ≤ 2π log d + C`, then\n  `Tendsto (fun d => a d / log d) atTop (𝓝 (2π))`. File `BLTAudit/LimitConstant.lean`.\n- [ ] F4. Conditional main theorem: combine F1–F3 into one statement about `aMin` and a candidate family\n  `f_d`, whose only hypotheses are `[HU]` (the trial bound (U4) with (U14)) and `[HL]` (the lower bound\n  (L19)), each a named structure field tagged `/-- [HU] ... -/`, `/-- [HL] ... -/`.\n  File `BLTAudit/MainConditional.lean`.\n\n## Not attempted here\n\n- Uniqueness and simplicity of the Gaussian Zak zero in the unit square (Jacobi triple product, Appendix A.3), unless Mathlib already has the triple product.\n- Spectral convergence `λ₀,d → 2π`, `λ₁,d → 6π` (A4), the fourth-order approximate ground vector (A5)–(A7), and the uniform Zak approximation (A9).\n- The trial-energy asymptotic (U4) and its transfer to the finite-Hermite phase (U12)–(U14): hypothesis `[HU]`.\n- The cellular degree lemma on the twisted torus (L12) and the ball-growth argument (L14)–(L16) as a whole, hence Theorem 4.1: hypothesis `[HL]`.\n- Theorem 1.1 without hypotheses.\n", "results": [], "theorems": null, "verified": null, "audit": null, "sha": "", "at": "before the first CI build", "live": false, "ci": null};
+const REPO = "JosiahPark/balian-low-asymptotics-hermitian-optimality";
+// Structure that ROADMAP.md does not carry: paper sections per band, short labels, item dependencies, and which items feed which result.
+// Items added later (splits like A3a, new sections) still appear, in their section, with no lines until listed here.
+// A result is "proved" when every item in `need` is ticked, "from named hypotheses" when its `cond` item is ticked,
+// "in progress" when some item that feeds it is ticked, and "open" otherwise.
+const CFG = {
+  bandRef: {A: "§1–§2", B: "§4.1", C: "§3.1 · A.3", D: "§1 · A.1", E: "§4.2–4.3", F: "§5"},
+  short: {A1: "unitary DFT", A2: "T, M, F relations", A3: "finite Zak transform", A4: "|Zf| = 1/d ⇒ ONB", A5: "ONB ⇒ |Zf| = 1/d", A6: "G_N standard form", A7: "Zak energy identity",
+    B1: "edge energy (L1)", B2: "plaquette (L3)", B3: "total charge 1 (L4)", B4: "good plaquettes (L5)",
+    C1: "theta representation", C2: "gluing (U1)", C3: "Zak zero", C4: "conformal at zero", C5: "A₀ ≠ 0",
+    D1: "H₀ eigenfunctions", D2: "Perron step", D3: "positivity on cycle", D4: "simple ground state",
+    E1: "circle energy", E2: "annulus log (L13)", E3: "bilinear interp.", E4: "ball merging", E5: "(L17)–(L19) arithmetic",
+    F1: "statement layer", F2: "ratio → 1", F3: "limit constant 2π", F4: "main, conditional"},
+  deps: {A4: ["A3"], A5: ["A3", "A4"], A6: ["A1", "A2"], A7: ["A1", "A2", "A3"],
+    B3: ["B2"], B4: ["B1", "B2"], C2: ["C1"], C4: ["C1", "C3"], C5: ["C3"],
+    D4: ["A6", "D2", "D3"], E2: ["E1"], F4: ["F1", "F2", "F3"]},
+  decision: [],
+  results: [
+    {id: "T11", name: "Theorem 1.1", sub: "a_d ~ 2π log d; f_d relatively optimal", main: true, items: ["F4", "F2", "F1"], cond: "F4"},
+    {id: "LIM", name: "Limit constant", sub: "lim a_d / log d = 2π", items: ["F3"], cond: "F3"},
+    {id: "T41", name: "Theorem 4.1", sub: "[HL] lower bound (L19), any phase array", items: ["B3", "B4", "E2", "E3", "E4", "E5"], cond: "E5"},
+    {id: "P31", name: "Proposition 3.1", sub: "[HU] trial energy (U4), transfer (U14)", items: ["C2", "C4", "C5"]},
+    {id: "ZAK", name: "§2 Zak formulation", sub: "|Z f| = 1/d and the energy identity", items: ["A4", "A5", "A7"], need: ["A4", "A5", "A7"]},
+    {id: "L4", name: "(L1)–(L5)", sub: "edge angles; total integer charge one", items: ["B1", "B2", "B3", "B4"], need: ["B1", "B2", "B3", "B4"]},
+    {id: "A10", name: "(U1), (A10)", sub: "Gaussian Zak gluing, zero, conformality", items: ["C2", "C3", "C4", "C5"], need: ["C2", "C3", "C4", "C5"]},
+    {id: "GS", name: "§1 ground vector", sub: "simple, strictly positive ground state", items: ["A6", "D4"], need: ["A6", "D4"]},
+    {id: "OSC", name: "(A4)–(A9)", sub: "oscillator approximation of g₀", items: ["D1"]}
+  ]
+};
+const STATUS_TEXT = {done: "done", written: "written", open: "open", skipped: "skipped", decision: "decision"};
+const STATUS_COL = {done: "var(--paper)", written: "var(--cond)", open: "var(--supp)", skipped: "var(--muted)", decision: "var(--muted)"};
+const RES_TEXT = {proved: "proved", conditional: "from named hypotheses", stated: "in progress", missing: "open", external: "external"};
+const RES_SHORT = {conditional: "conditional"};
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("map"), side = document.getElementById("side"), wrap = document.getElementById("wrap");
+const filt = {done: true, written: true, open: true, skipped: true};
+let scale = 1, sel = null, M = null, src = SNAPSHOT, fitted = false;
+
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const md = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${/^https?:/.test(u) ? u : `https://github.com/${REPO}/blob/main/${u.replace(/^\.\.\//, "")}`}" target="_blank" rel="noopener">${t}</a>`);
+const trunc = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+
+function parseRoadmap(text) {
+  const bands = [], lists = [], items = [];
+  let band = null, item = null, list = null;
+  for (const raw of text.split("\n")) {
+    const h = raw.match(/^##\s+(.*)$/);
+    if (h) {
+      item = null; const t = h[1].trim();
+      // sections that are lists, not work items: shown in the side panel, not as boxes
+      if (/^(not attempted|pending generali[sz]ations?|superseded)/i.test(t)) { list = {title: t, intro: [], entries: []}; lists.push(list); band = null; continue; }
+      list = null;
+      const m = t.match(/^([A-Z])\.\s+(.*)$/);
+      band = {key: m ? m[1] : (/^done/i.test(t) ? "Done" : t.slice(0, 12)), title: m ? m[2] : t, intro: [], items: []};
+      bands.push(band); continue;
+    }
+    if (list) { const b = raw.match(/^-\s+(.*)$/); if (b) list.entries.push(b[1]); else if (raw.trim() && list.entries.length) list.entries[list.entries.length - 1] += " " + raw.trim(); else if (raw.trim()) list.intro.push(raw.trim()); continue; }
+    if (!band) continue;
+    const it = raw.match(/^-\s+\[( |x|X|-)\]\s+(.*)$/);
+    if (it) {
+      let t = it[2], id; const idm = t.match(/^([A-Z]\d+[a-z]*)\.\s+(.*)$/);
+      if (idm) { id = idm[1]; t = idm[2]; } else id = (band.key === "Done" ? "V" : band.key) + (band.items.length + 1);
+      item = {id, mark: it[1].toLowerCase(), text: t, notes: [], depth: [], band: band.key};
+      band.items.push(item); items.push(item); continue;
+    }
+    const sub = raw.match(/^(\s{2,8})-\s+(.*)$/);
+    if (sub && item) { item.notes.push(sub[2]); item.depth.push(Math.max(0, (sub[1].length - 2) >> 1)); continue; }
+    if (!raw.trim()) continue;
+    if (/^\s+\S/.test(raw) && item) {
+      const ind = raw.match(/^\s*/)[0].length;
+      if (item.notes.length) item.notes[item.notes.length - 1] += " " + raw.trim(); else item.text += " " + raw.trim();
+      continue;
+    }
+    item = null; band.intro.push(raw.trim());
+  }
+  for (const b of bands) b.intro = b.intro.join(" ").trim();
+  for (const l of lists) l.intro = l.intro.join(" ").trim();
+  return {bands: bands.filter(b => b.items.length), lists, items};
+}
+function model(s) {
+  const R = parseRoadmap(s.roadmap), byId = {};
+  for (const it of R.items) {
+    byId[it.id] = it;
+    const written = it.notes.some(n => /written by the (hourly|formalize) task/i.test(n));
+    it.status = it.mark === "x" ? "done" : it.mark === "-" ? "skipped" : CFG.decision.includes(it.id) ? "decision" : written ? "written" : "open";
+    const code = [...(it.text + " " + it.notes.join(" ")).matchAll(/`([^`]+)`/g)].map(m => m[1]);
+    it.files = [...new Set(code.filter(c => /^BLTAudit\/[\w\/]+\.lean$/.test(c)))];
+    it.names = [...new Set(code.filter(c => /^[\w.']+$/.test(c) && !/\.lean$/.test(c)))];
+    if (it.status === "open" && (s.results || []).some(r => it.files.includes(r[0]))) it.status = "written";
+    it.short = CFG.short[it.id] || it.names.find(n => n.length > 5 || /[_.]/.test(n)) || trunc(it.text.replace(/`/g, "").replace(/\s*\(.*$/, ""), 22);
+  }
+  const next = R.items.find(it => it.band !== "Done" && it.status === "open");
+  if (next) next.next = true;
+  // dependencies: configured ones, plus a parent item for split items (A3a needs nothing extra, but inherits A3's)
+  const deps = {};
+  for (const it of R.items) {
+    const base = it.id.replace(/[a-z]+$/, "");
+    deps[it.id] = (CFG.deps[it.id] || CFG.deps[base] || []).filter(d => byId[d] && d !== it.id);
+  }
+  const usedBy = {};
+  for (const [a, ds] of Object.entries(deps)) for (const d of ds) (usedBy[d] ||= []).push(a);
+  const isDone = i => byId[i] && byId[i].status === "done";
+  const results = CFG.results.map(r => {
+    const items = r.items.filter(i => byId[i]), need = (r.need || []).filter(i => byId[i]);
+    const status = need.length && need.length === (r.need || []).length && need.every(isDone) ? "proved" : r.cond && isDone(r.cond) ? "conditional" : items.some(isDone) ? "stated" : "missing";
+    return {...r, items, status};
+  });
+  const feeds = {};
+  for (const r of results) for (const i of r.items) (feeds[i] ||= []).push(r.id);
+  // layout
+  const NW = 178, NH = 44, GX = 12, GY = 12, PER = 6, X0 = 24;
+  let y = 16; const bands = [];
+  for (const b of R.bands) {
+    b.items.forEach((it, i) => { const r = Math.floor(i / PER), c = i % PER; it.x = X0 + c * (NW + GX); it.y = y + 32 + r * (NH + GY); });
+    const h = 32 + Math.ceil(b.items.length / PER) * (NH + GY) + 6;
+    bands.push({...b, y, h}); y += h + 10;
+  }
+  const spineX = X0 + PER * (NW + GX) + 48, RW = 236, RH = 52;
+  results.forEach((r, i) => { r.x = spineX; r.y = 96 + i * (RH + 12); r.w = RW; r.h = RH; });
+  const H = Math.max(y + 10, results.length ? results[results.length - 1].y + RH + 24 : 0);
+  return {R, byId, deps, usedBy, results, feeds, next, bands, L: {NW, NH, W: spineX + RW + 24, H, spineX}};
+}
+
+function draw() {
+  const {L} = M;
+  svg.innerHTML = "";
+  svg.setAttribute("viewBox", `0 0 ${L.W} ${L.H}`);
+  svg.setAttribute("width", L.W * scale); svg.setAttribute("height", L.H * scale);
+  const gB = el("g", {}, svg), gE = el("g", {}, svg), gN = el("g", {}, svg);
+  M.bands.forEach((b, i) => {
+    el("rect", {x: 8, y: b.y, width: L.spineX - 32, height: b.h, rx: 6, fill: i % 2 ? "var(--bg)" : "var(--band)"}, gB);
+    const label = b.key === "Done" ? b.title : `${b.key}. ${b.title.replace(/\s*\(`[^)]*\)\s*$/, "")}`;
+    const t = el("text", {x: 24, y: b.y + 20, class: "bandlbl"}, gB); t.textContent = trunc(label, 70);
+    const r = el("text", {x: L.spineX - 40, y: b.y + 20, class: "bandref", "text-anchor": "end"}, gB); r.textContent = CFG.bandRef[b.key] || "";
+  });
+  const lbl = el("text", {x: L.spineX, y: 36, class: "bandlbl"}, gB); lbl.textContent = "Paper results";
+  ["Status follows the ticked roadmap items.", "Proved: every item it needs compiled, with", "no hypothesis beyond the paper's."].forEach((s, k) => { const t = el("text", {x: L.spineX, y: 54 + 14 * k, class: "small"}, gB); t.textContent = s; });
+  const curve = (x1, y1, x2, y2) => { const mx = (x1 + x2) / 2; return `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`; };
+  const edges = [];
+  for (const [a, ds] of Object.entries(M.deps)) for (const d of ds) {
+    const A = M.byId[a], B = M.byId[d];
+    const p = el("path", {d: curve(B.x + L.NW / 2, B.y + L.NH / 2, A.x + L.NW / 2, A.y + L.NH / 2), class: "edge"}, gE);
+    p.dataset.a = a; p.dataset.b = d; edges.push(p);
+  }
+  const RCOL = {proved: "var(--paper)", conditional: "var(--given)", stated: "var(--cond)", missing: "var(--supp)", external: "var(--ext)"};
+  for (const r of M.results) for (const i of r.items) {
+    const it = M.byId[i];
+    const p = el("path", {d: curve(it.x + L.NW, it.y + L.NH / 2, r.x, r.y + r.h / 2), class: "redge", stroke: RCOL[r.status] || "var(--supp)"}, gE);
+    p.dataset.a = i; p.dataset.b = r.id; edges.push(p);
+  }
+  for (const r of M.results) {
+    const g = el("g", {class: `rnode ${r.status}${r.main ? " main" : ""}`, tabindex: 0, role: "button", "aria-label": r.name}, gN);
+    g.dataset.id = r.id;
+    el("rect", {x: r.x, y: r.y, width: r.w, height: r.h, rx: 7}, g);
+    const t1 = el("text", {x: r.x + 11, y: r.y + 21, class: "rt"}, g); t1.textContent = r.name;
+    const t2 = el("text", {x: r.x + r.w - 10, y: r.y + 20, class: "small", "text-anchor": "end"}, g); t2.textContent = RES_SHORT[r.status] || RES_TEXT[r.status] || r.status;
+    const t3 = el("text", {x: r.x + 11, y: r.y + 39, class: "small"}, g); t3.textContent = r.sub;
+    const ti = el("title", {}, g); ti.textContent = `${r.name}: ${RES_TEXT[r.status] || r.status}. Roadmap items: ${r.items.join(", ") || "none"}`;
+    g.addEventListener("click", () => selectResult(r.id));
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectResult(r.id); } });
+    g.addEventListener("mouseenter", () => hot(r.id)); g.addEventListener("mouseleave", () => hot(sel));
+  }
+  for (const it of M.R.items) {
+    const key = it.status === "decision" ? "skipped" : it.status;
+    const g = el("g", {class: `node ${it.status}${it.next ? " next" : ""}${filt[key] ? "" : " dim"}`, tabindex: 0, role: "button", "aria-label": `${it.id} ${it.short}`}, gN);
+    g.dataset.id = it.id;
+    el("rect", {x: it.x, y: it.y, width: L.NW, height: L.NH, rx: 5, class: "box"}, g);
+    const t = el("text", {x: it.x + 8, y: it.y + 17, class: "id"}, g); t.textContent = it.id;
+    const nm = el("text", {x: it.x + 8 + 8 * it.id.length + 6, y: it.y + 17, class: "nm"}, g); nm.textContent = trunc(it.short, 23 - it.id.length);
+    const ct = el("text", {x: it.x + L.NW - 8, y: it.y + 36, class: "ct" + (it.next ? " nx" : ""), "text-anchor": "end"}, g); ct.textContent = it.next ? "next" : STATUS_TEXT[it.status];
+    el("rect", {x: it.x + 8, y: it.y + 29, width: L.NW - 94, height: 6, rx: 1, fill: STATUS_COL[it.status], opacity: it.status === "skipped" || it.status === "decision" ? .35 : 1}, g);
+    const ti = el("title", {}, g); ti.textContent = `${it.id}: ${it.text.replace(/`/g, "")}`;
+    g.addEventListener("click", () => select(it.id));
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(it.id); } });
+    g.addEventListener("mouseenter", () => hot(it.id)); g.addEventListener("mouseleave", () => hot(sel));
+  }
+  svg._edges = edges;
+  hot(sel);
+  applySearch();
+}
+function hot(id) {
+  for (const p of svg._edges || []) { const on = id && (p.dataset.a === id || p.dataset.b === id); p.classList.toggle("hot", !!on); p.classList.toggle("dim", !!id && !on); }
+  svg.querySelectorAll(".node,.rnode").forEach(n => n.classList.toggle("sel", n.dataset.id === sel));
+}
+const pill = s => `<span class="pill p-${s}">${esc(STATUS_TEXT[s] || RES_TEXT[s] || s)}</span>`;
+function refBtn(id) {
+  const it = M.byId[id], r = M.results.find(x => x.id === id);
+  const col = it ? STATUS_COL[it.status] : r ? ({proved: "var(--paper)", conditional: "var(--given)", stated: "var(--cond)", missing: "var(--supp)", external: "var(--ext)"}[r.status]) : "var(--supp)";
+  return `<button class="ref" data-ref="${esc(id)}"><span class="dot" style="background:${col}"></span>${esc(it ? id + " " + it.short : r ? r.name : id)}</button>`;
+}
+function wireRefs() {
+  side.querySelectorAll("[data-ref]").forEach(b => b.addEventListener("click", () => { const id = b.dataset.ref; M.byId[id] ? select(id, true) : selectResult(id, true); }));
+}
+function noteHtml(n, depth) {
+  const pad = depth ? ` style="margin-left:${depth * 14}px"` : "";
+  const st = n.match(/^\[( |x|X|-)\]\s+([A-Z]\d+[a-z]*\d*)\.\s+(.*)$/);
+  if (st) {
+    const mark = st[1] === " " ? "○" : st[1] === "-" ? "–" : "✓";
+    return `<div class="step"${pad}><span class="mk">${mark}</span> <b>${esc(st[2])}</b> ${md(st[3])}</div>`;
+  }
+  return `<div class="note${/written by the (hourly|formalize) task/i.test(n) ? "" : " plain"} sub"${depth ? ` style="margin-left:${depth * 14 + 14}px"` : ` style="margin-left:14px"`}>${md(n)}</div>`;
+}
+function select(id, scroll) {
+  sel = id; hot(id);
+  const it = M.byId[id], band = M.bands.find(b => b.key === it.band);
+  const needs = M.deps[id] || [], unl = M.usedBy[id] || [], fd = M.feeds[id] || [];
+  const blocked = needs.filter(d => M.byId[d].status !== "done");
+  side.innerHTML = `<h2>${esc(id)} · ${esc(it.short)}</h2>
+    <div class="area">${esc(band.key === "Done" ? band.title : band.key + ". " + band.title.replace(/\s*\(`[^)]*\)\s*$/, ""))}${CFG.bandRef[band.key] ? " · " + esc(CFG.bandRef[band.key]) : ""}</div>
+    <div>${pill(it.status)}${it.next ? pill("next") : ""}</div>
+    <p style="margin-top:10px">${md(it.text)}</p>
+    ${it.notes.map((n, k) => noteHtml(n, it.depth[k] || 0)).join("")}
+    ${it.next ? `<div class="note plain">The hourly task takes this item on its next run: it is the first open item, after any item already written, not counting skipped items.</div>` : ""}
+    ${it.status === "decision" ? `<div class="note plain">This is Josiah's decision; the hourly task skips it.</div>` : ""}
+    ${it.files.length ? `<h3>Files</h3><div class="refs">${it.files.map(f => `<a class="ref" href="https://github.com/${REPO}/blob/main/${esc(f)}" target="_blank" rel="noopener">${esc(f)}</a>`).join("")}</div>` : ""}
+    ${thmList(it)}
+    ${needs.length ? `<h3>Needs${blocked.length ? ` · ${blocked.length} not done` : " · all done"}</h3><div class="refs">${needs.map(refBtn).join("")}</div>` : ""}
+    ${unl.length ? `<h3>Unlocks</h3><div class="refs">${unl.map(refBtn).join("")}</div>` : ""}
+    ${fd.length ? `<h3>Feeds</h3><div class="refs">${fd.map(refBtn).join("")}</div>` : ""}`;
+  wireRefs();
+  if (scroll) scrollTo(it.x + M.L.NW / 2, it.y);
+}
+function thmList(it) {
+  const rows = (src.results || []).filter(r => it.files.includes(r[0]));
+  if (!rows.length) return "";
+  const ok = rows.filter(r => r[2]).length;
+  return `<h3>Theorems in CI · ${ok} of ${rows.length} verified</h3><div class="refs">${rows.map(r => `<span class="ref" style="cursor:default"><span class="dot" style="background:${r[2] ? "var(--paper)" : "var(--open)"}"></span>${esc(r[1].replace(/^BLT\./, ""))}</span>`).join("")}</div>`;
+}
+function selectResult(id, scroll) {
+  sel = id; hot(id);
+  const r = M.results.find(x => x.id === id);
+  const extra = {T11: "2π log d − 7π log log d − C ≤ a_d ≤ 2π log d + C, and A_d(f_d)/a_d → 1 along odd d. Lean can only reach this from the two named hypotheses [HU] and [HL] (item F4); neither is proved here.",
+    LIM: "The optimal discrete limit constant. Item F3 derives it from the two-sided bound of Theorem 1.1, taken as a hypothesis.",
+    T41: "Hypothesis [HL]. The degree lemma on the twisted torus (L12) and the ball growth (L14)–(L16) are not attempted; section E checks one-variable and model versions of the steps, and E5 the final arithmetic.",
+    P31: "Hypothesis [HU]. The vortex Riemann sum (U4) and the transfer to the finite-Hermite phase (U12)–(U14) are not attempted; section C checks the Gaussian Zak facts they start from.",
+    ZAK: "Exact finite statements: the critical orthonormality criterion and A_d(ζ) = d² E(f) with both seams. A numerical check of the energy identity for d ≤ 7 passed on 2026-11-19.",
+    L4: "Exact finite statements. The twisted gluing forces the plaquette integers to sum to one, whatever the phases.",
+    A10: "The zero at (1/2, 1/2), ∂_y = i ∂_x there, and A₀ ≠ 0. That it is the only zero in the unit square (Jacobi triple product) is not attempted.",
+    GS: "G_N in standard coordinates, and a simple strictly positive ground vector by the Perron–Frobenius argument.",
+    OSC: "Spectral convergence (A4), the fourth-order approximate ground vector (A5)–(A7) and the uniform Zak approximation (A9) are not attempted; D1 checks the continuum eigenfunctions only."}[id];
+  side.innerHTML = `<h2>${esc(r.name)}</h2><div class="area">${esc(r.sub)}</div><div>${pill(r.status)}</div>
+    ${extra ? `<p style="margin-top:10px">${esc(extra)}</p>` : ""}
+    <h3>Roadmap items</h3><div class="refs">${r.items.map(refBtn).join("") || "<span class='hint'>none yet</span>"}</div>`;
+  wireRefs();
+  if (scroll) scrollTo(r.x + r.w / 2, r.y);
+}
+function scrollTo(x, y) { wrap.scrollTo({left: x * scale - wrap.clientWidth / 2, top: y * scale - wrap.clientHeight / 3, behavior: "smooth"}); }
+function intro() {
+  const lists = M.R.lists;
+  side.innerHTML = `<h2>How to read the roadmap</h2><div class="hint">
+    <p>Each box is one roadmap item, in its section of ROADMAP.md. Its bar shows its state: <b style="color:var(--paper)">done</b> (ticked after CI compiled it), <b style="color:var(--cond)">written</b> (its file is in the build, but the item is not yet ticked), <b>open</b>, or dashed when skipped.</p>
+    <p>Solid lines join an item to the items it needs. Dashed lines run to the paper results on the right, coloured by their Lean status: proved, proved from named hypotheses, in progress, or open. Theorem 1.1 can only become “from named hypotheses” here: [HU] and [HL] are not attempted.</p>
+    <p>${M.next ? "The box outlined in blue is the next item the formalize task will take." : "No item is open, so no box is marked as next."} Select any box for its full text, files, verified theorems, and what it needs and unlocks.</p>
+    ${lists.map((l, i) => `<h3 id="list-${i}">${esc(l.title)}</h3>${l.intro ? `<p>${md(l.intro)}</p>` : ""}<ul>${l.entries.map(n => `<li>${md(n)}</li>`).join("")}</ul>`).join("")}</div>
+    <div class="src" id="srcnote"></div>`;
+  renderSrc();
+}
+function renderSrc() {
+  const n = document.getElementById("srcnote");
+  if (n) n.textContent = src.live ? `Read live from main at ${src.at}.` : `Snapshot${src.sha ? " of commit " + src.sha : ""} (${src.at}); live data could not be fetched here.`;
+}
+function stats() {
+  const its = M.R.items, c = s => its.filter(i => i.status === s).length;
+  const total = its.length, ci = src.ci;
+  const ciTxt = ci ? (ci.status !== "completed" ? "running" : ci.conclusion === "success" ? "passing" : "failing") : "–";
+  const ciCol = ciTxt === "passing" ? "var(--paper)" : ciTxt === "failing" ? "var(--open)" : "var(--cond)";
+  document.getElementById("stats").innerHTML =
+    `<div class="stat"><b>${c("done")}/${total}</b><span>items done</span></div>` +
+    (src.theorems != null ? `<a class="stat link" href="https://github.com/${REPO}/blob/main/verification/STATUS.md" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" title="theorems that compile and depend only on Lean's three standard axioms, out of all theorems in the library. Opens verification/STATUS.md."><b>${src.verified}/${src.theorems}</b><span>theorems verified ↗</span></a>` : "") +
+    `<div class="stat"><b style="color:var(--cond)">${c("written")}</b><span>written, unticked</span></div>` +
+    `<div class="stat"><b style="color:var(--supp)">${c("open") + c("decision")}</b><span>open</span></div>` +
+    `<div class="stat"><b style="color:${ciCol}">${ciTxt}</b><span>CI ${ci && ci.sha ? esc(ci.sha.slice(0, 7)) : ""}</span></div>` +
+    (M.next ? `<div class="stat link" id="nextstat" role="button" tabindex="0"><b style="color:var(--accent)">${esc(M.next.id)}</b><span>next item</span></div>` : "");
+  const ns = document.getElementById("nextstat");
+  if (ns) { ns.onclick = () => select(M.next.id, true); ns.onkeydown = e => { if (e.key === "Enter") select(M.next.id, true); }; }
+  document.getElementById("nextchip").style.display = M.next ? "" : "none";
+  document.getElementById("built").textContent = src.live ? `Live from main, ${src.at}.` : `Snapshot of ${src.sha || "the last build"}, ${src.at}.`;
+}
+function render() {
+  M = model(src); stats(); draw();
+  if (sel && (M.byId[sel])) select(sel); else if (sel && M.results.find(r => r.id === sel)) selectResult(sel); else intro();
+  if (!fitted) { setScale(Math.min(1, (wrap.clientWidth || M.L.W) / M.L.W)); fitted = true; }
+}
+function setScale(s) { scale = Math.max(.35, Math.min(2.2, s)); svg.setAttribute("width", M.L.W * scale); svg.setAttribute("height", M.L.H * scale); }
+document.getElementById("zin").onclick = () => setScale(scale * 1.2);
+document.getElementById("zout").onclick = () => setScale(scale / 1.2);
+document.getElementById("zfit").onclick = () => setScale(wrap.clientWidth / M.L.W);
+document.querySelectorAll(".chip[data-f]").forEach(b => b.addEventListener("click", () => { const f = b.dataset.f; filt[f] = !filt[f]; b.setAttribute("aria-pressed", String(filt[f])); draw(); }));
+let dr = null;
+wrap.addEventListener("pointerdown", e => { if (e.target.closest(".node,.rnode")) return; dr = {x: e.clientX, y: e.clientY, l: wrap.scrollLeft, t: wrap.scrollTop}; wrap.classList.add("drag"); });
+addEventListener("pointermove", e => { if (!dr) return; wrap.scrollLeft = dr.l - (e.clientX - dr.x); wrap.scrollTop = dr.t - (e.clientY - dr.y); });
+addEventListener("pointerup", () => { dr = null; wrap.classList.remove("drag"); });
+function applySearch() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  svg.querySelectorAll(".node").forEach(n => {
+    const it = M.byId[n.dataset.id];
+    const hit = !q || (it.id + " " + it.short + " " + it.text + " " + it.notes.join(" ")).toLowerCase().includes(q);
+    n.style.opacity = hit ? "" : ".15";
+  });
+}
+document.getElementById("q").addEventListener("input", applySearch);
+
+// Live data: ROADMAP.md and verification/STATUS.json from main, and the latest CI run.
+async function live() {
+  const raw = p => fetch(`https://raw.githubusercontent.com/${REPO}/main/${p}?t=${Date.now()}`, {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); });
+  try {
+    const roadmap = await raw("ROADMAP.md");
+    const next = {...src, roadmap, live: true, at: new Date().toLocaleString([], {dateStyle: "medium", timeStyle: "short"})};
+    try {
+      const st = JSON.parse(await raw("verification/STATUS.json"));
+      next.theorems = st.theorems; next.verified = st.verified; next.audit = st.all_verified;
+      next.results = (st.results || []).map(r => [r.file, r.theorem, /^verified/.test(r.status)]);
+    } catch (e) { /* keep the snapshot's numbers */ }
+    try {
+      const runs = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/lean.yml/runs?per_page=1&branch=main`).then(r => r.json());
+      const r0 = runs.workflow_runs[0]; next.ci = {status: r0.status, conclusion: r0.conclusion, sha: r0.head_sha};
+    } catch (e) { /* keep the snapshot's CI state */ }
+    src = next; render();
+  } catch (e) { render(); renderSrc(); }
+}
+// Draw only once live data has arrived (or failed), so the stale snapshot numbers never flash first.
+document.getElementById("stats").textContent = "Loading live data from main…";
+setTimeout(() => { if (!M) { render(); renderSrc(); } }, 10000);
+live();
+</script>
+
+</body>
+</html>
