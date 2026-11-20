@@ -1,65 +1,331 @@
 {
-  "checked_at": "2026-11-20 03:43 UTC",
-  "commit": "cdc6578e431e1aa14a40946d45f6724292677bf4",
-  "all_verified": true,
-  "build_ok": true,
-  "lean_exit_code": 0,
-  "theorems": 5,
-  "verified": 5,
-  "problems": [],
+  "checked_at": "2026-11-20 03:52 UTC",
+  "commit": "ebbd00c332fd7d6e3da526536211a22143689959",
+  "all_verified": false,
+  "build_ok": false,
+  "lean_exit_code": 1,
+  "theorems": 45,
+  "verified": 0,
+  "problems": [
+    "BLT.norm_mergeCenter_sub_left",
+    "BLT.norm_mergeCenter_sub_right",
+    "BLT.margin_mergeBall_left",
+    "BLT.margin_mergeBall_right",
+    "BLT.ball_union_subset_mergeBall",
+    "BLT.transl_apply",
+    "BLT.diffOp_apply",
+    "BLT.modul_apply",
+    "BLT.energy_nonneg",
+    "BLT.zakEnergy_nonneg",
+    "BLT.norm_exp_sub_one_sq",
+    "BLT.norm_sub_sq_eq_four_sin_sq",
+    "BLT.norm_mag",
+    "BLT.zakEnergy_eq_sin_sq",
+    "BLT.stdAddChar_natCast",
+    "BLT.zakIndex_lt",
+    "BLT.zakIndex_injective",
+    "BLT.zakIndex_bijective",
+    "BLT.zak_eq_dftU",
+    "BLT.parseval_zak",
+    "BLT.zak_transl_of_lt",
+    "BLT.zak_transl_seam",
+    "BLT.zak_modul",
+    "BLT.stdAddChar_add_neg",
+    "BLT.normSq_one_sub_stdAddChar",
+    "BLT.sum_norm_sq_eq",
+    "BLT.energy_eq_ip_gStd",
+    "BLT.energy_eq_re_ip_gStd",
+    "BLT.im_ip_gStd",
+    "BLT.tendsto_loglog_div_log",
+    "BLT.limit_constant",
+    "BLT.log_stopTime",
+    "BLT.lower_bound_arithmetic",
+    "BLT.gap_bound",
+    "BLT.relative_optimality",
+    "BLT.transl_modul",
+    "BLT.transl_dftU",
+    "BLT.dftU_sub",
+    "BLT.diffOp_dftU",
+    "BLT.sum_stdAddChar_mul",
+    "BLT.conj_stdAddChar",
+    "BLT.dft_norm_sq",
+    "BLT.sum_conj_stdAddChar_mul",
+    "BLT.ip_dftU",
+    "BLT.parseval_dftU"
+  ],
   "skipped_private": [],
   "escape_hatches": [],
   "tautologies": [],
   "results": [
     {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.norm_mergeCenter_sub_left",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.norm_mergeCenter_sub_right",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.margin_mergeBall_left",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.margin_mergeBall_right",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.ball_union_subset_mergeBall",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.transl_apply",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "verified (standard axioms only)"
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.diffOp_apply",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "verified (standard axioms only)"
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.modul_apply",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "verified (standard axioms only)"
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.energy_nonneg",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "verified (standard axioms only)"
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "verified (standard axioms only)"
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_exp_sub_one_sq",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_sub_sq_eq_four_sin_sq",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_mag",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.zakEnergy_eq_sin_sq",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.stdAddChar_natCast",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zakIndex_lt",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zakIndex_injective",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zakIndex_bijective",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zak_eq_dftU",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.parseval_zak",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zak_transl_of_lt",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zak_transl_seam",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/FiniteZak.lean",
+      "theorem": "BLT.zak_modul",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.stdAddChar_add_neg",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.normSq_one_sub_stdAddChar",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_norm_sq_eq",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.energy_eq_ip_gStd",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.energy_eq_re_ip_gStd",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.im_ip_gStd",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/LimitConstant.lean",
+      "theorem": "BLT.tendsto_loglog_div_log",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/LimitConstant.lean",
+      "theorem": "BLT.limit_constant",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.log_stopTime",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.lower_bound_arithmetic",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.gap_bound",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.relative_optimality",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.transl_modul",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.transl_dftU",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.dftU_sub",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/TimeFrequency.lean",
+      "theorem": "BLT.diffOp_dftU",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.sum_stdAddChar_mul",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.conj_stdAddChar",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.dft_norm_sq",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.sum_conj_stdAddChar_mul",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.ip_dftU",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
+    },
+    {
+      "file": "BLTAudit/UnitaryDFT.lean",
+      "theorem": "BLT.parseval_dftU",
+      "axioms": null,
+      "status": "NOT CHECKED (name not found by Lean)"
     }
   ]
 }
