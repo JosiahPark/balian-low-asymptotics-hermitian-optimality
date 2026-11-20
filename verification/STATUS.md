@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 17:53 UTC at commit `c799a5c26f7f`.
+Checked 2026-11-20 18:05 UTC at commit `2917950686a6`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 22 of 22
+- Theorems verified with standard axioms only: 24 of 24
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -15,6 +15,8 @@ Checked 2026-11-20 17:53 UTC at commit `c799a5c26f7f`.
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.energy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.zakEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/FiniteZakModulation.lean | `BLT.stdAddChar_natCast` | verified (standard axioms only) |
+| BLTAudit/FiniteZakModulation.lean | `BLT.zak_modul` | verified (standard axioms only) |
 | BLTAudit/FiniteZakTranslation.lean | `BLT.zak_transl_of_lt` | verified (standard axioms only) |
 | BLTAudit/FiniteZakTranslation.lean | `BLT.zak_transl_seam` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zakIndex_lt` | verified (standard axioms only) |

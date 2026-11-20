@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 17:53 UTC",
-  "commit": "c799a5c26f7fea411a5c28577df9b542e1cf31ca",
+  "checked_at": "2026-11-20 18:05 UTC",
+  "commit": "2917950686a63a6f6d607670acd0b423d53ca0ae",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 22,
-  "verified": 22,
+  "theorems": 24,
+  "verified": 24,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,26 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakModulation.lean",
+      "theorem": "BLT.stdAddChar_natCast",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakModulation.lean",
+      "theorem": "BLT.zak_modul",
       "axioms": [
         "propext",
         "Classical.choice",
