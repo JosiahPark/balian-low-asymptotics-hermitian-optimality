@@ -59,9 +59,34 @@ systems and no Zak transform.
   `mag d r.val` (the character of `ZMod (d * d)` at `b.val * d + r.val` is
   `e^{2πi b.val / d} · e^{2πi r.val / d²}`). File `BLTAudit/FiniteZakModulation.lean`.
   - Done 2026-11-20 18:05 UTC at 2917950: `zak_modul`, `stdAddChar_natCast`. The factor is stated as `Complex.exp (2 * π * I * r.val / d ^ 2)`; its identification with `mag d r.val` is not stated as a lemma.
-- [ ] A4. Critical Gabor criterion, sufficiency (§2): if `‖zak f q r‖ = 1 / d` for all `q r`, then the
+- [-] A4. Critical Gabor criterion, sufficiency (§2): if `‖zak f q r‖ = 1 / d` for all `q r`, then the
   `d²` vectors `gabor f n m` (`n m < d`) are orthonormal for `ip`, hence a basis of `ℂ^{d²}`.
-  File `BLTAudit/ZakCriterion.lean`.
+  File `BLTAudit/ZakCriterion.lean`. (split into A4a, A4b, A4c, A4d, A4e)
+  - Split 2026-11-20: five separate steps (closed form of `gabor`, two index computations in `ZMod (d * d)`, a correlation identity on `ZMod d`, the orthonormality sum, linear independence with span), about 220 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakCriterion.lean` is now the file of A4d. The five statements below passed a numerical check for `d ≤ 5` on 2026-11-20.
+- [ ] A4a. Closed form of the Gabor vectors: for `f : ZMod N → ℂ`, `k : ℕ` and `j : ZMod N`,
+  `(transl^[k] f) j = f (j + k)` and `(modul^[k] f) j = ZMod.stdAddChar (k * j) * f j`; hence for
+  `f : ZMod (d * d) → ℂ` and all `n m : ℕ`,
+  `gabor f n m j = ZMod.stdAddChar ((m * d : ℕ) * j) * f (j + (n * d : ℕ))` (the cross term
+  `(m d)(n d)` vanishes because `d * d = 0` in `ZMod (d * d)`). File `BLTAudit/GaborFormula.lean`.
+- [ ] A4b. Gabor vectors in Zak coordinates: for `b r : ZMod d` and `n m : ℕ`,
+  `gabor f n m (zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r) * f (zakIndex d (b + n, r))`,
+  from A4a and the two index facts `zakIndex d (b, r) + (n * d : ℕ) = zakIndex d (b + n, r)` and
+  `ZMod.stdAddChar ((m * d : ℕ) * zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r)` (the first
+  character is on `ZMod (d * d)`, the second on `ZMod d`). File `BLTAudit/GaborZakCoordinates.lean`.
+- [ ] A4c. Zak correlation identity: for `f : ZMod (d * d) → ℂ` and `r s t : ZMod d`, in `ℂ`,
+  `∑ b, conj (f (zakIndex d (b + s, r))) * f (zakIndex d (b + t, r))`
+  `= ∑ q, ZMod.stdAddChar ((s - t) * q) * ‖zak f q r‖ ^ 2`; hence, if `‖zak f q r‖ = 1 / d` for all
+  `q`, the left side is `1 / d` when `s = t` and `0` otherwise (the DFT of `b ↦ g (b + s)` is
+  `q ↦ ZMod.stdAddChar (-(s * q)) * dftU g q`; then A1 and the identification of `zak` with `dftU`
+  in A3a). File `BLTAudit/ZakCorrelation.lean`.
+- [ ] A4d. Orthonormality, the statement of A4 without "basis": if `‖zak f q r‖ = 1 / d` for all `q r`,
+  then for `n m n' m' < d`, `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` (sum
+  over `ZMod (d * d)` through the bijection of A3a, then A4b, A4c, and orthogonality of characters in
+  `r`). File `BLTAudit/ZakCriterion.lean`.
+- [ ] A4e. Basis: a family `v : ι → ZMod N → ℂ` with `ip (v i) (v j) = if i = j then 1 else 0` is
+  linearly independent over `ℂ`; hence, under the hypothesis of A4, the family
+  `fun p : Fin d × Fin d => gabor f p.1 p.2` is linearly independent and spans `ZMod (d * d) → ℂ`
+  (it has `d * d = finrank` members; uses A4d). File `BLTAudit/GaborBasis.lean`.
 - [ ] A5. Critical Gabor criterion, necessity: orthonormality of `{gabor f n m : n m < d}` forces
   `‖zak f q r‖ = 1 / d` for all `q r`, so admissible vectors correspond exactly to unit-modulus arrays
   `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`.
