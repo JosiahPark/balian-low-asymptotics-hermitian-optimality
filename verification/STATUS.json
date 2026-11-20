@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 20:38 UTC",
-  "commit": "d2944e5be33c04341b934fa8bf1b1fb5e888a99e",
+  "checked_at": "2026-11-20 21:58 UTC",
+  "commit": "5013a3bbce07ea3063512fb7c2faa8ff99c2edf5",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 45,
-  "verified": 45,
+  "theorems": 49,
+  "verified": 49,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -144,6 +144,46 @@
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.parseval_zak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FourierUniqueness.lean",
+      "theorem": "BLT.sum_stdAddChar_inversion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FourierUniqueness.lean",
+      "theorem": "BLT.sum_sum_stdAddChar_inversion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FourierUniqueness.lean",
+      "theorem": "BLT.sum_sum_ite_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FourierUniqueness.lean",
+      "theorem": "BLT.fourier_uniqueness_two",
       "axioms": [
         "propext",
         "Classical.choice",

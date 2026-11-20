@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 20:38 UTC at commit `d2944e5be33c`.
+Checked 2026-11-20 21:58 UTC at commit `5013a3bbce07`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 45 of 45
+- Theorems verified with standard axioms only: 49 of 49
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -24,6 +24,10 @@ Checked 2026-11-20 20:38 UTC at commit `d2944e5be33c`.
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zakIndex_bijective` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zak_eq_dftU` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.parseval_zak` | verified (standard axioms only) |
+| BLTAudit/FourierUniqueness.lean | `BLT.sum_stdAddChar_inversion` | verified (standard axioms only) |
+| BLTAudit/FourierUniqueness.lean | `BLT.sum_sum_stdAddChar_inversion` | verified (standard axioms only) |
+| BLTAudit/FourierUniqueness.lean | `BLT.sum_sum_ite_zero` | verified (standard axioms only) |
+| BLTAudit/FourierUniqueness.lean | `BLT.fourier_uniqueness_two` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_zero_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_sum_smul_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.linearIndependent_of_ip_orthonormal` | verified (standard axioms only) |
