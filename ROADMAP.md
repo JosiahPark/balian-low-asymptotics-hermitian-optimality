@@ -104,11 +104,12 @@ systems and no Zak transform.
   `= ∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * ‖zak f q r‖ ^ 2`.
   File `BLTAudit/GaborZakModulus.lean`.
   - Done 2026-11-20 20:35 UTC at 85ee9d4: `ip_gabor_eq_sum_zak`, `ip_gabor_val_zero`. The right sides are stated with `(‖zak f q r‖ : ℂ) ^ 2`.
-- [ ] A5b. Two-variable Fourier uniqueness on `ZMod d`: if `W : ZMod d → ZMod d → ℂ` satisfies
+- [x] A5b. Two-variable Fourier uniqueness on `ZMod d`: if `W : ZMod d → ZMod d → ℂ` satisfies
   `∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * W q r = if a = 0 ∧ c = 0 then 1 else 0`
   for all `a c : ZMod d`, then `W q r = 1 / d ^ 2` for all `q r` (multiply by
   `ZMod.stdAddChar (-(c * r₀)) * ZMod.stdAddChar (-(a * q₀))`, sum over `a c`, and use
   `sum_stdAddChar_mul` of A1 in each variable). File `BLTAudit/FourierUniqueness.lean`.
+  - Done 2026-11-20 21:58 UTC at 5013a3b: `fourier_uniqueness_two`, `sum_sum_stdAddChar_inversion`, `sum_stdAddChar_inversion`, `sum_sum_ite_zero`
 - [ ] A5c. Necessity, the statement of A5: if
   `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` for all `n m n' m' < d`, then
   `‖zak f q r‖ = 1 / d` for all `q r` (A5a at `n = a.val`, `m = 0`, `n' = 0`, `m' = c.val`, then A5b
