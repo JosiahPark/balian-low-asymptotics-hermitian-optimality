@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 20:31 UTC",
-  "commit": "647c7e3b89bd935444cfd7f105ab40eb3e545ad5",
+  "checked_at": "2026-11-20 20:35 UTC",
+  "commit": "85ee9d49490384fd02532df97e35c1fd89264a48",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 43,
-  "verified": 43,
+  "theorems": 45,
+  "verified": 45,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -264,6 +264,26 @@
     {
       "file": "BLTAudit/GaborZakCoordinates.lean",
       "theorem": "BLT.gabor_zakIndex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaborZakModulus.lean",
+      "theorem": "BLT.ip_gabor_eq_sum_zak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaborZakModulus.lean",
+      "theorem": "BLT.ip_gabor_val_zero",
       "axioms": [
         "propext",
         "Classical.choice",

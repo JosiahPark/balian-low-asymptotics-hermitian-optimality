@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 20:31 UTC at commit `647c7e3b89bd`.
+Checked 2026-11-20 20:35 UTC at commit `85ee9d494903`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 43 of 43
+- Theorems verified with standard axioms only: 45 of 45
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -36,6 +36,8 @@ Checked 2026-11-20 20:31 UTC at commit `647c7e3b89bd`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.stdAddChar_natCast_mul_self` | verified (standard axioms only) |
 | BLTAudit/GaborZakCoordinates.lean | `BLT.stdAddChar_mul_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
+| BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
+| BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |
