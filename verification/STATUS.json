@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 17:41 UTC",
-  "commit": "c0a8c2550a614a8d453565fb14b29d5b475657de",
+  "checked_at": "2026-11-20 17:50 UTC",
+  "commit": "3579b28eaaf647f4e74d4e07b1220575ed402434",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 20,
-  "verified": 20,
+  "theorems": 22,
+  "verified": 22,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,26 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakTranslation.lean",
+      "theorem": "BLT.zak_transl_of_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/FiniteZakTranslation.lean",
+      "theorem": "BLT.zak_transl_seam",
       "axioms": [
         "propext",
         "Classical.choice",
