@@ -54,10 +54,11 @@ systems and no Zak transform.
   `b ↦ b + 1`; the term with `b.val + 1 = d` wraps around because `d * d = 0` in `ZMod (d * d)`).
   File `BLTAudit/FiniteZakTranslation.lean`.
   - Done 2026-11-20 17:50 UTC at 3579b28: `zak_transl_of_lt`, `zak_transl_seam`
-- [ ] A3c. Zak transform of a modulate:
+- [x] A3c. Zak transform of a modulate:
   `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`, where the factor is
   `mag d r.val` (the character of `ZMod (d * d)` at `b.val * d + r.val` is
   `e^{2πi b.val / d} · e^{2πi r.val / d²}`). File `BLTAudit/FiniteZakModulation.lean`.
+  - Done 2026-11-20 18:05 UTC at 2917950: `zak_modul`, `stdAddChar_natCast`. The factor is stated as `Complex.exp (2 * π * I * r.val / d ^ 2)`; its identification with `mag d r.val` is not stated as a lemma.
 - [ ] A4. Critical Gabor criterion, sufficiency (§2): if `‖zak f q r‖ = 1 / d` for all `q r`, then the
   `d²` vectors `gabor f n m` (`n m < d`) are orthonormal for `ip`, hence a basis of `ℂ^{d²}`.
   File `BLTAudit/ZakCriterion.lean`.
