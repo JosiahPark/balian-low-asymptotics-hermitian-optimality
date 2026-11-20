@@ -75,12 +75,13 @@ systems and no Zak transform.
   `ZMod.stdAddChar ((m * d : ℕ) * zakIndex d (b, r)) = ZMod.stdAddChar ((m : ZMod d) * r)` (the first
   character is on `ZMod (d * d)`, the second on `ZMod d`). File `BLTAudit/GaborZakCoordinates.lean`.
   - Done 2026-11-20 18:37 UTC at 8735e2c: `gabor_zakIndex`, `zakIndex_add_natCast_mul`, `stdAddChar_mul_zakIndex`, `stdAddChar_natCast_mul_self`
-- [ ] A4c. Zak correlation identity: for `f : ZMod (d * d) → ℂ` and `r s t : ZMod d`, in `ℂ`,
+- [x] A4c. Zak correlation identity: for `f : ZMod (d * d) → ℂ` and `r s t : ZMod d`, in `ℂ`,
   `∑ b, conj (f (zakIndex d (b + s, r))) * f (zakIndex d (b + t, r))`
   `= ∑ q, ZMod.stdAddChar ((s - t) * q) * ‖zak f q r‖ ^ 2`; hence, if `‖zak f q r‖ = 1 / d` for all
   `q`, the left side is `1 / d` when `s = t` and `0` otherwise (the DFT of `b ↦ g (b + s)` is
   `q ↦ ZMod.stdAddChar (-(s * q)) * dftU g q`; then A1 and the identification of `zak` with `dftU`
   in A3a). File `BLTAudit/ZakCorrelation.lean`.
+  - Done 2026-11-20 18:46 UTC at 0014bf4: `zak_correlation`, `zak_correlation_of_norm`, `dftU_shift`. The right side is stated with `(‖zak f q r‖ : ℂ) ^ 2`.
 - [ ] A4d. Orthonormality, the statement of A4 without "basis": if `‖zak f q r‖ = 1 / d` for all `q r`,
   then for `n m n' m' < d`, `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` (sum
   over `ZMod (d * d)` through the bijection of A3a, then A4b, A4c, and orthogonality of characters in
