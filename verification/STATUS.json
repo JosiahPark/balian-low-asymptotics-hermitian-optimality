@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 18:48 UTC",
-  "commit": "d84f00b95c568f929c6be40c98663579ca7c0a1f",
+  "checked_at": "2026-11-20 19:52 UTC",
+  "commit": "c24ed5dec85f3c5b2e1950ad4227067f82a58afc",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 34,
-  "verified": 34,
+  "theorems": 38,
+  "verified": 38,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -344,6 +344,46 @@
     {
       "file": "BLTAudit/ZakCorrelation.lean",
       "theorem": "BLT.zak_correlation_of_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterion.lean",
+      "theorem": "BLT.natCast_zmod_eq_iff_of_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterion.lean",
+      "theorem": "BLT.ip_eq_sum_zakIndex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterion.lean",
+      "theorem": "BLT.ip_gabor_eq_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterion.lean",
+      "theorem": "BLT.ip_gabor_of_zak_norm",
       "axioms": [
         "propext",
         "Classical.choice",
