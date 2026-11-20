@@ -96,13 +96,14 @@ systems and no Zak transform.
   `‖zak f q r‖ = 1 / d` for all `q r`, so admissible vectors correspond exactly to unit-modulus arrays
   `ζ = d • zak f`. File `BLTAudit/ZakCriterionConverse.lean`. (split into A5a, A5b, A5c)
   - Split 2026-11-20: three separate steps (Gabor inner products through `‖zak f q r‖ ^ 2`, a two-variable Fourier uniqueness statement on `ZMod d`, the conclusion with the equivalence), about 200 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakCriterionConverse.lean` is now the file of A5c. The three statements below passed a numerical check for `d ≤ 5` on 2026-11-20.
-- [ ] A5a. Gabor inner products through the Zak modulus, with no hypothesis on `f`: for
+- [x] A5a. Gabor inner products through the Zak modulus, with no hypothesis on `f`: for
   `f : ZMod (d * d) → ℂ` and all `n m n' m' : ℕ`, `ip (gabor f n m) (gabor f n' m')`
   `= ∑ r, conj (ZMod.stdAddChar ((m : ZMod d) * r)) * ZMod.stdAddChar ((m' : ZMod d) * r)`
   `* ∑ q, ZMod.stdAddChar (((n : ZMod d) - n') * q) * ‖zak f q r‖ ^ 2` (`ip_gabor_eq_sum` of A4d, then
   `zak_correlation` of A4c); hence for `a c : ZMod d`, `ip (gabor f a.val 0) (gabor f 0 c.val)`
   `= ∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * ‖zak f q r‖ ^ 2`.
   File `BLTAudit/GaborZakModulus.lean`.
+  - Done 2026-11-20 20:35 UTC at 85ee9d4: `ip_gabor_eq_sum_zak`, `ip_gabor_val_zero`. The right sides are stated with `(‖zak f q r‖ : ℂ) ^ 2`.
 - [ ] A5b. Two-variable Fourier uniqueness on `ZMod d`: if `W : ZMod d → ZMod d → ℂ` satisfies
   `∑ r, ∑ q, ZMod.stdAddChar (c * r) * ZMod.stdAddChar (a * q) * W q r = if a = 0 ∧ c = 0 then 1 else 0`
   for all `a c : ZMod d`, then `W q r = 1 / d ^ 2` for all `q r` (multiply by
