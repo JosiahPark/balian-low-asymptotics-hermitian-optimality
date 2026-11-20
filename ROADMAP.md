@@ -110,12 +110,13 @@ systems and no Zak transform.
   `ZMod.stdAddChar (-(c * r₀)) * ZMod.stdAddChar (-(a * q₀))`, sum over `a c`, and use
   `sum_stdAddChar_mul` of A1 in each variable). File `BLTAudit/FourierUniqueness.lean`.
   - Done 2026-11-20 21:58 UTC at 5013a3b: `fourier_uniqueness_two`, `sum_sum_stdAddChar_inversion`, `sum_stdAddChar_inversion`, `sum_sum_ite_zero`
-- [ ] A5c. Necessity, the statement of A5: if
+- [x] A5c. Necessity, the statement of A5: if
   `ip (gabor f n m) (gabor f n' m') = if n = n' ∧ m = m' then 1 else 0` for all `n m n' m' < d`, then
   `‖zak f q r‖ = 1 / d` for all `q r` (A5a at `n = a.val`, `m = 0`, `n' = 0`, `m' = c.val`, then A5b
   with `W q r = ‖zak f q r‖ ^ 2`); hence, with A4d, orthonormality of the Gabor vectors is equivalent to
   `‖zak f q r‖ = 1 / d` for all `q r`, that is, to `‖d * zak f q r‖ = 1` for all `q r` (unit modulus of
   `ζ = d • zak f`). File `BLTAudit/ZakCriterionConverse.lean`.
+  - Done 2026-11-20 23:45 UTC at 14316bd: `zak_norm_of_ip_gabor`, `ip_gabor_orthonormal_iff_zak_norm`, `ip_gabor_orthonormal_iff_unit_modulus`, `norm_natCast_mul_zak_eq_one_iff`, `zmod_val_eq_zero_iff`. The correspondence with unit-modulus arrays is proved as this equivalence only; that every unit-modulus array is `d • zak f` for some `f` (inverse Zak transform) is not stated.
 - [ ] A6. Standard form of `G_N` (§1): `energy f = (ip f (gStd f)).re` and `(ip f (gStd f)).im = 0`,
   that is, `D*D + F*D*DF` acts as `(4 − 2cos(2πj/N)) f(j) − f(j−1) − f(j+1)` (uses A1, A2).
   File `BLTAudit/GStandardForm.lean`.
