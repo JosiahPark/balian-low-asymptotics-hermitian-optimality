@@ -37,11 +37,25 @@ systems and no Zak transform.
   (that is, `T M = e^{2πi/N} M T`) and `transl (dftU f) = dftU (modul f)` (that is, `F* T F = M`).
   File `BLTAudit/TimeFrequency.lean`.
   - Done 2026-11-20 15:11 UTC at 43d02d6: `transl_modul`, `transl_dftU`, `dftU_sub`, `diffOp_dftU`
-- [ ] A3. Finite Zak transform for `N = d²`: `∑ q, ∑ r, ‖zak f q r‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`;
+- [-] A3. Finite Zak transform for `N = d²`: `∑ q, ∑ r, ‖zak f q r‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`;
   `zak (transl f) q r = zak f q (r + 1)` when `r.val + 1 < d`, and
   `zak (transl f) q r = ZMod.stdAddChar (-q) * zak f q 0` when `r.val + 1 = d` (the seam);
   `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`.
-  File `BLTAudit/FiniteZak.lean`.
+  File `BLTAudit/FiniteZak.lean`. (split into A3a, A3b, A3c)
+  - Split 2026-11-20: three separate index computations in `ZMod (d * d)`, too large for one file of about 150 lines. Nothing was attempted and `BLTAudit/FiniteZak.lean` was not written.
+- [ ] A3a. The finite Zak transform is unitary: for `f : ZMod (d * d) → ℂ`,
+  `∑ q, ∑ r, ‖zak f q r‖ ^ 2 = ∑ j, ‖f j‖ ^ 2`, by Parseval (A1) on `ZMod d` in the variable `b` for
+  each fixed `r`, and the bijection `(b, r) ↦ b.val * d + r.val` from `ZMod d × ZMod d` onto
+  `ZMod (d * d)`. File `BLTAudit/FiniteZakUnitary.lean`.
+- [ ] A3b. Zak transform of a translate: for `f : ZMod (d * d) → ℂ` and `q r : ZMod d`,
+  `zak (transl f) q r = zak f q (r + 1)` when `r.val + 1 < d`, and
+  `zak (transl f) q r = ZMod.stdAddChar (-q) * zak f q 0` when `r.val + 1 = d` (the seam: reindex
+  `b ↦ b + 1`; the term with `b.val + 1 = d` wraps around because `d * d = 0` in `ZMod (d * d)`).
+  File `BLTAudit/FiniteZakTranslation.lean`.
+- [ ] A3c. Zak transform of a modulate:
+  `zak (modul f) q r = Complex.exp (2πi r.val / d²) * zak f (q + 1) r`, where the factor is
+  `mag d r.val` (the character of `ZMod (d * d)` at `b.val * d + r.val` is
+  `e^{2πi b.val / d} · e^{2πi r.val / d²}`). File `BLTAudit/FiniteZakModulation.lean`.
 - [ ] A4. Critical Gabor criterion, sufficiency (§2): if `‖zak f q r‖ = 1 / d` for all `q r`, then the
   `d²` vectors `gabor f n m` (`n m < d`) are orthonormal for `ip`, hence a basis of `ℂ^{d²}`.
   File `BLTAudit/ZakCriterion.lean`.
