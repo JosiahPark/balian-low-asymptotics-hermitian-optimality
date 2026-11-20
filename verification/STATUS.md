@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 19:59 UTC at commit `3ea443a3f996`.
+Checked 2026-11-20 20:22 UTC at commit `81f9fe171b84`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 38 of 38
+- Theorems verified with standard axioms only: 43 of 43
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -24,6 +24,11 @@ Checked 2026-11-20 19:59 UTC at commit `3ea443a3f996`.
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zakIndex_bijective` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.zak_eq_dftU` | verified (standard axioms only) |
 | BLTAudit/FiniteZakUnitary.lean | `BLT.parseval_zak` | verified (standard axioms only) |
+| BLTAudit/GaborBasis.lean | `BLT.ip_zero_right` | verified (standard axioms only) |
+| BLTAudit/GaborBasis.lean | `BLT.ip_sum_smul_right` | verified (standard axioms only) |
+| BLTAudit/GaborBasis.lean | `BLT.linearIndependent_of_ip_orthonormal` | verified (standard axioms only) |
+| BLTAudit/GaborBasis.lean | `BLT.linearIndependent_gabor` | verified (standard axioms only) |
+| BLTAudit/GaborBasis.lean | `BLT.span_gabor_eq_top` | verified (standard axioms only) |
 | BLTAudit/GaborFormula.lean | `BLT.transl_iterate_apply` | verified (standard axioms only) |
 | BLTAudit/GaborFormula.lean | `BLT.modul_iterate_apply` | verified (standard axioms only) |
 | BLTAudit/GaborFormula.lean | `BLT.gabor_apply` | verified (standard axioms only) |
