@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 22:01 UTC at commit `a0356eeefceb`.
+Checked 2026-11-20 23:45 UTC at commit `14316bd641d3`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 49 of 49
+- Theorems verified with standard axioms only: 54 of 54
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -59,3 +59,8 @@ Checked 2026-11-20 22:01 UTC at commit `a0356eeefceb`.
 | BLTAudit/ZakCriterion.lean | `BLT.ip_eq_sum_zakIndex` | verified (standard axioms only) |
 | BLTAudit/ZakCriterion.lean | `BLT.ip_gabor_eq_sum` | verified (standard axioms only) |
 | BLTAudit/ZakCriterion.lean | `BLT.ip_gabor_of_zak_norm` | verified (standard axioms only) |
+| BLTAudit/ZakCriterionConverse.lean | `BLT.zmod_val_eq_zero_iff` | verified (standard axioms only) |
+| BLTAudit/ZakCriterionConverse.lean | `BLT.zak_norm_of_ip_gabor` | verified (standard axioms only) |
+| BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_zak_norm` | verified (standard axioms only) |
+| BLTAudit/ZakCriterionConverse.lean | `BLT.norm_natCast_mul_zak_eq_one_iff` | verified (standard axioms only) |
+| BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_unit_modulus` | verified (standard axioms only) |

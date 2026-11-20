@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 22:01 UTC",
-  "commit": "a0356eeefceb0165186ffd132cf6bc56d517f0b0",
+  "checked_at": "2026-11-20 23:45 UTC",
+  "commit": "14316bd641d3b7f51594f4cc57c65b3e7f19816c",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 49,
-  "verified": 49,
+  "theorems": 54,
+  "verified": 54,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -494,6 +494,55 @@
     {
       "file": "BLTAudit/ZakCriterion.lean",
       "theorem": "BLT.ip_gabor_of_zak_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterionConverse.lean",
+      "theorem": "BLT.zmod_val_eq_zero_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterionConverse.lean",
+      "theorem": "BLT.zak_norm_of_ip_gabor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterionConverse.lean",
+      "theorem": "BLT.ip_gabor_orthonormal_iff_zak_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterionConverse.lean",
+      "theorem": "BLT.norm_natCast_mul_zak_eq_one_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakCriterionConverse.lean",
+      "theorem": "BLT.ip_gabor_orthonormal_iff_unit_modulus",
       "axioms": [
         "propext",
         "Classical.choice",
