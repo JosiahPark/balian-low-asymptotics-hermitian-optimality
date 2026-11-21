@@ -241,9 +241,10 @@ systems and no Zak transform.
 
 §1 and Appendix A.1: `G_N` has a simple, strictly positive ground vector.
 
-- [ ] D1. Gaussian eigenfunctions of `H₀ = −∂² + 4π²x²` (Appendix A.1): `φ(x) = exp (−πx²)` satisfies
+- [x] D1. Gaussian eigenfunctions of `H₀ = −∂² + 4π²x²` (Appendix A.1): `φ(x) = exp (−πx²)` satisfies
   `−φ'' + 4π²x²φ = 2πφ`, and `ψ = xφ` satisfies `−ψ'' + 4π²x²ψ = 6πψ`, as `HasDerivAt` statements.
   File `BLTAudit/OscillatorGaussian.lean`.
+  - Done 2026-11-21 21:46 UTC at 2aa008f: `oscPhi_eigenfunction`, `oscPsi_eigenfunction`, `hasDerivAt_oscPhi`, `hasDerivAt_oscPhiD`, `hasDerivAt_oscPsi`, `hasDerivAt_oscPsiD`, `oscPhi_eigen`, `oscPsi_eigen`, `gauss_eq_mul_oscPhi`, `const_mul_oscPhi_eigenfunction`, `const_mul_oscPsi_eigenfunction`. Defined in this file: `oscPhi x = Real.exp (-π * x ^ 2)` and `oscPsi x = x * oscPhi x`, with their derivatives written out, `oscPhiD x = -(2πx) * oscPhi x`, `oscPhiDD x = (4π²x² − 2π) * oscPhi x`, `oscPsiD x = (1 − 2πx²) * oscPhi x` and `oscPsiDD x = (4π²x³ − 6πx) * oscPhi x`. Each of the two main theorems is a conjunction at a point `x`: two `HasDerivAt` statements (first and second derivative) and the equation with the second derivative written out, `-oscPhiDD x + 4π²x² * oscPhi x = 2π * oscPhi x` and `-oscPsiDD x + 4π²x² * oscPsi x = 6π * oscPsi x`. The paper's Gaussian in Appendix A.1 is the normalised `ϕ = 2^{1/4} e^{−πx²}`, that is `gauss`, not the `e^{−πx²}` of this item: `gauss_eq_mul_oscPhi` is `gauss x = 2^{1/4} * oscPhi x`, and the two `const_mul` theorems are the same statements for `c * oscPhi` and `c * oscPsi` with any real `c`. `H₀` is not defined as an operator, so "eigenfunction" means only the pointwise equation; the equations are not restated with Mathlib's `deriv`; that `ϕ` has norm one, that `ϕ` and `xϕ` are orthogonal, and that `2π` and `6π` are the two lowest eigenvalues of `H₀` are not stated.
 - [ ] D2. Perron–Frobenius step: for a real symmetric matrix `A` with nonpositive off-diagonal entries
   and `v : ι → ℂ`, `∑ i j, A i j * ‖v i‖ * ‖v j‖ ≤ (∑ i j, A i j * conj (v i) * v j).re`; so replacing
   a vector by its entrywise modulus does not raise the quadratic form. File `BLTAudit/PerronStep.lean`.
