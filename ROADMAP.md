@@ -194,9 +194,10 @@ systems and no Zak transform.
 
 §3.1 and Appendix A.3. Mathlib has `jacobiTheta₂`; it has no Zak transform.
 
-- [ ] C1. Theta representation: `r ↦ gauss (x − r) * exp (2πi r y)` is summable over `ℤ`, and
+- [x] C1. Theta representation: `r ↦ gauss (x − r) * exp (2πi r y)` is summable over `ℤ`, and
   `gaussZak x y = 2^{1/4} e^{−πx²} * jacobiTheta₂ (y − x * I) I` (Mathlib's convention is
   `jacobiTheta₂ z τ = ∑ exp (2πi n z + πi n² τ)`). File `BLTAudit/ZakTheta.lean`.
+  - Done 2026-11-21 16:36 UTC at 6b1be5d: `gaussZak_eq_theta`, `summable_gaussZak_term`, `hasSum_gaussZak_term`, `gaussZak_eq_gauss_mul_theta`, `hasSum_gaussZak_term_theta`, `gaussZak_term_eq`, `gaussZak_term_aux`, `ofReal_mul_exp_mul_exp_eq`. The constant is the real number `(2 : ℝ) ^ ((1 : ℝ) / 4) * Real.exp (-Real.pi * x ^ 2)` (that is, `gauss x`) cast to `ℂ`, and the theta function is taken at `z = y - x * I`, `τ = I`. Both statements follow from the termwise identity `gaussZak_term_eq` (complete the square) and Mathlib's `hasSum_jacobiTheta₂_term`; `hasSum_gaussZak_term` says that the series sums to `gaussZak x y`. Continuity or differentiability of `gaussZak` is not stated.
 - [ ] C2. Quasi-periodicity (U1): `gaussZak (x + 1) y = exp (2πi y) * gaussZak x y` and
   `gaussZak x (y + 1) = gaussZak x y`. File `BLTAudit/ZakGluing.lean`.
 - [ ] C3. The Zak zero (A10, first part): `gaussZak (1/2) (1/2) = 0`, by pairing `r ↔ 1 − r` in the sum.
