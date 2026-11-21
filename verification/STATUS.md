@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 11:16 UTC at commit `d6dd6b4abedf`.
+Checked 2026-11-21 15:11 UTC at commit `751049e1bcf8`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 114 of 114
+- Theorems verified with standard axioms only: 127 of 127
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -73,6 +73,19 @@ Checked 2026-11-21 11:16 UTC at commit `d6dd6b4abedf`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.abs_aR_le_pi` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.abs_aQ_le_pi` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.int_eq_zero_of_four_small` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.plaquette_int_eq_zero_of_small` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.plaquetteCharge_eq_zero_of_small` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.four_sin_half_sq` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.four_sin_half_sq_le_of_le_abs` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.card_filter_mul_le_sum` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.zakEnergy_eq_sum_product` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.card_largeEdgesR_mul_le` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.card_largeEdgesQ_mul_le` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_mul_le_zakEnergy` | verified (standard axioms only) |
+| BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_le_div` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exp_arg_mul_I_of_norm_eq_one` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exists_int_of_exp_mul_I_eq` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.arg_add_arg_sub_of_mul_eq` | verified (standard axioms only) |

@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 11:16 UTC",
-  "commit": "d6dd6b4abedfeaaa497a300314df169994427c24",
+  "checked_at": "2026-11-21 15:11 UTC",
+  "commit": "751049e1bcf85814ba57d9a7d65079b3e7292080",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 114,
-  "verified": 114,
+  "theorems": 127,
+  "verified": 127,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -634,6 +634,136 @@
     {
       "file": "BLTAudit/GaborZakModulus.lean",
       "theorem": "BLT.ip_gabor_val_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.abs_aR_le_pi",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.abs_aQ_le_pi",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.int_eq_zero_of_four_small",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.plaquette_int_eq_zero_of_small",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.plaquetteCharge_eq_zero_of_small",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.four_sin_half_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.four_sin_half_sq_le_of_le_abs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.card_filter_mul_le_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.zakEnergy_eq_sum_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.card_largeEdgesR_mul_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.card_largeEdgesQ_mul_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.card_large_edges_mul_le_zakEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GoodPlaquette.lean",
+      "theorem": "BLT.card_large_edges_le_div",
       "axioms": [
         "propext",
         "Classical.choice",
