@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 21:26 UTC",
-  "commit": "902a4642300c55dbeba2f04512c7316eb06a461b",
+  "checked_at": "2026-11-21 21:46 UTC",
+  "commit": "2aa008f9d2d8741f93457c7ceb5d5bf7a276f619",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 185,
-  "verified": 185,
+  "theorems": 196,
+  "verified": 196,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -764,6 +764,116 @@
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_large_edges_le_div",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.hasDerivAt_oscPhi",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.hasDerivAt_oscPhiD",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.hasDerivAt_oscPsi",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.hasDerivAt_oscPsiD",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.oscPhi_eigen",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.oscPsi_eigen",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.oscPhi_eigenfunction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.oscPsi_eigenfunction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.gauss_eq_mul_oscPhi",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.const_mul_oscPhi_eigenfunction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/OscillatorGaussian.lean",
+      "theorem": "BLT.const_mul_oscPsi_eigenfunction",
       "axioms": [
         "propext",
         "Classical.choice",

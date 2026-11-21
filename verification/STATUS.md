@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 21:26 UTC at commit `902a4642300c`.
+Checked 2026-11-21 21:46 UTC at commit `2aa008f9d2d8`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 185 of 185
+- Theorems verified with standard axioms only: 196 of 196
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -86,6 +86,17 @@ Checked 2026-11-21 21:26 UTC at commit `902a4642300c`.
 | BLTAudit/GoodPlaquette.lean | `BLT.card_largeEdgesQ_mul_le` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_mul_le_zakEnergy` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_le_div` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsiD` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.oscPhi_eigen` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.oscPsi_eigen` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.oscPhi_eigenfunction` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.oscPsi_eigenfunction` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.gauss_eq_mul_oscPhi` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.const_mul_oscPhi_eigenfunction` | verified (standard axioms only) |
+| BLTAudit/OscillatorGaussian.lean | `BLT.const_mul_oscPsi_eigenfunction` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exp_arg_mul_I_of_norm_eq_one` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exists_int_of_exp_mul_I_eq` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.arg_add_arg_sub_of_mul_eq` | verified (standard axioms only) |
