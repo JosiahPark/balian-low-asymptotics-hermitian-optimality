@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 15:23 UTC at commit `60706721bb82`.
+Checked 2026-11-21 16:36 UTC at commit `6b1be5d97b05`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 127 of 127
+- Theorems verified with standard axioms only: 135 of 135
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -137,3 +137,11 @@ Checked 2026-11-21 15:23 UTC at commit `60706721bb82`.
 | BLTAudit/ZakSeams.lean | `BLT.mag_mul_zeta_q_succ` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.norm_sq_zeta_r_edge` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.norm_sq_zeta_q_edge` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.ofReal_mul_exp_mul_exp_eq` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.gaussZak_term_aux` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.gaussZak_term_eq` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.hasSum_gaussZak_term_theta` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.summable_gaussZak_term` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.gaussZak_eq_gauss_mul_theta` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.gaussZak_eq_theta` | verified (standard axioms only) |
+| BLTAudit/ZakTheta.lean | `BLT.hasSum_gaussZak_term` | verified (standard axioms only) |

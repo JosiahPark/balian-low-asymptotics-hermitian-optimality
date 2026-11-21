@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 15:23 UTC",
-  "commit": "60706721bb8211e52c6602121de8d7155df090d9",
+  "checked_at": "2026-11-21 16:36 UTC",
+  "commit": "6b1be5d97b059b1773397515b7419e81f3894446",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 127,
-  "verified": 127,
+  "theorems": 135,
+  "verified": 135,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1272,6 +1272,86 @@
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.norm_sq_zeta_q_edge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.ofReal_mul_exp_mul_exp_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.gaussZak_term_aux",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.gaussZak_term_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.hasSum_gaussZak_term_theta",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.summable_gaussZak_term",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.gaussZak_eq_gauss_mul_theta",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.gaussZak_eq_theta",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakTheta.lean",
+      "theorem": "BLT.hasSum_gaussZak_term",
       "axioms": [
         "propext",
         "Classical.choice",
