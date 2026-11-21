@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 01:18 UTC",
-  "commit": "af33c1372dee1945d8373f8dd3aca3a3ef9134cc",
+  "checked_at": "2026-11-21 01:39 UTC",
+  "commit": "f9d12f144534bd586ef6e6ab79edaaa9d3d319f9",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 65,
-  "verified": 65,
+  "theorems": 69,
+  "verified": 69,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,46 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EnergyZakCoordinates.lean",
+      "theorem": "BLT.zak_sub",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EnergyZakCoordinates.lean",
+      "theorem": "BLT.sum_norm_sq_diffOp_eq_zak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EnergyZakCoordinates.lean",
+      "theorem": "BLT.sum_norm_sq_diffOp_dftU_eq_zak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EnergyZakCoordinates.lean",
+      "theorem": "BLT.energy_eq_sum_zak",
       "axioms": [
         "propext",
         "Classical.choice",
