@@ -218,13 +218,14 @@ systems and no Zak transform.
   with `jacobiTheta₂'_term n z τ = 2πi n * jacobiTheta₂_term n z τ`, multiplied by
   `gauss (1/2) * (−I)`, then `gaussZak_term_eq` of C1). File `BLTAudit/ZakDerivSeries.lean`.
   - Done 2026-11-21 18:18 UTC at c80ecaa: `hasSum_zakA0`, `hasSum_deriv_gaussZak_fst_zero`, `summable_zakA0_term`, `zakA0_eq_tsum`, `zakA0_term_eq`, `hasSum_thetaDerivTerm`, `thetaDerivTerm_eq`. The summand is stated as `2 * π * n * (gauss (1/2 − n) * Complex.exp (2 * π * I * n * (1/2)))`, with `π`, `n` and the `1/2` of the exponent cast to `ℂ` (the `1/2` is a real number cast to `ℂ`, as in the summand of `gaussZak`). The series is Mathlib's series of `jacobiTheta₂'` at `1/2 − (1/2) * I`, multiplied by `gauss (1/2) * (−I)`; it is not obtained by differentiating the series of `gaussZak` term by term. `hasSum_deriv_gaussZak_fst_zero` is the same series with the sum written `deriv (fun s : ℝ => gaussZak s (1/2)) (1/2)` (`hasDerivAt_gaussZak_fst_zero` of C4). `Complex.exp (2πi n (1/2)) = (−1) ^ n` is not stated (C5b). Uses `gaussZak_term_eq` of C1 and `im_I_pos` of C4.
-- [ ] C5b. Folding to a series over `ℕ`: `Complex.exp (2πi n (1/2)) = (−1) ^ n` for `n : ℤ`, and
+- [x] C5b. Folding to a series over `ℕ`: `Complex.exp (2πi n (1/2)) = (−1) ^ n` for `n : ℤ`, and
   `HasSum (fun k : ℕ => −(4π) * ((−1) ^ k * ((k + 1/2) * gauss (k + 1/2)))) zakA0`, each term a real
   number cast to `ℂ`; that is, `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)` (reindex the series
   of C5a by `n = m + 1`, split `ℤ` into `m = k` and `m = −(k + 1)` with `HasSum.of_nat_of_neg_add_one`
   and `Summable.comp_injective`; the terms at `n = k + 1` and `n = −k` add up to
   `−4π (−1)^k (k + 1/2) gauss (k + 1/2)` because `gauss` is even, `gauss_neg` of C3; uses C5a).
   File `BLTAudit/ZakDerivFold.lean`.
+  - Done 2026-11-21 20:24 UTC at 6c0ffc0: `exp_half_int`, `hasSum_zakA0_nat`, `zakA0Term_fold`, `hasSum_zakA0Term`, `exp_half_succ`, `exp_half_neg`, `exp_nat_mul_pi_I`, `zakA0_eq_tsum_nat`, `hasSum_zakA0_re`. `exp_half_int` is stated with the `1/2` of the exponent a real number cast to `ℂ`, as in the summand of C5a, and with `(-1) ^ n` an integer power in `ℂ`. The term of the folded series is the real number `-(4 * π) * ((-1) ^ k * ((k + 1/2) * gauss (k + 1/2)))` cast to `ℂ`. The series of C5a is reindexed by `n = m + 1` and folded with Mathlib's `HasSum.nat_add_neg_add_one`, which pairs `n = k + 1` with `n = -k`; `HasSum.of_nat_of_neg_add_one` and `Summable.comp_injective` of the hint are not used. `zakA0Term n`, defined in this file, is the summand of the series of C5a. `hasSum_zakA0_re` is the same series of real numbers with sum `zakA0.re` (for C5d); that the imaginary part of `zakA0` is `0` is not stated. Uses `gauss_neg` of C3 and `hasSum_zakA0` of C5a.
 - [ ] C5c. The terms are positive and strictly decreasing: for `k : ℕ`, with
   `a k = (k + 1/2) * gauss (k + 1/2)`, `0 < a k` and `a (k + 1) < a k`
   (`gauss (t + 1) = exp (−π (2t + 1)) * gauss t`, and `exp (−2π (k + 1)) ≤ exp (−2π) < 1/3` because
