@@ -168,11 +168,12 @@ systems and no Zak transform.
   `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` for some `n : ℤ`.
   File `BLTAudit/PlaquetteCharge.lean`. (split into B2a, B2b)
   - Split 2026-11-21: two separate steps (four periodicity statements, two of which need the twist factors and the magnetic factor to cancel across the seam, and the plaquette identity through the product of the four edge phases), about 215 lines in all, too large for one file of about 150 lines. A draft was written but not committed, and no Lean file is on main; `BLTAudit/PlaquetteCharge.lean` is now the file of B2b.
-- [ ] B2a. Periodic edge numbers: for `IsTwisted d ζ` and integers `q r`, `aR ζ (q + d) r = aR ζ q r`,
+- [x] B2a. Periodic edge numbers: for `IsTwisted d ζ` and integers `q r`, `aR ζ (q + d) r = aR ζ q r`,
   `aR ζ q (r + d) = aR ζ q r`, `aQ d ζ (q + d) r = aQ d ζ q r` and, if `0 < d`,
   `aQ d ζ q (r + d) = aQ d ζ q r` (in `r` the twist factor `e^{−2πiq/d}` meets its conjugate; for `aQ`,
   `mag d (r + d) = mag d r * e^{2πi/d}` and `e^{−2πi(q+1)/d} = e^{−2πiq/d} * e^{−2πi/d}`).
   File `BLTAudit/EdgePeriodicity.lean`.
+  - Done 2026-11-21 05:19 UTC at ea468fb: `aR_add_period_q`, `aR_add_period_r`, `aQ_add_period_q`, `aQ_add_period_r`, `mag_add_period_mul_twist`, `norm_twist_factor`, `mag_twist_cancel`, `unit_mul_mul_conj`, `mul_conj_of_norm_eq_one`. Each periodicity is proved as an equality of the complex numbers under `Complex.arg`. The two factor identities of the hint are proved only in the combined form `mag d (r + d) * e^{-2πi(q+1)/d} = mag d r * e^{-2πiq/d}` (`mag_add_period_mul_twist`, for `0 < d`); shifts by integer multiples of `d` are not stated.
 - [ ] B2b. Plaquette identity (L3): for a unit-modulus `ζ : ℤ × ℤ → ℂ` (in particular under
   `IsTwisted d ζ`) and integers `q r`, there is `n : ℤ` with
   `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` (`exp (a * I) = w` for each
