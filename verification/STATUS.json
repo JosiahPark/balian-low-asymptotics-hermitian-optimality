@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 10:24 UTC",
-  "commit": "5a8bc689a7f0d7eb4fb4efb00ba2d7fe82239303",
+  "checked_at": "2026-11-21 11:12 UTC",
+  "commit": "f640d861f2657eebca48c7ca593aa41bbe32965e",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 104,
-  "verified": 104,
+  "theorems": 114,
+  "verified": 114,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -754,6 +754,106 @@
     {
       "file": "BLTAudit/TimeFrequency.lean",
       "theorem": "BLT.diffOp_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.plaquetteCharge_eq_of_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.plaquetteCharge_spec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_range_int_telescope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_range_aQ_r_edge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_range_aR_q_edge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_plaquette_edges_eq_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_range_const_add_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_sum_range_const_add_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.sum_plaquette_int_eq_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/TotalCharge.lean",
+      "theorem": "BLT.total_charge_one",
       "axioms": [
         "propext",
         "Classical.choice",

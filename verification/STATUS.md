@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 10:24 UTC at commit `5a8bc689a7f0`.
+Checked 2026-11-21 11:12 UTC at commit `f640d861f265`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 104 of 104
+- Theorems verified with standard axioms only: 114 of 114
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -85,6 +85,16 @@ Checked 2026-11-21 10:24 UTC at commit `5a8bc689a7f0`.
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.diffOp_dftU` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.plaquetteCharge_eq_of_identity` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.plaquetteCharge_spec` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_range_int_telescope` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_range_aQ_r_edge` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_range_aR_q_edge` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_plaquette_edges_eq_zero` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_range_const_add_mul` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_sum_range_const_add_mul` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.sum_plaquette_int_eq_one` | verified (standard axioms only) |
+| BLTAudit/TotalCharge.lean | `BLT.total_charge_one` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.sum_stdAddChar_mul` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.conj_stdAddChar` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.dft_norm_sq` | verified (standard axioms only) |
