@@ -259,13 +259,14 @@ systems and no Zak transform.
   minimizer by D2 and A6, hence strictly positive by D3; two orthogonal vectors cannot both have
   constant sign). File `BLTAudit/GroundState.lean`. (split into D4a, D4b, D4c)
   - Split 2026-11-21: three separate steps (a minimizer is an eigenvector, a minimizer exists, positivity with uniqueness up to sign), about 300 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/GroundState.lean` is now the file of D4c. Below, "real unit vector" means `v : ZMod N → ℝ` with `∑ j, v j ^ 2 = 1`, and "minimizer" means a real unit vector `v` with `energy (fun j => (v j : ℂ)) ≤ energy (fun j => (u j : ℂ))` for every real unit vector `u`.
-- [ ] D4a. A minimizer is an eigenvector: if `v` is a minimizer and `λ = energy (fun j => (v j : ℂ))`, then
+- [x] D4a. A minimizer is an eigenvector: if `v` is a minimizer and `λ = energy (fun j => (v j : ℂ))`, then
   `gStd (fun i => (v i : ℂ)) j = λ * v j` for every `j` (in the form of the hypothesis of D3). Route: by
   `re_ip_gStd` of A6, for real `u` the energy is the real quadratic form
   `∑ j, (4 − 2 cos(2πj/N)) * u j ^ 2 − 2 * ∑ j, u j * u (j + 1)`; it scales by `t ^ 2`, so
   `B u = energy u − λ ∑ j, u j ^ 2 ≥ 0` with `B v = 0`; expanding `B (v + t • w) ≥ 0` in `t` gives
   `∑ j, w j * ((gStd v) j − λ v j) = 0` for all `w`, and `w = gStd v − λ v` ends it.
   File `BLTAudit/GroundEigen.lean`.
+  - Done 2026-11-21 23:07 UTC at f6310c2: `ground_eigen`, `gStdR_eq_of_min`, `cross_eq`, `eq_zero_of_forall_quad_nonneg`, `quadR_lower`, and in the helper file `BLTAudit/RealQuadForm.lean` (imported by `BLTAudit/GroundEigen.lean`; the two files together were about 270 lines, too long for one): `energy_ofReal`, `gStd_ofReal`, `quadR_expand`, `sum_sq_expand`, `quadR_smul`, `sum_sq_smul`, `sum_quad`. Defined there: `oscDiag N j = 4 − 2 cos(2πj/N)`, `quadR u = ∑ j, oscDiag N j * u j ^ 2 − 2 * ∑ j, u j * u (j + 1)` (the energy of a real vector, `energy_ofReal`) and `gStdR u j = oscDiag N j * u j − u (j − 1) − u (j + 1)` (`gStd` on real vectors, `gStd_ofReal`). The eigenvalue is `energy (fun i => (v i : ℂ))`, cast to `ℂ`. The minimizer hypothesis is over real unit vectors only, as in the item.
 - [ ] D4b. A minimizer exists: for `0 < N` there is a minimizer (the real unit sphere in
   `ZMod N → ℝ` is closed, bounded and nonempty, hence compact, and `u ↦ energy (fun j => (u j : ℂ))`
   is continuous, being the real quadratic form of D4a; then `IsCompact.exists_isMinOn`).
