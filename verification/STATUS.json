@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 02:11 UTC",
-  "commit": "e103428bca5a87229d1a1646466d647a1a8c69d7",
+  "checked_at": "2026-11-21 03:54 UTC",
+  "commit": "ffa15cb7f1ba5ab28c42d59e2779bf43686da93b",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 80,
-  "verified": 80,
+  "theorems": 87,
+  "verified": 87,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,76 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_sub_one_sq_of_norm_eq_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_sub_sq_eq_four_sin_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_mag",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_sq_edgeR",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.norm_sq_edgeQ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.zakEnergy_eq_sum_sin_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeEnergy.lean",
+      "theorem": "BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted",
       "axioms": [
         "propext",
         "Classical.choice",

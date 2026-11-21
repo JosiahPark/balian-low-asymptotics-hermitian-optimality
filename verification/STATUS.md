@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 02:11 UTC at commit `e103428bca5a`.
+Checked 2026-11-21 03:54 UTC at commit `ffa15cb7f1ba`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 80 of 80
+- Theorems verified with standard axioms only: 87 of 87
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -15,6 +15,13 @@ Checked 2026-11-21 02:11 UTC at commit `e103428bca5a`.
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.energy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.zakEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_one_sq_of_norm_eq_one` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_sq_eq_four_sin_sq` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.norm_mag` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.norm_sq_edgeR` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.norm_sq_edgeQ` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.zakEnergy_eq_sum_sin_sq` | verified (standard axioms only) |
+| BLTAudit/EdgeEnergy.lean | `BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.zak_sub` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.sum_norm_sq_diffOp_eq_zak` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.sum_norm_sq_diffOp_dftU_eq_zak` | verified (standard axioms only) |
