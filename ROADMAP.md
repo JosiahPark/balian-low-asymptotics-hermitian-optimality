@@ -181,9 +181,10 @@ systems and no Zak transform.
   `mag d r * conj (mag d (r + 1)) = e^{−2πi/d²}`; then `Complex.exp_eq_exp_iff_exists_int`). Neither
   the gluing nor `0 < d` is needed. File `BLTAudit/PlaquetteCharge.lean`.
   - Done 2026-11-21 10:20 UTC at 6533028: `plaquette_identity`, `plaquette_identity_of_isTwisted`, `arg_add_arg_sub_of_mul_eq`, `exists_int_of_exp_mul_I_eq`, `exp_arg_mul_I_of_norm_eq_one`, `mag_succ`, `plaquette_phase_algebra`, `norm_mul_conj_eq_one`. The right side is stated as `-(2 * π / d ^ 2) + 2 * π * n`. The integer `n` is only shown to exist for each `(q, r)`; it is not defined as a function of the plaquette. The phase product is used in the form `mag d (r + 1) = mag d r * exp ((2π / d²) * I)` (`mag_succ`), not with `conj (mag d (r + 1))`. Uses `norm_mag` of B1 and `mul_conj_of_norm_eq_one` of B2a.
-- [ ] B3. Total charge one (L4): for `IsTwisted d ζ` with `0 < d`, the plaquette integers of B2 over
+- [x] B3. Total charge one (L4): for `IsTwisted d ζ` with `0 < d`, the plaquette integers of B2 over
   `0 ≤ q, r < d` sum to `1` (the oriented edge sums telescope by the periodicity of B2).
   File `BLTAudit/TotalCharge.lean`.
+  - Done 2026-11-21 11:12 UTC at f640d86: `total_charge_one`, `sum_plaquette_int_eq_one`, `sum_plaquette_edges_eq_zero`, `plaquetteCharge_spec`, `plaquetteCharge_eq_of_identity`, `sum_range_int_telescope`, `sum_range_aQ_r_edge`, `sum_range_aR_q_edge`, `sum_range_const_add_mul`, `sum_sum_range_const_add_mul`. The plaquette integer is defined in this file as `plaquetteCharge d ζ q r` (the oriented sum of the four edge numbers plus `2π / d²`, divided by `2π` and rounded): for a unit-modulus array it satisfies (L3), and any integer that satisfies (L3) at `(q, r)` equals it. `sum_plaquette_int_eq_one` is the same statement for any integers `n q r` that satisfy (L3) on the square. The sum is over naturals `q r < d`. Of B2a only `aQ_add_period_r` and `aR_add_period_q` are used. That `plaquetteCharge d ζ` is `d`-periodic is not stated.
 - [ ] B4. Good plaquettes are neutral and large edges are few (§4.1, (L5)): if the four edge numbers of
   a plaquette have modulus `< η` and `4η + 2π/d² < 2π`, its integer is `0`; and for `0 < η ≤ π`,
   `#{edges with |a| ≥ η} * (4 sin²(η/2)) ≤ zakEnergy d ζ`. File `BLTAudit/GoodPlaquette.lean`.
