@@ -121,10 +121,33 @@ systems and no Zak transform.
   that is, `D*D + F*D*DF` acts as `(4 − 2cos(2πj/N)) f(j) − f(j−1) − f(j+1)` (uses A1, A2).
   File `BLTAudit/GStandardForm.lean`.
   - Done 2026-11-21 00:35 UTC at ad4e270: `energy_eq_re_ip_gStd`, `im_ip_gStd`, `re_ip_gStd`, `sum_norm_sq_diffOp`, `sum_norm_sq_diffOp_dftU`, `norm_sq_one_sub_stdAddChar`, `stdAddChar_eq_exp_ofReal`, `sum_re_conj_mul_sub_one`, `sum_im_conj_mul_sub_one`, `complex_norm_sub_sq`, `sum_zmod_add_one`. Proved as an identity of quadratic forms; the operator identity `gStd f = D*D f + F*D*D F f` is not stated (the adjoints `D*`, `F*` are not defined). Also uses `stdAddChar_natCast` of A3c.
-- [ ] A7. Zak energy identity (§2): for `f : ZMod (d * d) → ℂ` and any `ζ : ℤ × ℤ → ℂ` with
+- [-] A7. Zak energy identity (§2): for `f : ZMod (d * d) → ℂ` and any `ζ : ℤ × ℤ → ℂ` with
   `ζ (q, r) = d * zak f q r` on `0 ≤ q, r < d` and the gluing `shift_q`, `shift_r` of `IsTwisted`,
   `d ^ 2 * energy f = zakEnergy d ζ` (uses A1–A3). Unit modulus is not needed. A numerical check of
   this identity for `d ≤ 7` passed on 2026-11-19; if a convention still fails in Lean, prove the
+  corrected identity and record the difference in the docstring and in a note under this item.
+  File `BLTAudit/ZakEnergyIdentity.lean`. (split into A7a, A7b, A7c)
+  - Split 2026-11-21: three separate steps (the two halves of `energy` in Zak coordinates, the array `ζ` across the two seams, the sum over `ZMod d` as a sum over `range d` with the assembly), about 190 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakEnergyIdentity.lean` is now the file of A7c. The three statements below passed a numerical check for `d ≤ 6` on 2026-11-21.
+- [ ] A7a. Energy in Zak coordinates, with no array `ζ`: for `f g : ZMod (d * d) → ℂ` and
+  `q r : ZMod d`, `zak (f - g) q r = zak f q r - zak g q r`;
+  `∑ j, ‖diffOp f j‖ ^ 2 = ∑ q, ∑ r, ‖zak f q r - zak (transl f) q r‖ ^ 2` (`parseval_zak` of A3a at
+  `f - transl f`); `∑ k, ‖diffOp (dftU f) k‖ ^ 2 = ∑ q, ∑ r, ‖zak f q r - zak (modul f) q r‖ ^ 2`
+  (`diffOp_dftU` of A2, `parseval_dftU` of A1, then `parseval_zak` at `f - modul f`); hence
+  `energy f = ∑ q, ∑ r, (‖zak f q r - zak (transl f) q r‖ ^ 2 + ‖zak f q r - zak (modul f) q r‖ ^ 2)`,
+  all sums over `q r : ZMod d`. File `BLTAudit/EnergyZakCoordinates.lean`.
+- [ ] A7b. The array `ζ` across the two seams: let `f : ZMod (d * d) → ℂ` and `ζ : ℤ × ℤ → ℂ` satisfy
+  `ζ (q, r) = d * zak f q r` for naturals `q r < d`, `ζ (q + d, r) = ζ (q, r)` and
+  `ζ (q, r + d) = Complex.exp (-2πi q / d) * ζ (q, r)` for integers `q r` (`shift_q` and `shift_r` of
+  `IsTwisted`; unit modulus is not assumed). Then for naturals `q r < d`,
+  `ζ (q, r + 1) = d * zak (transl f) q r` (A3b; at `r + 1 = d` by `shift_r` and
+  `ZMod.stdAddChar (-(q : ZMod d)) = Complex.exp (-2πi q / d)`) and
+  `mag d r * ζ (q + 1, r) = d * zak (modul f) q r` (A3c, whose factor is `mag d r`; at `q + 1 = d` by
+  `shift_q`); hence `‖ζ (q, r + 1) - ζ (q, r)‖ ^ 2 = d ^ 2 * ‖zak f q r - zak (transl f) q r‖ ^ 2` and
+  `‖mag d r * ζ (q + 1, r) - ζ (q, r)‖ ^ 2 = d ^ 2 * ‖zak f q r - zak (modul f) q r‖ ^ 2`.
+  File `BLTAudit/ZakSeams.lean`.
+- [ ] A7c. The identity, the statement of A7: `∑ q : ZMod d, F q = ∑ k ∈ range d, F (k : ZMod d)` for
+  `F : ZMod d → ℝ`; hence, under the hypotheses of A7b, `d ^ 2 * energy f = zakEnergy d ζ` (A7a, the
+  reindexing in both variables, then A7b edge by edge). If a convention still fails in Lean, prove the
   corrected identity and record the difference in the docstring and in a note under this item.
   File `BLTAudit/ZakEnergyIdentity.lean`.
 
