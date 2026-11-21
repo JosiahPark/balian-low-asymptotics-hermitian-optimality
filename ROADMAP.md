@@ -117,9 +117,10 @@ systems and no Zak transform.
   `‖zak f q r‖ = 1 / d` for all `q r`, that is, to `‖d * zak f q r‖ = 1` for all `q r` (unit modulus of
   `ζ = d • zak f`). File `BLTAudit/ZakCriterionConverse.lean`.
   - Done 2026-11-20 23:45 UTC at 14316bd: `zak_norm_of_ip_gabor`, `ip_gabor_orthonormal_iff_zak_norm`, `ip_gabor_orthonormal_iff_unit_modulus`, `norm_natCast_mul_zak_eq_one_iff`, `zmod_val_eq_zero_iff`. The correspondence with unit-modulus arrays is proved as this equivalence only; that every unit-modulus array is `d • zak f` for some `f` (inverse Zak transform) is not stated.
-- [ ] A6. Standard form of `G_N` (§1): `energy f = (ip f (gStd f)).re` and `(ip f (gStd f)).im = 0`,
+- [x] A6. Standard form of `G_N` (§1): `energy f = (ip f (gStd f)).re` and `(ip f (gStd f)).im = 0`,
   that is, `D*D + F*D*DF` acts as `(4 − 2cos(2πj/N)) f(j) − f(j−1) − f(j+1)` (uses A1, A2).
   File `BLTAudit/GStandardForm.lean`.
+  - Done 2026-11-21 00:35 UTC at ad4e270: `energy_eq_re_ip_gStd`, `im_ip_gStd`, `re_ip_gStd`, `sum_norm_sq_diffOp`, `sum_norm_sq_diffOp_dftU`, `norm_sq_one_sub_stdAddChar`, `stdAddChar_eq_exp_ofReal`, `sum_re_conj_mul_sub_one`, `sum_im_conj_mul_sub_one`, `complex_norm_sub_sq`, `sum_zmod_add_one`. Proved as an identity of quadratic forms; the operator identity `gStd f = D*D f + F*D*D F f` is not stated (the adjoints `D*`, `F*` are not defined). Also uses `stdAddChar_natCast` of A3c.
 - [ ] A7. Zak energy identity (§2): for `f : ZMod (d * d) → ℂ` and any `ζ : ℤ × ℤ → ℂ` with
   `ζ (q, r) = d * zak f q r` on `0 ≤ q, r < d` and the gluing `shift_q`, `shift_r` of `IsTwisted`,
   `d ^ 2 * energy f = zakEnergy d ζ` (uses A1–A3). Unit modulus is not needed. A numerical check of
