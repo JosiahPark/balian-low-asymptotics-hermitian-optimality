@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 02:00 UTC",
-  "commit": "012c5191d738e7866038fa06c36542285189f0f2",
+  "checked_at": "2026-11-21 02:07 UTC",
+  "commit": "1c05ccb674f4cb7357d1d5e4baa441501a26a5b1",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 76,
-  "verified": 76,
+  "theorems": 80,
+  "verified": 80,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -693,6 +693,46 @@
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.ip_gabor_orthonormal_iff_unit_modulus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakEnergyIdentity.lean",
+      "theorem": "BLT.sum_zmod_eq_sum_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakEnergyIdentity.lean",
+      "theorem": "BLT.sum_sum_zmod_eq_sum_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakEnergyIdentity.lean",
+      "theorem": "BLT.zak_energy_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakEnergyIdentity.lean",
+      "theorem": "BLT.zak_energy_identity_of_isTwisted",
       "axioms": [
         "propext",
         "Classical.choice",
