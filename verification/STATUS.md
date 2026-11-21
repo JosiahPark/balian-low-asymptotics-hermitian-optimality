@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 22:54 UTC at commit `111f4e2f78fb`.
+Checked 2026-11-21 23:07 UTC at commit `f6310c2273a4`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 208 of 208
+- Theorems verified with standard axioms only: 220 of 220
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -90,6 +90,11 @@ Checked 2026-11-21 22:54 UTC at commit `111f4e2f78fb`.
 | BLTAudit/GoodPlaquette.lean | `BLT.card_largeEdgesQ_mul_le` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_mul_le_zakEnergy` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.card_large_edges_le_div` | verified (standard axioms only) |
+| BLTAudit/GroundEigen.lean | `BLT.quadR_lower` | verified (standard axioms only) |
+| BLTAudit/GroundEigen.lean | `BLT.eq_zero_of_forall_quad_nonneg` | verified (standard axioms only) |
+| BLTAudit/GroundEigen.lean | `BLT.cross_eq` | verified (standard axioms only) |
+| BLTAudit/GroundEigen.lean | `BLT.gStdR_eq_of_min` | verified (standard axioms only) |
+| BLTAudit/GroundEigen.lean | `BLT.ground_eigen` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
@@ -117,6 +122,13 @@ Checked 2026-11-21 22:54 UTC at commit `111f4e2f78fb`.
 | BLTAudit/PlaquetteCharge.lean | `BLT.norm_mul_conj_eq_one` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.plaquette_identity` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.plaquette_identity_of_isTwisted` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.energy_ofReal` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.gStd_ofReal` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.sum_quad` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.sum_sq_smul` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.quadR_smul` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.quadR_expand` | verified (standard axioms only) |
+| BLTAudit/RealQuadForm.lean | `BLT.sum_sq_expand` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |

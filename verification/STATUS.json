@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 22:54 UTC",
-  "commit": "111f4e2f78fba67b6da56df39347e72844e22fc3",
+  "checked_at": "2026-11-21 23:07 UTC",
+  "commit": "f6310c2273a44e40341f49ecca0e1a1c7796d6be",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 208,
-  "verified": 208,
+  "theorems": 220,
+  "verified": 220,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -812,6 +812,56 @@
       "status": "verified (standard axioms only)"
     },
     {
+      "file": "BLTAudit/GroundEigen.lean",
+      "theorem": "BLT.quadR_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundEigen.lean",
+      "theorem": "BLT.eq_zero_of_forall_quad_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundEigen.lean",
+      "theorem": "BLT.cross_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundEigen.lean",
+      "theorem": "BLT.gStdR_eq_of_min",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundEigen.lean",
+      "theorem": "BLT.ground_eigen",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.hasDerivAt_oscPhi",
       "axioms": [
@@ -1074,6 +1124,76 @@
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.plaquette_identity_of_isTwisted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.energy_ofReal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.gStd_ofReal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.sum_quad",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.sum_sq_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.quadR_smul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.quadR_expand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RealQuadForm.lean",
+      "theorem": "BLT.sum_sq_expand",
       "axioms": [
         "propext",
         "Classical.choice",
