@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 17:01 UTC at commit `7c3ccdec899e`.
+Checked 2026-11-21 17:19 UTC at commit `4803e98077af`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 139 of 139
+- Theorems verified with standard axioms only: 145 of 145
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -149,3 +149,9 @@ Checked 2026-11-21 17:01 UTC at commit `7c3ccdec899e`.
 | BLTAudit/ZakTheta.lean | `BLT.gaussZak_eq_gauss_mul_theta` | verified (standard axioms only) |
 | BLTAudit/ZakTheta.lean | `BLT.gaussZak_eq_theta` | verified (standard axioms only) |
 | BLTAudit/ZakTheta.lean | `BLT.hasSum_gaussZak_term` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.gauss_neg` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.gauss_pos` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.exp_reflect_half` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.gaussZak_half_term_reflect` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.gaussZak_half_half` | verified (standard axioms only) |
+| BLTAudit/ZakZero.lean | `BLT.jacobiTheta_zakZero` | verified (standard axioms only) |

@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 17:01 UTC",
-  "commit": "7c3ccdec899e95e52508f24c921ce1b81a3b5370",
+  "checked_at": "2026-11-21 17:19 UTC",
+  "commit": "4803e98077afc201536584e3456b91c3733cf1b5",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 139,
-  "verified": 139,
+  "theorems": 145,
+  "verified": 145,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1392,6 +1392,66 @@
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.hasSum_gaussZak_term",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.gauss_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.gauss_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.exp_reflect_half",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.gaussZak_half_term_reflect",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.gaussZak_half_half",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakZero.lean",
+      "theorem": "BLT.jacobiTheta_zakZero",
       "axioms": [
         "propext",
         "Classical.choice",
