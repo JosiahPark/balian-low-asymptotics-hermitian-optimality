@@ -245,17 +245,38 @@ systems and no Zak transform.
   `−φ'' + 4π²x²φ = 2πφ`, and `ψ = xφ` satisfies `−ψ'' + 4π²x²ψ = 6πψ`, as `HasDerivAt` statements.
   File `BLTAudit/OscillatorGaussian.lean`.
   - Done 2026-11-21 21:46 UTC at 2aa008f: `oscPhi_eigenfunction`, `oscPsi_eigenfunction`, `hasDerivAt_oscPhi`, `hasDerivAt_oscPhiD`, `hasDerivAt_oscPsi`, `hasDerivAt_oscPsiD`, `oscPhi_eigen`, `oscPsi_eigen`, `gauss_eq_mul_oscPhi`, `const_mul_oscPhi_eigenfunction`, `const_mul_oscPsi_eigenfunction`. Defined in this file: `oscPhi x = Real.exp (-π * x ^ 2)` and `oscPsi x = x * oscPhi x`, with their derivatives written out, `oscPhiD x = -(2πx) * oscPhi x`, `oscPhiDD x = (4π²x² − 2π) * oscPhi x`, `oscPsiD x = (1 − 2πx²) * oscPhi x` and `oscPsiDD x = (4π²x³ − 6πx) * oscPhi x`. Each of the two main theorems is a conjunction at a point `x`: two `HasDerivAt` statements (first and second derivative) and the equation with the second derivative written out, `-oscPhiDD x + 4π²x² * oscPhi x = 2π * oscPhi x` and `-oscPsiDD x + 4π²x² * oscPsi x = 6π * oscPsi x`. The paper's Gaussian in Appendix A.1 is the normalised `ϕ = 2^{1/4} e^{−πx²}`, that is `gauss`, not the `e^{−πx²}` of this item: `gauss_eq_mul_oscPhi` is `gauss x = 2^{1/4} * oscPhi x`, and the two `const_mul` theorems are the same statements for `c * oscPhi` and `c * oscPsi` with any real `c`. `H₀` is not defined as an operator, so "eigenfunction" means only the pointwise equation; the equations are not restated with Mathlib's `deriv`; that `ϕ` has norm one, that `ϕ` and `xϕ` are orthogonal, and that `2π` and `6π` are the two lowest eigenvalues of `H₀` are not stated.
-- [ ] D2. Perron–Frobenius step: for a real symmetric matrix `A` with nonpositive off-diagonal entries
+- [x] D2. Perron–Frobenius step: for a real symmetric matrix `A` with nonpositive off-diagonal entries
   and `v : ι → ℂ`, `∑ i j, A i j * ‖v i‖ * ‖v j‖ ≤ (∑ i j, A i j * conj (v i) * v j).re`; so replacing
   a vector by its entrywise modulus does not raise the quadratic form. File `BLTAudit/PerronStep.lean`.
-- [ ] D3. Positivity on the cycle: if `v : ZMod N → ℝ` is nonzero, entrywise nonnegative and
+  - Done 2026-11-21 22:43 UTC at 1c55849: `perron_step`, `quadFormRe_norm_le`, `quadFormRe_norm`, `energy_norm_le`, `energy_le_of_norm`, `re_conj_mul_le_norm_mul`, `re_ofReal_mul_conj_mul`, `re_conj_mul_self`. Proved without the symmetry hypothesis, which the term-by-term argument does not need. Also proved for `G_N` itself: `energy (fun j => (‖f j‖ : ℂ)) ≤ energy f`.
+- [x] D3. Positivity on the cycle: if `v : ZMod N → ℝ` is nonzero, entrywise nonnegative and
   `gStd` (applied to `v` as a complex vector) equals `λ • v` for a real `λ`, then `0 < v j` for every
   `j` (a zero entry forces its two neighbours to vanish, all the way around `ZMod N`).
   File `BLTAudit/GStdPositive.lean`.
-- [ ] D4. Simple positive ground state (§1): among real vectors, the minimizers of `energy` on the unit
+  - Done 2026-11-21 22:48 UTC at 0f6ab65: `gStd_eigvec_pos`, `gStd_eigvec_pos'`, `gStd_eigvec_eq_zero_of_zero`, `gStd_eigvec_zero_succ`. The eigenvalue equation is stated pointwise, `gStd (fun i => (v i : ℂ)) j = μ * v j`, and as an equation of vectors in the primed version.
+- [-] D4. Simple positive ground state (§1): among real vectors, the minimizers of `energy` on the unit
   sphere form a line spanned by an entrywise strictly positive vector (a minimizer's modulus is a
   minimizer by D2 and A6, hence strictly positive by D3; two orthogonal vectors cannot both have
-  constant sign). File `BLTAudit/GroundState.lean`.
+  constant sign). File `BLTAudit/GroundState.lean`. (split into D4a, D4b, D4c)
+  - Split 2026-11-21: three separate steps (a minimizer is an eigenvector, a minimizer exists, positivity with uniqueness up to sign), about 300 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/GroundState.lean` is now the file of D4c. Below, "real unit vector" means `v : ZMod N → ℝ` with `∑ j, v j ^ 2 = 1`, and "minimizer" means a real unit vector `v` with `energy (fun j => (v j : ℂ)) ≤ energy (fun j => (u j : ℂ))` for every real unit vector `u`.
+- [ ] D4a. A minimizer is an eigenvector: if `v` is a minimizer and `λ = energy (fun j => (v j : ℂ))`, then
+  `gStd (fun i => (v i : ℂ)) j = λ * v j` for every `j` (in the form of the hypothesis of D3). Route: by
+  `re_ip_gStd` of A6, for real `u` the energy is the real quadratic form
+  `∑ j, (4 − 2 cos(2πj/N)) * u j ^ 2 − 2 * ∑ j, u j * u (j + 1)`; it scales by `t ^ 2`, so
+  `B u = energy u − λ ∑ j, u j ^ 2 ≥ 0` with `B v = 0`; expanding `B (v + t • w) ≥ 0` in `t` gives
+  `∑ j, w j * ((gStd v) j − λ v j) = 0` for all `w`, and `w = gStd v − λ v` ends it.
+  File `BLTAudit/GroundEigen.lean`.
+- [ ] D4b. A minimizer exists: for `0 < N` there is a minimizer (the real unit sphere in
+  `ZMod N → ℝ` is closed, bounded and nonempty, hence compact, and `u ↦ energy (fun j => (u j : ℂ))`
+  is continuous, being the real quadratic form of D4a; then `IsCompact.exists_isMinOn`).
+  File `BLTAudit/GroundExists.lean`.
+- [ ] D4c. Simple positive ground state, the statement of D4: there is a minimizer `w` with `0 < w j`
+  for every `j`, and every minimizer `v` is `w` or `−w`. Route: for a minimizer `v`, `j ↦ |v j|` is a
+  minimizer (`energy_norm_le` of D2), hence an eigenvector (D4a), hence strictly positive
+  (`gStd_eigvec_pos` of D3), so no minimizer has a zero entry; for two minimizers `v`, `w`, the vector
+  `v 0 • w − w 0 • v` lies in the same eigenspace and vanishes at `0`, so it is zero (otherwise its
+  normalization would be a minimizer with a zero entry), and unit length leaves `v = ± w`.
+  File `BLTAudit/GroundState.lean`.
 
 ## E. Tools for the vortex lower bound
 
