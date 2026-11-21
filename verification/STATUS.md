@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 17:24 UTC at commit `7ec678509294`.
+Checked 2026-11-21 17:44 UTC at commit `cb5e057d56e5`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 145 of 145
+- Theorems verified with standard axioms only: 154 of 154
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -114,6 +114,15 @@ Checked 2026-11-21 17:24 UTC at commit `7ec678509294`.
 | BLTAudit/UnitaryDFT.lean | `BLT.sum_conj_stdAddChar_mul` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.ip_dftU` | verified (standard axioms only) |
 | BLTAudit/UnitaryDFT.lean | `BLT.parseval_dftU` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.im_I_pos` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.exp_mul_gaussZak` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.exp_mul_gaussZak_holomorphic` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.hasDerivAt_gauss` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.hasDerivAt_gaussZak_snd` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.hasDerivAt_gaussZak_fst` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.hasDerivAt_gaussZak_fst_zero` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.hasDerivAt_gaussZak_snd_zero` | verified (standard axioms only) |
+| BLTAudit/ZakConformal.lean | `BLT.deriv_gaussZak_snd_zero` | verified (standard axioms only) |
 | BLTAudit/ZakCorrelation.lean | `BLT.dftU_shift` | verified (standard axioms only) |
 | BLTAudit/ZakCorrelation.lean | `BLT.zak_correlation` | verified (standard axioms only) |
 | BLTAudit/ZakCorrelation.lean | `BLT.zak_correlation_of_norm` | verified (standard axioms only) |

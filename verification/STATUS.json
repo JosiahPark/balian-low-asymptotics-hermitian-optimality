@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 17:24 UTC",
-  "commit": "7ec67850929401c29ddf443b6e48ca76146e0c71",
+  "checked_at": "2026-11-21 17:44 UTC",
+  "commit": "cb5e057d56e5fb3e188d39bdebb0e56d425545d9",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 145,
-  "verified": 145,
+  "theorems": 154,
+  "verified": 154,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1044,6 +1044,96 @@
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.parseval_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.im_I_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.exp_mul_gaussZak",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.exp_mul_gaussZak_holomorphic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.hasDerivAt_gauss",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.hasDerivAt_gaussZak_snd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.hasDerivAt_gaussZak_fst",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.hasDerivAt_gaussZak_fst_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.hasDerivAt_gaussZak_snd_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakConformal.lean",
+      "theorem": "BLT.deriv_gaussZak_snd_zero",
       "axioms": [
         "propext",
         "Classical.choice",
