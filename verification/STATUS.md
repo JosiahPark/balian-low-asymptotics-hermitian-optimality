@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 05:25 UTC at commit `2d84de9b2c38`.
+Checked 2026-11-21 10:20 UTC at commit `6533028a6d23`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 96 of 96
+- Theorems verified with standard axioms only: 104 of 104
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -73,6 +73,14 @@ Checked 2026-11-21 05:25 UTC at commit `2d84de9b2c38`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.exp_arg_mul_I_of_norm_eq_one` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.exists_int_of_exp_mul_I_eq` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.arg_add_arg_sub_of_mul_eq` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.mag_succ` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.plaquette_phase_algebra` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.norm_mul_conj_eq_one` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.plaquette_identity` | verified (standard axioms only) |
+| BLTAudit/PlaquetteCharge.lean | `BLT.plaquette_identity_of_isTwisted` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |
