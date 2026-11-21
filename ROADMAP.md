@@ -208,9 +208,30 @@ systems and no Zak transform.
   `y − x * I` (from C1), hence `∂_y gaussZak = I * ∂_x gaussZak` at `(1/2, 1/2)`.
   File `BLTAudit/ZakConformal.lean`.
   - Done 2026-11-21 17:44 UTC at cb5e057: `deriv_gaussZak_snd_zero`, `hasDerivAt_gaussZak_fst_zero`, `hasDerivAt_gaussZak_snd_zero`, `exp_mul_gaussZak`, `exp_mul_gaussZak_holomorphic`, `hasDerivAt_gaussZak_fst`, `hasDerivAt_gaussZak_snd`, `hasDerivAt_gauss`, `im_I_pos`. The holomorphic statement is `e^{πx²} * gaussZak x y = Θ (y − x * I)` for all real `x y`, with the entire function `Θ z = 2^{1/4} * jacobiTheta₂ z I`. The conformality is stated for the two one-variable derivatives `deriv (fun t : ℝ => gaussZak (1/2) t) (1/2)` and `deriv (fun s : ℝ => gaussZak s (1/2)) (1/2)`, both of which exist (as `HasDerivAt`). The `x`-derivative at the zero is `zakA0 = gauss (1/2) * (jacobiTheta₂' (1/2 − (1/2) * I) I * (−I))`, defined in this file with Mathlib's `jacobiTheta₂'`; it is the number `A₀` of (A10), and the `y`-derivative is `I * zakA0`. The two partial derivatives are computed at every point; at the zero the term with `gauss'` vanishes by `jacobiTheta_zakZero` of C3. Joint differentiability of `gaussZak` on `ℝ²`, the expansion (U2) and `zakA0 ≠ 0` (C5) are not stated.
-- [ ] C5. Nonvanishing derivative (A10): with `A₀ = ∂ₓ gaussZak` at `(1/2, 1/2)`,
+- [-] C5. Nonvanishing derivative (A10): with `A₀ = ∂ₓ gaussZak` at `(1/2, 1/2)`,
   `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)`, and this alternating series has strictly
-  decreasing terms, so `A₀ ≠ 0`. File `BLTAudit/ZakDerivNonzero.lean`.
+  decreasing terms, so `A₀ ≠ 0`. File `BLTAudit/ZakDerivNonzero.lean`. (split into C5a, C5b, C5c, C5d)
+  - Split 2026-11-21: four separate steps (the series of `A₀` over `ℤ` from Mathlib's series of `jacobiTheta₂'`, its folding to a series over `ℕ` by pairing `n ↔ 1 − n`, the positivity and strict decrease of the terms, the alternating-series bound with the conclusion), about 400 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakDerivNonzero.lean` is now the file of C5d. The four statements below passed a numerical check on 2026-11-21 (`zakA0 ≈ −3.38769`).
+- [ ] C5a. Series of `A₀` over `ℤ`: with `zakA0` of C4 (so that `∂ₓ gaussZak = zakA0` at `(1/2, 1/2)`),
+  `HasSum (fun n : ℤ => 2 * π * n * (gauss (1/2 − n) * Complex.exp (2πi n (1/2)))) zakA0` in `ℂ`: the
+  summand is `2πn` times the summand of `gaussZak (1/2) (1/2)` (Mathlib's `hasSum_jacobiTheta₂'_term`
+  with `jacobiTheta₂'_term n z τ = 2πi n * jacobiTheta₂_term n z τ`, multiplied by
+  `gauss (1/2) * (−I)`, then `gaussZak_term_eq` of C1). File `BLTAudit/ZakDerivSeries.lean`.
+- [ ] C5b. Folding to a series over `ℕ`: `Complex.exp (2πi n (1/2)) = (−1) ^ n` for `n : ℤ`, and
+  `HasSum (fun k : ℕ => −(4π) * ((−1) ^ k * ((k + 1/2) * gauss (k + 1/2)))) zakA0`, each term a real
+  number cast to `ℂ`; that is, `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)` (reindex the series
+  of C5a by `n = m + 1`, split `ℤ` into `m = k` and `m = −(k + 1)` with `HasSum.of_nat_of_neg_add_one`
+  and `Summable.comp_injective`; the terms at `n = k + 1` and `n = −k` add up to
+  `−4π (−1)^k (k + 1/2) gauss (k + 1/2)` because `gauss` is even, `gauss_neg` of C3; uses C5a).
+  File `BLTAudit/ZakDerivFold.lean`.
+- [ ] C5c. The terms are positive and strictly decreasing: for `k : ℕ`, with
+  `a k = (k + 1/2) * gauss (k + 1/2)`, `0 < a k` and `a (k + 1) < a k`
+  (`gauss (t + 1) = exp (−π (2t + 1)) * gauss t`, and `exp (−2π (k + 1)) ≤ exp (−2π) < 1/3` because
+  `1 + x ≤ exp x` and `3 < π`; then `(k + 3/2) / 3 ≤ k + 1/2`). File `BLTAudit/ZakDerivTerms.lean`.
+- [ ] C5d. Alternating series and the statement of C5: if `a : ℕ → ℝ` satisfies `a (k + 1) ≤ a k` for
+  all `k` and `HasSum (fun k => (−1) ^ k * a k) S`, then `a 0 − a 1 ≤ S` (the even partial sums are
+  `∑_{j < m} (a (2j) − a (2j + 1))`, and they tend to `S`); hence, with the real parts of the series
+  of C5b and with C5c, `zakA0 ≠ 0`. File `BLTAudit/ZakDerivNonzero.lean`.
 
 ## D. The finite oscillator and its ground state
 
