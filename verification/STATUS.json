@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 22:42 UTC",
-  "commit": "1c558495b7c24e5854d2545054b0286f4ce98aea",
+  "checked_at": "2026-11-21 22:48 UTC",
+  "commit": "0f6ab65188359fb6b5ffab03517540db29694316",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 204,
-  "verified": 204,
+  "theorems": 208,
+  "verified": 208,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -494,6 +494,46 @@
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.energy_eq_re_ip_gStd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStdPositive.lean",
+      "theorem": "BLT.gStd_eigvec_zero_succ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStdPositive.lean",
+      "theorem": "BLT.gStd_eigvec_eq_zero_of_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStdPositive.lean",
+      "theorem": "BLT.gStd_eigvec_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStdPositive.lean",
+      "theorem": "BLT.gStd_eigvec_pos'",
       "axioms": [
         "propext",
         "Classical.choice",

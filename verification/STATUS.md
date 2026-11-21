@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 22:42 UTC at commit `1c558495b7c2`.
+Checked 2026-11-21 22:48 UTC at commit `0f6ab6518835`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 204 of 204
+- Theorems verified with standard axioms only: 208 of 208
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -59,6 +59,10 @@ Checked 2026-11-21 22:42 UTC at commit `1c558495b7c2`.
 | BLTAudit/GStandardForm.lean | `BLT.re_ip_gStd` | verified (standard axioms only) |
 | BLTAudit/GStandardForm.lean | `BLT.im_ip_gStd` | verified (standard axioms only) |
 | BLTAudit/GStandardForm.lean | `BLT.energy_eq_re_ip_gStd` | verified (standard axioms only) |
+| BLTAudit/GStdPositive.lean | `BLT.gStd_eigvec_zero_succ` | verified (standard axioms only) |
+| BLTAudit/GStdPositive.lean | `BLT.gStd_eigvec_eq_zero_of_zero` | verified (standard axioms only) |
+| BLTAudit/GStdPositive.lean | `BLT.gStd_eigvec_pos` | verified (standard axioms only) |
+| BLTAudit/GStdPositive.lean | `BLT.gStd_eigvec_pos'` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_zero_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_sum_smul_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.linearIndependent_of_ip_orthonormal` | verified (standard axioms only) |
