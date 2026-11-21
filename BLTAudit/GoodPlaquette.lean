@@ -1,176 +1,195 @@
+import BLTAudit.Basic
 import BLTAudit.EdgeEnergy
 import BLTAudit.TotalCharge
 
 /-!
-# B4. Good plaquettes are neutral and large edges are few (L5)
+# B4. Good plaquettes are neutral and large edges are few (§4.1, (L5))
 
-Paper §4.1, around (L5). With `aQ`, `aR`, `zakEnergy` of `BLTAudit/Basic.lean` and
-`plaquetteCharge` of `BLTAudit/TotalCharge.lean`:
+Two consequences of (L1) and (L3) for a unit-modulus array `ζ : ℤ × ℤ → ℂ`, with `aQ`, `aR`,
+`zakEnergy` of `BLTAudit/Basic.lean` and the plaquette integer `plaquetteCharge` of B3.
 
-* `plaquette_int_eq_zero_of_good`: if the four edge numbers of the plaquette at `(q, r)` have
-  modulus `< η`, `4η + 2π / d² < 2π`, and the integer `n` satisfies (L3) there, then `n = 0`
-  (no hypothesis on `ζ`); `plaquetteCharge_eq_zero_of_good` is the same for
-  `n = plaquetteCharge d ζ q r` and a unit-modulus `ζ`;
-* `largeEdgesR d ζ η`, `largeEdgesQ d ζ η`: the pairs `(q, r)` of naturals `q r < d` with
-  `η ≤ |aR ζ q r|`, respectively `η ≤ |aQ d ζ q r|` (the large edges of the square);
-* `card_large_edges_mul_le_zakEnergy`: for a unit-modulus `ζ` and `0 ≤ η`,
-  `(#largeEdgesR + #largeEdgesQ) * (4 sin²(η / 2)) ≤ zakEnergy d ζ`, from (L1) (item B1) and the
-  monotonicity of `4 sin²(a / 2)` in `|a| ≤ π`.
+* `plaquetteCharge_eq_zero_of_small`: if the four edge numbers of the plaquette at `(q, r)` have
+  modulus `< η` and `4η + 2π/d² < 2π`, then `plaquetteCharge d ζ q r = 0`.
+  `plaquette_int_eq_zero_of_small` is the same for any integer `n` that satisfies (L3) at
+  `(q, r)`, with no hypothesis on `ζ`.
+* `largeEdgesR d ζ η`, `largeEdgesQ d ζ η`: the positions `(q, r)` with `q r < d` whose `r`-edge
+  (resp. `q`-edge) number has modulus `≥ η`. Together these are the large edges among the positive
+  edges of the `d × d` square, each edge once, as in `zakEnergy`.
+* `card_large_edges_mul_le_zakEnergy`: for `0 ≤ η`,
+  `(#largeEdgesR + #largeEdgesQ) * (4 sin²(η/2)) ≤ zakEnergy d ζ`;
+  `card_large_edges_le_div`: for `0 < η ≤ π`, the paper's form
+  `#{large edges} ≤ zakEnergy d ζ / (4 sin²(η/2))`, the first inequality of (L5).
 
-Helper lemmas: `cos_eq_one_sub_two_sin_sq_half`, `four_sin_sq_half_le_of_le_abs`,
-`abs_aR_le_pi`, `abs_aQ_le_pi`, `int_eq_zero_of_small` (the arithmetic of the first part) and
-`card_filter_mul_le_sum` (a count times a lower bound is at most the sum).
+Helpers: `abs_aR_le_pi`, `abs_aQ_le_pi` (edge numbers lie in `[-π, π]`),
+`int_eq_zero_of_four_small` (the real arithmetic of neutrality), `four_sin_half_sq`
+(`4 sin²(x/2) = 2 - 2 cos x`), `four_sin_half_sq_le_of_le_abs` (the edge weight is monotone on
+`0 ≤ η ≤ |a| ≤ π`), `card_filter_mul_le_sum` (a Markov-type count), `zakEnergy_eq_sum_product`
+((L1) over `range d ×ˢ range d`), `card_largeEdgesR_mul_le`, `card_largeEdgesQ_mul_le`.
 
-The item asks for `0 < η ≤ π` in the count; only `0 ≤ η` is used (for `η > π` there is no large
-edge). The gluing of `IsTwisted` is not used anywhere in this file.
+Differences from the roadmap item: the product bound needs only `0 ≤ η`; the bound `η ≤ π` is
+used only for the quotient form. Neither the gluing of `IsTwisted` nor `0 < d` is used.
 
-What this file does NOT prove: the bound `#{bad plaquettes} ≤ 2 #{large edges}` of (L5), the
-division form `#{large edges} ≤ A_d / (4 sin²(η / 2))`, the choice `η = 1 / log d`, or any lower
-bound for `zakEnergy`. It proves nothing toward Theorem 1.1 or Theorem 4.1 of the paper, and
-nothing toward the hypotheses [HU] and [HL].
+What this file does NOT prove: the rest of (L5), that is `#{large edges} ≤ C₁ log d / η²` and
+`#{bad plaquettes} ≤ 2 #{large edges}`; that the four edges of a plaquette at a seam are edges of
+the square (this needs the periodicity of B2a); where the nonzero plaquette integers sit. It
+proves nothing toward Theorem 1.1 or Theorem 4.1 of the paper, and nothing toward the hypotheses
+[HU] and [HL].
 -/
 
 noncomputable section
 
+open Finset
+open scoped ComplexConjugate
+
 namespace BLT
 
-/-- `cos x = 1 - 2 sin²(x / 2)`. -/
-theorem cos_eq_one_sub_two_sin_sq_half (x : ℝ) :
-    Real.cos x = 1 - 2 * Real.sin (x / 2) ^ 2 := by
-  have h := Real.cos_two_mul_eq_one_sub (x / 2)
-  have e : 2 * (x / 2) = x := by ring
-  rwa [e] at h
-
-/-- `4 sin²(a / 2)` is monotone in `|a|` for `|a| ≤ π`. -/
-theorem four_sin_sq_half_le_of_le_abs {η a : ℝ} (hη : 0 ≤ η) (ha : η ≤ |a|)
-    (hπ : |a| ≤ Real.pi) : 4 * Real.sin (η / 2) ^ 2 ≤ 4 * Real.sin (a / 2) ^ 2 := by
-  have h1 : Real.cos |a| ≤ Real.cos η := by
-    first
-      | exact Real.cos_le_cos_of_nonneg_of_le_pi hη hπ ha
-      | exact Real.antitoneOn_cos ⟨hη, ha.trans hπ⟩ ⟨hη.trans ha, hπ⟩ ha
-  have h2 : Real.cos |a| = Real.cos a := by
-    first | exact Real.cos_abs a | (rcases abs_choice a with h | h <;> simp [h])
-  have h3 := cos_eq_one_sub_two_sin_sq_half η
-  have h4 := cos_eq_one_sub_two_sin_sq_half a
-  linarith
-
-/-- The `r`-edge numbers lie in `[-π, π]`. -/
+/-- The `r`-edge numbers are principal arguments: `|aR ζ q r| ≤ π`. -/
 theorem abs_aR_le_pi (ζ : ℤ × ℤ → ℂ) (q r : ℤ) : |aR ζ q r| ≤ Real.pi := by
   unfold aR
-  first
-    | exact Complex.abs_arg_le_pi _
-    | exact abs_le.mpr ⟨(Complex.neg_pi_lt_arg _).le, Complex.arg_le_pi _⟩
+  exact Complex.abs_arg_le_pi _
 
-/-- The `q`-edge numbers lie in `[-π, π]`. -/
+/-- The `q`-edge numbers are principal arguments: `|aQ d ζ q r| ≤ π`. -/
 theorem abs_aQ_le_pi (d : ℕ) (ζ : ℤ × ℤ → ℂ) (q r : ℤ) : |aQ d ζ q r| ≤ Real.pi := by
   unfold aQ
-  first
-    | exact Complex.abs_arg_le_pi _
-    | exact abs_le.mpr ⟨(Complex.neg_pi_lt_arg _).le, Complex.arg_le_pi _⟩
+  exact Complex.abs_arg_le_pi _
 
-/-- If `s = -(2π / d²) + 2π n` with `|s| < 4η` and `4η + 2π / d² < 2π`, then `n = 0`. -/
-theorem int_eq_zero_of_small {d : ℕ} {η s : ℝ} {n : ℤ} (hs : |s| < 4 * η)
-    (hη : 4 * η + 2 * Real.pi / (d : ℝ) ^ 2 < 2 * Real.pi)
-    (hn : s = -(2 * Real.pi / (d : ℝ) ^ 2) + 2 * Real.pi * (n : ℝ)) : n = 0 := by
-  have hpi : 0 < Real.pi := Real.pi_pos
-  have hc : 0 ≤ 2 * Real.pi / (d : ℝ) ^ 2 := by positivity
-  obtain ⟨hs1, hs2⟩ := abs_lt.mp hs
-  have h1 : n < 1 := by
-    by_contra hcon
-    have h2 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast not_lt.mp hcon
-    have h5 : 0 ≤ Real.pi * ((n : ℝ) - 1) := mul_nonneg hpi.le (sub_nonneg.mpr h2)
-    first | linarith | nlinarith
-  have h3 : -1 < n := by
-    by_contra hcon
-    have h4 : (n : ℝ) ≤ -1 := by exact_mod_cast not_lt.mp hcon
-    have h5 : 0 ≤ Real.pi * (-1 - (n : ℝ)) := mul_nonneg hpi.le (sub_nonneg.mpr h4)
-    first | linarith | nlinarith
+/-- Real arithmetic behind neutrality: if `a₁ + a₂ - a₃ - a₄ = -c + t * n` for an integer `n`,
+with `0 < t`, `0 ≤ c`, the four terms of modulus `< η` and `4η + c < t`, then `n = 0`. -/
+theorem int_eq_zero_of_four_small {a₁ a₂ a₃ a₄ c t η : ℝ} {n : ℤ} (ht : 0 < t) (hc : 0 ≤ c)
+    (hn : a₁ + a₂ - a₃ - a₄ = -c + t * (n : ℝ)) (hη : 4 * η + c < t)
+    (h₁ : |a₁| < η) (h₂ : |a₂| < η) (h₃ : |a₃| < η) (h₄ : |a₄| < η) : n = 0 := by
+  obtain ⟨l₁, u₁⟩ := abs_lt.mp h₁
+  obtain ⟨l₂, u₂⟩ := abs_lt.mp h₂
+  obtain ⟨l₃, u₃⟩ := abs_lt.mp h₃
+  obtain ⟨l₄, u₄⟩ := abs_lt.mp h₄
+  have hlt : (n : ℝ) < 1 :=
+    lt_of_mul_lt_mul_left (by linarith : t * (n : ℝ) < t * 1) ht.le
+  have hgt : (0 : ℝ) < (n : ℝ) + 1 :=
+    lt_of_mul_lt_mul_left (by linarith : t * (0 : ℝ) < t * ((n : ℝ) + 1)) ht.le
+  have h1 : n < 1 := by exact_mod_cast hlt
+  have h2 : 0 < n + 1 := by exact_mod_cast hgt
   omega
 
-/-- **B4, first part.** If the four edge numbers of a plaquette have modulus `< η` and
-`4η + 2π / d² < 2π`, an integer satisfying (L3) at that plaquette is `0`. -/
-theorem plaquette_int_eq_zero_of_good {d : ℕ} {ζ : ℤ × ℤ → ℂ} {q r n : ℤ} {η : ℝ}
-    (h1 : |aQ d ζ q r| < η) (h2 : |aR ζ (q + 1) r| < η) (h3 : |aQ d ζ q (r + 1)| < η)
-    (h4 : |aR ζ q r| < η) (hη : 4 * η + 2 * Real.pi / (d : ℝ) ^ 2 < 2 * Real.pi)
+/-- **B4, neutrality, general form.** An integer that satisfies the plaquette identity (L3) at a
+plaquette whose four edge numbers have modulus `< η`, with `4η + 2π/d² < 2π`, is zero. -/
+theorem plaquette_int_eq_zero_of_small {d : ℕ} {ζ : ℤ × ℤ → ℂ} {q r n : ℤ} {η : ℝ}
     (hn : aQ d ζ q r + aR ζ (q + 1) r - aQ d ζ q (r + 1) - aR ζ q r =
-      -(2 * Real.pi / (d : ℝ) ^ 2) + 2 * Real.pi * (n : ℝ)) : n = 0 := by
-  have hs : |aQ d ζ q r + aR ζ (q + 1) r - aQ d ζ q (r + 1) - aR ζ q r| < 4 * η := by
-    obtain ⟨a1, a2⟩ := abs_lt.mp h1
-    obtain ⟨b1, b2⟩ := abs_lt.mp h2
-    obtain ⟨c1, c2⟩ := abs_lt.mp h3
-    obtain ⟨e1, e2⟩ := abs_lt.mp h4
-    exact abs_lt.mpr ⟨by linarith, by linarith⟩
-  exact int_eq_zero_of_small hs hη hn
+      -(2 * Real.pi / (d : ℝ) ^ 2) + 2 * Real.pi * (n : ℝ))
+    (hη : 4 * η + 2 * Real.pi / (d : ℝ) ^ 2 < 2 * Real.pi)
+    (h₁ : |aQ d ζ q r| < η) (h₂ : |aR ζ (q + 1) r| < η)
+    (h₃ : |aQ d ζ q (r + 1)| < η) (h₄ : |aR ζ q r| < η) : n = 0 := by
+  have hpi : (0 : ℝ) < 2 * Real.pi := by linarith [Real.pi_pos]
+  have hc : (0 : ℝ) ≤ 2 * Real.pi / (d : ℝ) ^ 2 := div_nonneg hpi.le (sq_nonneg _)
+  exact int_eq_zero_of_four_small hpi hc hn hη h₁ h₂ h₃ h₄
 
-/-- **B4, first part, for the plaquette integer.** For a unit-modulus array, a plaquette whose
-four edge numbers have modulus `< η`, with `4η + 2π / d² < 2π`, has `plaquetteCharge = 0`. -/
-theorem plaquetteCharge_eq_zero_of_good {d : ℕ} {ζ : ℤ × ℤ → ℂ} (hζ : ∀ p, ‖ζ p‖ = 1)
-    {q r : ℤ} {η : ℝ} (h1 : |aQ d ζ q r| < η) (h2 : |aR ζ (q + 1) r| < η)
-    (h3 : |aQ d ζ q (r + 1)| < η) (h4 : |aR ζ q r| < η)
-    (hη : 4 * η + 2 * Real.pi / (d : ℝ) ^ 2 < 2 * Real.pi) : plaquetteCharge d ζ q r = 0 :=
-  plaquette_int_eq_zero_of_good h1 h2 h3 h4 hη (plaquetteCharge_spec d ζ hζ q r)
+/-- **B4, good plaquettes are neutral.** For a unit-modulus array, a plaquette whose four edge
+numbers have modulus `< η`, with `4η + 2π/d² < 2π`, has plaquette integer zero. -/
+theorem plaquetteCharge_eq_zero_of_small (d : ℕ) (ζ : ℤ × ℤ → ℂ) (hζ : ∀ p, ‖ζ p‖ = 1)
+    (q r : ℤ) {η : ℝ} (hη : 4 * η + 2 * Real.pi / (d : ℝ) ^ 2 < 2 * Real.pi)
+    (h₁ : |aQ d ζ q r| < η) (h₂ : |aR ζ (q + 1) r| < η)
+    (h₃ : |aQ d ζ q (r + 1)| < η) (h₄ : |aR ζ q r| < η) : plaquetteCharge d ζ q r = 0 :=
+  plaquette_int_eq_zero_of_small (plaquetteCharge_spec d ζ hζ q r) hη h₁ h₂ h₃ h₄
 
-/-- The `r`-edges of the square, as pairs `(q, r)` with `q r < d`, with `η ≤ |aR ζ q r|`. -/
-def largeEdgesR (d : ℕ) (ζ : ℤ × ℤ → ℂ) (η : ℝ) : Finset (ℕ × ℕ) :=
-  (Finset.range d ×ˢ Finset.range d).filter
-    fun p : ℕ × ℕ => η ≤ |aR ζ (p.1 : ℤ) (p.2 : ℤ)|
+/-- The edge weight of (L1): `4 sin²(x/2) = 2 - 2 cos x`. -/
+theorem four_sin_half_sq (x : ℝ) : 4 * Real.sin (x / 2) ^ 2 = 2 - 2 * Real.cos x := by
+  have h := Real.cos_two_mul_eq_one_sub (x / 2)
+  have e : 2 * (x / 2) = x := by ring
+  rw [e] at h
+  first | linarith | linear_combination (2 : ℝ) * h
 
-/-- The `q`-edges of the square, as pairs `(q, r)` with `q r < d`, with `η ≤ |aQ d ζ q r|`. -/
-def largeEdgesQ (d : ℕ) (ζ : ℤ × ℤ → ℂ) (η : ℝ) : Finset (ℕ × ℕ) :=
-  (Finset.range d ×ˢ Finset.range d).filter
-    fun p : ℕ × ℕ => η ≤ |aQ d ζ (p.1 : ℤ) (p.2 : ℤ)|
+/-- The edge weight is monotone in the modulus of the angle on `[0, π]`. -/
+theorem four_sin_half_sq_le_of_le_abs {η a : ℝ} (hη : 0 ≤ η) (ha : |a| ≤ Real.pi)
+    (h : η ≤ |a|) : 4 * Real.sin (η / 2) ^ 2 ≤ 4 * Real.sin (a / 2) ^ 2 := by
+  have hcos : Real.cos |a| ≤ Real.cos η := Real.cos_le_cos_of_nonneg_of_le_pi hη ha h
+  rw [Real.cos_abs] at hcos
+  rw [four_sin_half_sq η, four_sin_half_sq a]
+  linarith
 
-/-- If `0 ≤ f` on `s` and `c ≤ f p` whenever `P p`, then `#{p ∈ s | P p} * c ≤ ∑ p ∈ s, f p`. -/
+/-- A Markov-type count: if `0 ≤ f` on `s` and `c ≤ f i` wherever `P i`, then
+`#{i ∈ s | P i} * c ≤ ∑ i ∈ s, f i`. -/
 theorem card_filter_mul_le_sum {ι : Type*} (s : Finset ι) (P : ι → Prop) [DecidablePred P]
-    (f : ι → ℝ) (c : ℝ) (hf : ∀ p ∈ s, 0 ≤ f p) (hc : ∀ p ∈ s, P p → c ≤ f p) :
-    ((s.filter P).card : ℝ) * c ≤ ∑ p ∈ s, f p := by
-  have h1 : ((s.filter P).card : ℝ) * c = ∑ _p ∈ s.filter P, c := by
+    (f : ι → ℝ) (c : ℝ) (hf : ∀ i ∈ s, 0 ≤ f i) (hc : ∀ i ∈ s, P i → c ≤ f i) :
+    ((s.filter P).card : ℝ) * c ≤ ∑ i ∈ s, f i := by
+  have h1 : ((s.filter P).card : ℝ) * c = ∑ _i ∈ s.filter P, c := by
     rw [Finset.sum_const, nsmul_eq_mul]
-  have h2 : ∑ _p ∈ s.filter P, c ≤ ∑ p ∈ s.filter P, f p :=
-    Finset.sum_le_sum fun p hp =>
-      hc p (Finset.mem_filter.mp hp).1 (Finset.mem_filter.mp hp).2
-  have h3 : ∑ p ∈ s.filter P, f p ≤ ∑ p ∈ s, f p :=
-    Finset.sum_le_sum_of_subset_of_nonneg (Finset.filter_subset P s) fun p hp _ => hf p hp
-  exact le_of_eq_of_le h1 (h2.trans h3)
+  have h2 : ∑ _i ∈ s.filter P, c ≤ ∑ i ∈ s.filter P, f i :=
+    Finset.sum_le_sum fun i hi => hc i (Finset.mem_filter.mp hi).1 (Finset.mem_filter.mp hi).2
+  have h3 : ∑ i ∈ s.filter P, f i ≤ ∑ i ∈ s, f i :=
+    Finset.sum_le_sum_of_subset_of_nonneg (Finset.filter_subset P s) fun i hi _ => hf i hi
+  rw [h1]
+  exact h2.trans h3
 
-/-- **B4, second part (L5).** For a unit-modulus array and `0 ≤ η`, the number of edges of the
-square with `|a| ≥ η`, times `4 sin²(η / 2)`, is at most the Zak energy. -/
+/-- The large `r`-edges of the `d × d` square: positions `(q, r)`, `q r < d`, with
+`η ≤ |aR ζ q r|`. -/
+def largeEdgesR (d : ℕ) (ζ : ℤ × ℤ → ℂ) (η : ℝ) : Finset (ℕ × ℕ) :=
+  (range d ×ˢ range d).filter fun p => η ≤ |aR ζ (p.1 : ℤ) (p.2 : ℤ)|
+
+/-- The large `q`-edges of the `d × d` square: positions `(q, r)`, `q r < d`, with
+`η ≤ |aQ d ζ q r|`. -/
+def largeEdgesQ (d : ℕ) (ζ : ℤ × ℤ → ℂ) (η : ℝ) : Finset (ℕ × ℕ) :=
+  (range d ×ˢ range d).filter fun p => η ≤ |aQ d ζ (p.1 : ℤ) (p.2 : ℤ)|
+
+/-- (L1) over the product index set, split into `r`-edges and `q`-edges. -/
+theorem zakEnergy_eq_sum_product (d : ℕ) (ζ : ℤ × ℤ → ℂ) (hζ : ∀ p, ‖ζ p‖ = 1) :
+    zakEnergy d ζ =
+      ∑ p ∈ range d ×ˢ range d, 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 +
+        ∑ p ∈ range d ×ˢ range d, 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := by
+  rw [zakEnergy_eq_sum_sin_sq d ζ hζ, ← Finset.sum_add_distrib]
+  exact (Finset.sum_product' (range d) (range d) fun q r : ℕ =>
+    4 * Real.sin (aR ζ (q : ℤ) (r : ℤ) / 2) ^ 2 +
+      4 * Real.sin (aQ d ζ (q : ℤ) (r : ℤ) / 2) ^ 2).symm
+
+/-- Large `r`-edges against the `r`-edge part of the energy. -/
+theorem card_largeEdgesR_mul_le (d : ℕ) (ζ : ℤ × ℤ → ℂ) {η : ℝ} (hη : 0 ≤ η) :
+    ((largeEdgesR d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) ≤
+      ∑ p ∈ range d ×ˢ range d, 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := by
+  have hf : ∀ p : ℕ × ℕ, p ∈ range d ×ˢ range d →
+      (0 : ℝ) ≤ 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := fun p _ => by positivity
+  have hc : ∀ p : ℕ × ℕ, p ∈ range d ×ˢ range d → η ≤ |aR ζ (p.1 : ℤ) (p.2 : ℤ)| →
+      4 * Real.sin (η / 2) ^ 2 ≤ 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 :=
+    fun p _ hp => four_sin_half_sq_le_of_le_abs hη (abs_aR_le_pi ζ _ _) hp
+  unfold largeEdgesR
+  exact card_filter_mul_le_sum (range d ×ˢ range d) (fun p => η ≤ |aR ζ (p.1 : ℤ) (p.2 : ℤ)|)
+    (fun p => 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2) (4 * Real.sin (η / 2) ^ 2) hf hc
+
+/-- Large `q`-edges against the `q`-edge part of the energy. -/
+theorem card_largeEdgesQ_mul_le (d : ℕ) (ζ : ℤ × ℤ → ℂ) {η : ℝ} (hη : 0 ≤ η) :
+    ((largeEdgesQ d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) ≤
+      ∑ p ∈ range d ×ˢ range d, 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := by
+  have hf : ∀ p : ℕ × ℕ, p ∈ range d ×ˢ range d →
+      (0 : ℝ) ≤ 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := fun p _ => by positivity
+  have hc : ∀ p : ℕ × ℕ, p ∈ range d ×ˢ range d → η ≤ |aQ d ζ (p.1 : ℤ) (p.2 : ℤ)| →
+      4 * Real.sin (η / 2) ^ 2 ≤ 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 :=
+    fun p _ hp => four_sin_half_sq_le_of_le_abs hη (abs_aQ_le_pi d ζ _ _) hp
+  unfold largeEdgesQ
+  exact card_filter_mul_le_sum (range d ×ˢ range d)
+    (fun p => η ≤ |aQ d ζ (p.1 : ℤ) (p.2 : ℤ)|)
+    (fun p => 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2) (4 * Real.sin (η / 2) ^ 2) hf hc
+
+/-- **B4, large edges are few.** For a unit-modulus array and `0 ≤ η`, the number of edges of the
+`d × d` square with `|a| ≥ η`, times `4 sin²(η/2)`, is at most the Zak energy. -/
 theorem card_large_edges_mul_le_zakEnergy (d : ℕ) (ζ : ℤ × ℤ → ℂ) (hζ : ∀ p, ‖ζ p‖ = 1)
     {η : ℝ} (hη : 0 ≤ η) :
     (((largeEdgesR d ζ η).card + (largeEdgesQ d ζ η).card : ℕ) : ℝ) *
       (4 * Real.sin (η / 2) ^ 2) ≤ zakEnergy d ζ := by
-  have hR : ((largeEdgesR d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) ≤
-      ∑ p ∈ Finset.range d ×ˢ Finset.range d,
-        4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 :=
-    card_filter_mul_le_sum (Finset.range d ×ˢ Finset.range d)
-      (fun p : ℕ × ℕ => η ≤ |aR ζ (p.1 : ℤ) (p.2 : ℤ)|)
-      (fun p : ℕ × ℕ => 4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2)
-      (4 * Real.sin (η / 2) ^ 2) (fun p _ => mul_nonneg (by norm_num) (sq_nonneg _))
-      (fun p _ hp => four_sin_sq_half_le_of_le_abs hη hp (abs_aR_le_pi ζ _ _))
-  have hQ : ((largeEdgesQ d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) ≤
-      ∑ p ∈ Finset.range d ×ˢ Finset.range d,
-        4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 :=
-    card_filter_mul_le_sum (Finset.range d ×ˢ Finset.range d)
-      (fun p : ℕ × ℕ => η ≤ |aQ d ζ (p.1 : ℤ) (p.2 : ℤ)|)
-      (fun p : ℕ × ℕ => 4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2)
-      (4 * Real.sin (η / 2) ^ 2) (fun p _ => mul_nonneg (by norm_num) (sq_nonneg _))
-      (fun p _ hp => four_sin_sq_half_le_of_le_abs hη hp (abs_aQ_le_pi d ζ _ _))
-  have hsplit : zakEnergy d ζ =
-      ∑ p ∈ Finset.range d ×ˢ Finset.range d,
-        4 * Real.sin (aR ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 +
-      ∑ p ∈ Finset.range d ×ˢ Finset.range d,
-        4 * Real.sin (aQ d ζ (p.1 : ℤ) (p.2 : ℤ) / 2) ^ 2 := by
-    rw [zakEnergy_eq_sum_sin_sq d ζ hζ, ← Finset.sum_add_distrib]
-    first
-      | exact (Finset.sum_product' _ _ _).symm
-      | exact (Finset.sum_product _ _ _).symm
-      | rw [Finset.sum_product]
-  have hcast : (((largeEdgesR d ζ η).card + (largeEdgesQ d ζ η).card : ℕ) : ℝ) *
-      (4 * Real.sin (η / 2) ^ 2) =
-      ((largeEdgesR d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) +
-        ((largeEdgesQ d ζ η).card : ℝ) * (4 * Real.sin (η / 2) ^ 2) := by
-    rw [Nat.cast_add, add_mul]
-  exact le_of_eq_of_le hcast ((add_le_add hR hQ).trans (le_of_eq hsplit.symm))
+  have hR := card_largeEdgesR_mul_le d ζ hη
+  have hQ := card_largeEdgesQ_mul_le d ζ hη
+  have hcast : (((largeEdgesR d ζ η).card + (largeEdgesQ d ζ η).card : ℕ) : ℝ) =
+      ((largeEdgesR d ζ η).card : ℝ) + ((largeEdgesQ d ζ η).card : ℝ) := Nat.cast_add _ _
+  rw [hcast, zakEnergy_eq_sum_product d ζ hζ, add_mul]
+  exact add_le_add hR hQ
+
+/-- **(L5), first inequality.** For `0 < η ≤ π`,
+`#{large edges} ≤ zakEnergy d ζ / (4 sin²(η/2))`. -/
+theorem card_large_edges_le_div (d : ℕ) (ζ : ℤ × ℤ → ℂ) (hζ : ∀ p, ‖ζ p‖ = 1) {η : ℝ}
+    (hη : 0 < η) (hηπ : η ≤ Real.pi) :
+    (((largeEdgesR d ζ η).card + (largeEdgesQ d ζ η).card : ℕ) : ℝ) ≤
+      zakEnergy d ζ / (4 * Real.sin (η / 2) ^ 2) := by
+  have hs : 0 < Real.sin (η / 2) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith [Real.pi_pos])
+  have hpos : 0 < 4 * Real.sin (η / 2) ^ 2 := mul_pos (by norm_num) (pow_pos hs 2)
+  rw [le_div_iff₀ hpos]
+  exact card_large_edges_mul_le_zakEnergy d ζ hζ hη.le
 
 end BLT
 
