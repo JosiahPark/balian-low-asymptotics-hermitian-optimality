@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 18:09 UTC",
-  "commit": "ccd3ed932153fbeda857a5f7a7533fdd70c16ce8",
+  "checked_at": "2026-11-21 18:18 UTC",
+  "commit": "c80ecaafd141127458b2f347b92286ff432d6a4a",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 154,
-  "verified": 154,
+  "theorems": 161,
+  "verified": 161,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1253,6 +1253,76 @@
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.ip_gabor_orthonormal_iff_unit_modulus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.thetaDerivTerm_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.hasSum_thetaDerivTerm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.zakA0_term_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.hasSum_zakA0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.summable_zakA0_term",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.zakA0_eq_tsum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivSeries.lean",
+      "theorem": "BLT.hasSum_deriv_gaussZak_fst_zero",
       "axioms": [
         "propext",
         "Classical.choice",
