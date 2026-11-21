@@ -5,6 +5,9 @@ This repository holds the note
 (J. Park, 25 September 2026) and a Lean 4 + Mathlib (v4.35.0) project, `BLTAudit`, that checks the parts of
 it that can be checked today.
 
+[Live roadmap page](https://josiahpark.github.io/balian-low-asymptotics-hermitian-optimality/docs/roadmap.html):
+the interactive map of the work list, with the state of each item and of CI.
+
 The note's Theorem 1.1: for the critical orthonormal Gabor problem on `ℂ^{d²}`, the minimal rescaled
 difference energy satisfies `2π log d − 7π log log d − C ≤ a_d ≤ 2π log d + C`. So the optimal discrete
 limit constant is `lim a_d / log d = 2π`, and the finite-Hermite window attains it to relative order
