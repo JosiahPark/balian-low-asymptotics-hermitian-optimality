@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 21:51 UTC at commit `a9c614806054`.
+Checked 2026-11-21 22:42 UTC at commit `1c558495b7c2`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 196 of 196
+- Theorems verified with standard axioms only: 204 of 204
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -97,6 +97,14 @@ Checked 2026-11-21 21:51 UTC at commit `a9c614806054`.
 | BLTAudit/OscillatorGaussian.lean | `BLT.gauss_eq_mul_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.const_mul_oscPhi_eigenfunction` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.const_mul_oscPsi_eigenfunction` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.re_conj_mul_le_norm_mul` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.re_ofReal_mul_conj_mul` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.re_conj_mul_self` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.perron_step` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.quadFormRe_norm` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.quadFormRe_norm_le` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.energy_le_of_norm` | verified (standard axioms only) |
+| BLTAudit/PerronStep.lean | `BLT.energy_norm_le` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exp_arg_mul_I_of_norm_eq_one` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.exists_int_of_exp_mul_I_eq` | verified (standard axioms only) |
 | BLTAudit/PlaquetteCharge.lean | `BLT.arg_add_arg_sub_of_mul_eq` | verified (standard axioms only) |

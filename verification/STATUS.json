@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 21:51 UTC",
-  "commit": "a9c6148060546f29fdc119f6df0150c35ceb054e",
+  "checked_at": "2026-11-21 22:42 UTC",
+  "commit": "1c558495b7c24e5854d2545054b0286f4ce98aea",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 196,
-  "verified": 196,
+  "theorems": 204,
+  "verified": 204,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -874,6 +874,86 @@
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.const_mul_oscPsi_eigenfunction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.re_conj_mul_le_norm_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.re_ofReal_mul_conj_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.re_conj_mul_self",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.perron_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.quadFormRe_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.quadFormRe_norm_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.energy_le_of_norm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/PerronStep.lean",
+      "theorem": "BLT.energy_norm_le",
       "axioms": [
         "propext",
         "Classical.choice",
