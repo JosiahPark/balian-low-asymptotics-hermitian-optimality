@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 16:41 UTC",
-  "commit": "1b8f707bcf0bedc9d7ba9fbb03e717a24677ea20",
+  "checked_at": "2026-11-21 16:58 UTC",
+  "commit": "2f275d1e25f3036ce00818df2abfa32278ed4d7d",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 135,
-  "verified": 135,
+  "theorems": 139,
+  "verified": 139,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1203,6 +1203,46 @@
     {
       "file": "BLTAudit/ZakEnergyIdentity.lean",
       "theorem": "BLT.zak_energy_identity_of_isTwisted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakGluing.lean",
+      "theorem": "BLT.exp_two_pi_int_mul_add_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakGluing.lean",
+      "theorem": "BLT.gaussZak_term_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakGluing.lean",
+      "theorem": "BLT.gaussZak_add_one_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakGluing.lean",
+      "theorem": "BLT.gaussZak_add_one_right",
       "axioms": [
         "propext",
         "Classical.choice",

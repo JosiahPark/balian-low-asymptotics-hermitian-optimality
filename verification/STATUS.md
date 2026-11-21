@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 16:41 UTC at commit `1b8f707bcf0b`.
+Checked 2026-11-21 16:58 UTC at commit `2f275d1e25f3`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 135 of 135
+- Theorems verified with standard axioms only: 139 of 139
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -130,6 +130,10 @@ Checked 2026-11-21 16:41 UTC at commit `1b8f707bcf0b`.
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.sum_sum_zmod_eq_sum_range` | verified (standard axioms only) |
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.zak_energy_identity` | verified (standard axioms only) |
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.zak_energy_identity_of_isTwisted` | verified (standard axioms only) |
+| BLTAudit/ZakGluing.lean | `BLT.exp_two_pi_int_mul_add_one` | verified (standard axioms only) |
+| BLTAudit/ZakGluing.lean | `BLT.gaussZak_term_shift` | verified (standard axioms only) |
+| BLTAudit/ZakGluing.lean | `BLT.gaussZak_add_one_left` | verified (standard axioms only) |
+| BLTAudit/ZakGluing.lean | `BLT.gaussZak_add_one_right` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.zmod_val_natCast_of_lt` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.norm_sq_natCast_mul` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.stdAddChar_neg_natCast` | verified (standard axioms only) |
