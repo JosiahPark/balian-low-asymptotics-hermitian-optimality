@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 20:45 UTC",
-  "commit": "36affdb6b221121e20b7d3ce8de17176e275a17a",
+  "checked_at": "2026-11-21 21:21 UTC",
+  "commit": "f28752bcf882c332bfc996f21513d8791797338a",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 177,
-  "verified": 177,
+  "theorems": 185,
+  "verified": 185,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1343,6 +1343,86 @@
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.hasSum_zakA0_re",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.hasSum_pairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.le_hasSum_alternating",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.hasSum_alternating_zakA0Coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.zakA0_re_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.zakA0_re_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.zakA0_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.deriv_gaussZak_fst_zero_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivNonzero.lean",
+      "theorem": "BLT.deriv_gaussZak_snd_zero_ne_zero",
       "axioms": [
         "propext",
         "Classical.choice",

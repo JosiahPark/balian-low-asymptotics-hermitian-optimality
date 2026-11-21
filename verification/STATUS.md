@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 20:45 UTC at commit `36affdb6b221`.
+Checked 2026-11-21 21:21 UTC at commit `f28752bcf882`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 177 of 177
+- Theorems verified with standard axioms only: 185 of 185
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -144,6 +144,14 @@ Checked 2026-11-21 20:45 UTC at commit `36affdb6b221`.
 | BLTAudit/ZakDerivFold.lean | `BLT.hasSum_zakA0_nat` | verified (standard axioms only) |
 | BLTAudit/ZakDerivFold.lean | `BLT.zakA0_eq_tsum_nat` | verified (standard axioms only) |
 | BLTAudit/ZakDerivFold.lean | `BLT.hasSum_zakA0_re` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.hasSum_pairs` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.le_hasSum_alternating` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.hasSum_alternating_zakA0Coeff` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.zakA0_re_le` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.zakA0_re_neg` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.zakA0_ne_zero` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.deriv_gaussZak_fst_zero_ne_zero` | verified (standard axioms only) |
+| BLTAudit/ZakDerivNonzero.lean | `BLT.deriv_gaussZak_snd_zero_ne_zero` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.thetaDerivTerm_eq` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.hasSum_thetaDerivTerm` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.zakA0_term_eq` | verified (standard axioms only) |
