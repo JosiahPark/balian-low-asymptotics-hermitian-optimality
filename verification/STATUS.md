@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 01:42 UTC at commit `b6761c936d7d`.
+Checked 2026-11-21 01:57 UTC at commit `0abbc796ad94`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 69 of 69
+- Theorems verified with standard axioms only: 76 of 76
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -79,3 +79,10 @@ Checked 2026-11-21 01:42 UTC at commit `b6761c936d7d`.
 | BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_zak_norm` | verified (standard axioms only) |
 | BLTAudit/ZakCriterionConverse.lean | `BLT.norm_natCast_mul_zak_eq_one_iff` | verified (standard axioms only) |
 | BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_unit_modulus` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.zmod_val_natCast_of_lt` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.norm_sq_natCast_mul` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.stdAddChar_neg_natCast` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.zeta_r_succ` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.mag_mul_zeta_q_succ` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.norm_sq_zeta_r_edge` | verified (standard axioms only) |
+| BLTAudit/ZakSeams.lean | `BLT.norm_sq_zeta_q_edge` | verified (standard axioms only) |
