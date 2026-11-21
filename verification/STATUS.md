@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 04:55 UTC at commit `95b601b5e3ef`.
+Checked 2026-11-21 05:19 UTC at commit `ea468fba9f2c`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 87 of 87
+- Theorems verified with standard axioms only: 96 of 96
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -22,6 +22,15 @@ Checked 2026-11-21 04:55 UTC at commit `95b601b5e3ef`.
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_sq_edgeQ` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.zakEnergy_eq_sum_sin_sq` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.mul_conj_of_norm_eq_one` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.unit_mul_mul_conj` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.mag_twist_cancel` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.norm_twist_factor` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.mag_add_period_mul_twist` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.aR_add_period_q` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.aR_add_period_r` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.aQ_add_period_q` | verified (standard axioms only) |
+| BLTAudit/EdgePeriodicity.lean | `BLT.aQ_add_period_r` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.zak_sub` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.sum_norm_sq_diffOp_eq_zak` | verified (standard axioms only) |
 | BLTAudit/EnergyZakCoordinates.lean | `BLT.sum_norm_sq_diffOp_dftU_eq_zak` | verified (standard axioms only) |

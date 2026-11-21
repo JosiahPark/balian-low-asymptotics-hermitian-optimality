@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 04:55 UTC",
-  "commit": "95b601b5e3ef944550b4034b46c867af6b4e9ae9",
+  "checked_at": "2026-11-21 05:19 UTC",
+  "commit": "ea468fba9f2cadd2b6bc0504539c79a70cea20b3",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 87,
-  "verified": 87,
+  "theorems": 96,
+  "verified": 96,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -124,6 +124,96 @@
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.mul_conj_of_norm_eq_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.unit_mul_mul_conj",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.mag_twist_cancel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.norm_twist_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.mag_add_period_mul_twist",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.aR_add_period_q",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.aR_add_period_r",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.aQ_add_period_q",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgePeriodicity.lean",
+      "theorem": "BLT.aQ_add_period_r",
       "axioms": [
         "propext",
         "Classical.choice",
