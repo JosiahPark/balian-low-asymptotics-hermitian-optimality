@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 23:07 UTC",
-  "commit": "f6310c2273a44e40341f49ecca0e1a1c7796d6be",
+  "checked_at": "2026-11-21 23:18 UTC",
+  "commit": "5981bcecbe0baaa01241b92f986b63a70eba0846",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 220,
-  "verified": 220,
+  "theorems": 225,
+  "verified": 225,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -854,6 +854,56 @@
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.ground_eigen",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundExists.lean",
+      "theorem": "BLT.continuous_quadR",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundExists.lean",
+      "theorem": "BLT.isCompact_unitSphereR",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundExists.lean",
+      "theorem": "BLT.unitSphereR_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundExists.lean",
+      "theorem": "BLT.exists_minimizer_quadR",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundExists.lean",
+      "theorem": "BLT.exists_minimizer",
       "axioms": [
         "propext",
         "Classical.choice",

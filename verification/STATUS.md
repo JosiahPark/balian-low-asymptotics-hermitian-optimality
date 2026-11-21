@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 23:07 UTC at commit `f6310c2273a4`.
+Checked 2026-11-21 23:18 UTC at commit `5981bcecbe0b`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 220 of 220
+- Theorems verified with standard axioms only: 225 of 225
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -95,6 +95,11 @@ Checked 2026-11-21 23:07 UTC at commit `f6310c2273a4`.
 | BLTAudit/GroundEigen.lean | `BLT.cross_eq` | verified (standard axioms only) |
 | BLTAudit/GroundEigen.lean | `BLT.gStdR_eq_of_min` | verified (standard axioms only) |
 | BLTAudit/GroundEigen.lean | `BLT.ground_eigen` | verified (standard axioms only) |
+| BLTAudit/GroundExists.lean | `BLT.continuous_quadR` | verified (standard axioms only) |
+| BLTAudit/GroundExists.lean | `BLT.isCompact_unitSphereR` | verified (standard axioms only) |
+| BLTAudit/GroundExists.lean | `BLT.unitSphereR_nonempty` | verified (standard axioms only) |
+| BLTAudit/GroundExists.lean | `BLT.exists_minimizer_quadR` | verified (standard axioms only) |
+| BLTAudit/GroundExists.lean | `BLT.exists_minimizer` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
