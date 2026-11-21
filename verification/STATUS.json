@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-20 23:51 UTC",
-  "commit": "006da86c600d946973f7558234e63ddcca319f96",
+  "checked_at": "2026-11-21 00:32 UTC",
+  "commit": "ad4e270f821a11eb6d0e32860073cc33ff782d11",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 54,
-  "verified": 54,
+  "theorems": 65,
+  "verified": 65,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -184,6 +184,116 @@
     {
       "file": "BLTAudit/FourierUniqueness.lean",
       "theorem": "BLT.fourier_uniqueness_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_zmod_add_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.complex_norm_sub_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.stdAddChar_eq_exp_ofReal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.norm_sq_one_sub_stdAddChar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_norm_sq_diffOp_dftU",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_norm_sq_diffOp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_re_conj_mul_sub_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.sum_im_conj_mul_sub_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.re_ip_gStd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.im_ip_gStd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GStandardForm.lean",
+      "theorem": "BLT.energy_eq_re_ip_gStd",
       "axioms": [
         "propext",
         "Classical.choice",

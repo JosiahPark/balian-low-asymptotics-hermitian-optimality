@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-20 23:51 UTC at commit `006da86c600d`.
+Checked 2026-11-21 00:32 UTC at commit `ad4e270f821a`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 54 of 54
+- Theorems verified with standard axioms only: 65 of 65
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -28,6 +28,17 @@ Checked 2026-11-20 23:51 UTC at commit `006da86c600d`.
 | BLTAudit/FourierUniqueness.lean | `BLT.sum_sum_stdAddChar_inversion` | verified (standard axioms only) |
 | BLTAudit/FourierUniqueness.lean | `BLT.sum_sum_ite_zero` | verified (standard axioms only) |
 | BLTAudit/FourierUniqueness.lean | `BLT.fourier_uniqueness_two` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.sum_zmod_add_one` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.complex_norm_sub_sq` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.stdAddChar_eq_exp_ofReal` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.norm_sq_one_sub_stdAddChar` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.sum_norm_sq_diffOp_dftU` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.sum_norm_sq_diffOp` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.sum_re_conj_mul_sub_one` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.sum_im_conj_mul_sub_one` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.re_ip_gStd` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.im_ip_gStd` | verified (standard axioms only) |
+| BLTAudit/GStandardForm.lean | `BLT.energy_eq_re_ip_gStd` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_zero_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.ip_sum_smul_right` | verified (standard axioms only) |
 | BLTAudit/GaborBasis.lean | `BLT.linearIndependent_of_ip_orthonormal` | verified (standard axioms only) |
