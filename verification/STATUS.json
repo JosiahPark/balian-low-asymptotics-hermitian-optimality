@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 19:42 UTC",
-  "commit": "62c8c7b725d407f5e1dbfeab845f34152c006381",
+  "checked_at": "2026-11-21 20:24 UTC",
+  "commit": "6c0ffc0b204aca80c76c78ab917ceb60759c9f79",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 161,
-  "verified": 161,
+  "theorems": 170,
+  "verified": 170,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1253,6 +1253,96 @@
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.ip_gabor_orthonormal_iff_unit_modulus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.exp_nat_mul_pi_I",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.exp_half_int",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.exp_half_succ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.exp_half_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.hasSum_zakA0Term",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.zakA0Term_fold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.hasSum_zakA0_nat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.zakA0_eq_tsum_nat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivFold.lean",
+      "theorem": "BLT.hasSum_zakA0_re",
       "axioms": [
         "propext",
         "Classical.choice",

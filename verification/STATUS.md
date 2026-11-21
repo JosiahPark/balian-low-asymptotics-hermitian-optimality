@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 19:42 UTC at commit `62c8c7b725d4`.
+Checked 2026-11-21 20:24 UTC at commit `6c0ffc0b204a`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 161 of 161
+- Theorems verified with standard axioms only: 170 of 170
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -135,6 +135,15 @@ Checked 2026-11-21 19:42 UTC at commit `62c8c7b725d4`.
 | BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_zak_norm` | verified (standard axioms only) |
 | BLTAudit/ZakCriterionConverse.lean | `BLT.norm_natCast_mul_zak_eq_one_iff` | verified (standard axioms only) |
 | BLTAudit/ZakCriterionConverse.lean | `BLT.ip_gabor_orthonormal_iff_unit_modulus` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.exp_nat_mul_pi_I` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.exp_half_int` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.exp_half_succ` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.exp_half_neg` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.hasSum_zakA0Term` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.zakA0Term_fold` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.hasSum_zakA0_nat` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.zakA0_eq_tsum_nat` | verified (standard axioms only) |
+| BLTAudit/ZakDerivFold.lean | `BLT.hasSum_zakA0_re` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.thetaDerivTerm_eq` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.hasSum_thetaDerivTerm` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.zakA0_term_eq` | verified (standard axioms only) |
