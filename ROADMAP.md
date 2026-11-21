@@ -158,10 +158,11 @@ systems and no Zak transform.
 
 §4.1: the twisted boundary condition forces total integer charge one. Nothing like this is in Mathlib.
 
-- [ ] B1. Edge energy (L1): for `‖u‖ = ‖v‖ = 1`, `‖v − u‖ ^ 2 = 4 * sin (arg (v * conj u) / 2) ^ 2`;
+- [x] B1. Edge energy (L1): for `‖u‖ = ‖v‖ = 1`, `‖v − u‖ ^ 2 = 4 * sin (arg (v * conj u) / 2) ^ 2`;
   hence for unit-modulus `ζ`,
   `zakEnergy d ζ = ∑ q r < d, (4 sin²(aR ζ q r / 2) + 4 sin²(aQ d ζ q r / 2))`.
   File `BLTAudit/EdgeEnergy.lean`.
+  - Done 2026-11-21 03:54 UTC at ffa15cb: `zakEnergy_eq_sum_sin_sq`, `zakEnergy_eq_sum_sin_sq_of_isTwisted`, `norm_sub_sq_eq_four_sin_sq`, `norm_sub_one_sq_of_norm_eq_one`, `norm_mag`, `norm_sq_edgeR`, `norm_sq_edgeQ`. Only unit modulus is used. The sum is over naturals `q r < d`, as in the definition of `zakEnergy`; the paper's sum over `q, r (mod d)` is the same once the periodicity of B2 is known.
 - [ ] B2. Plaquette identity (L3): for `IsTwisted d ζ` with `0 < d`, the edge numbers `aQ d ζ` and
   `aR ζ` are `d`-periodic in `q` and in `r`, and
   `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` for some `n : ℤ`.
