@@ -136,7 +136,7 @@ systems and no Zak transform.
   `energy f = ∑ q, ∑ r, (‖zak f q r - zak (transl f) q r‖ ^ 2 + ‖zak f q r - zak (modul f) q r‖ ^ 2)`,
   all sums over `q r : ZMod d`. File `BLTAudit/EnergyZakCoordinates.lean`.
   - Done 2026-11-21 01:39 UTC at f9d12f1: `energy_eq_sum_zak`, `sum_norm_sq_diffOp_eq_zak`, `sum_norm_sq_diffOp_dftU_eq_zak`, `zak_sub`
-- [ ] A7b. The array `ζ` across the two seams: let `f : ZMod (d * d) → ℂ` and `ζ : ℤ × ℤ → ℂ` satisfy
+- [x] A7b. The array `ζ` across the two seams: let `f : ZMod (d * d) → ℂ` and `ζ : ℤ × ℤ → ℂ` satisfy
   `ζ (q, r) = d * zak f q r` for naturals `q r < d`, `ζ (q + d, r) = ζ (q, r)` and
   `ζ (q, r + d) = Complex.exp (-2πi q / d) * ζ (q, r)` for integers `q r` (`shift_q` and `shift_r` of
   `IsTwisted`; unit modulus is not assumed). Then for naturals `q r < d`,
@@ -146,6 +146,7 @@ systems and no Zak transform.
   `shift_q`); hence `‖ζ (q, r + 1) - ζ (q, r)‖ ^ 2 = d ^ 2 * ‖zak f q r - zak (transl f) q r‖ ^ 2` and
   `‖mag d r * ζ (q + 1, r) - ζ (q, r)‖ ^ 2 = d ^ 2 * ‖zak f q r - zak (modul f) q r‖ ^ 2`.
   File `BLTAudit/ZakSeams.lean`.
+  - Done 2026-11-21 01:57 UTC at 0abbc79: `zeta_r_succ`, `mag_mul_zeta_q_succ`, `norm_sq_zeta_r_edge`, `norm_sq_zeta_q_edge`, `stdAddChar_neg_natCast`, `zmod_val_natCast_of_lt`, `norm_sq_natCast_mul`. The gluing enters as two explicit hypotheses with the statements of `shift_q` and `shift_r`, not as `IsTwisted`; that an array `ζ` with the three properties exists is not stated.
 - [ ] A7c. The identity, the statement of A7: `∑ q : ZMod d, F q = ∑ k ∈ range d, F (k : ZMod d)` for
   `F : ZMod d → ℝ`; hence, under the hypotheses of A7b, `d ^ 2 * energy f = zakEnergy d ζ` (A7a, the
   reindexing in both variables, then A7b edge by edge). If a convention still fails in Lean, prove the
