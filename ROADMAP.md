@@ -267,17 +267,19 @@ systems and no Zak transform.
   `∑ j, w j * ((gStd v) j − λ v j) = 0` for all `w`, and `w = gStd v − λ v` ends it.
   File `BLTAudit/GroundEigen.lean`.
   - Done 2026-11-21 23:07 UTC at f6310c2: `ground_eigen`, `gStdR_eq_of_min`, `cross_eq`, `eq_zero_of_forall_quad_nonneg`, `quadR_lower`, and in the helper file `BLTAudit/RealQuadForm.lean` (imported by `BLTAudit/GroundEigen.lean`; the two files together were about 270 lines, too long for one): `energy_ofReal`, `gStd_ofReal`, `quadR_expand`, `sum_sq_expand`, `quadR_smul`, `sum_sq_smul`, `sum_quad`. Defined there: `oscDiag N j = 4 − 2 cos(2πj/N)`, `quadR u = ∑ j, oscDiag N j * u j ^ 2 − 2 * ∑ j, u j * u (j + 1)` (the energy of a real vector, `energy_ofReal`) and `gStdR u j = oscDiag N j * u j − u (j − 1) − u (j + 1)` (`gStd` on real vectors, `gStd_ofReal`). The eigenvalue is `energy (fun i => (v i : ℂ))`, cast to `ℂ`. The minimizer hypothesis is over real unit vectors only, as in the item.
-- [ ] D4b. A minimizer exists: for `0 < N` there is a minimizer (the real unit sphere in
+- [x] D4b. A minimizer exists: for `0 < N` there is a minimizer (the real unit sphere in
   `ZMod N → ℝ` is closed, bounded and nonempty, hence compact, and `u ↦ energy (fun j => (u j : ℂ))`
   is continuous, being the real quadratic form of D4a; then `IsCompact.exists_isMinOn`).
   File `BLTAudit/GroundExists.lean`.
-- [ ] D4c. Simple positive ground state, the statement of D4: there is a minimizer `w` with `0 < w j`
+  - Done 2026-11-21 23:18 UTC at 5981bce: `exists_minimizer`, `exists_minimizer_quadR`, `isCompact_unitSphereR`, `unitSphereR_nonempty`, `continuous_quadR`. `0 < N` is the instance `[NeZero N]`. Compactness is for the sup norm of `ZMod N → ℝ`: the sphere is closed and lies in the closed ball of radius `1`.
+- [x] D4c. Simple positive ground state, the statement of D4: there is a minimizer `w` with `0 < w j`
   for every `j`, and every minimizer `v` is `w` or `−w`. Route: for a minimizer `v`, `j ↦ |v j|` is a
   minimizer (`energy_norm_le` of D2), hence an eigenvector (D4a), hence strictly positive
   (`gStd_eigvec_pos` of D3), so no minimizer has a zero entry; for two minimizers `v`, `w`, the vector
   `v 0 • w − w 0 • v` lies in the same eigenspace and vanishes at `0`, so it is zero (otherwise its
   normalization would be a minimizer with a zero entry), and unit length leaves `v = ± w`.
   File `BLTAudit/GroundState.lean`.
+  - Done 2026-11-21 23:23 UTC at a21c7ef: `ground_state`, `isGround_unique`, `isGround_ne_zero`, `ne_zero_of_eig`, `isGround_abs`, `quadR_abs_le`, `quadR_eq_sum_mul_gStdR`, `gStdR_comb`. `IsGround v` (defined in this file) says that `v` minimizes `quadR` on the real unit sphere. That `j ↦ |v j|` is again a minimizer is proved directly (`quadR_abs_le`: `v j * v (j + 1) ≤ |v j| * |v (j + 1)|`), not through `energy_norm_le` of D2. `ground_state` is a single statement: a minimizer `w` with `0 < w j` for every `j`, and every minimizer is `w` or `-w`. Only real vectors are compared, as in the item.
 
 ## E. Tools for the vortex lower bound
 
