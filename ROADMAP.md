@@ -174,12 +174,13 @@ systems and no Zak transform.
   `mag d (r + d) = mag d r * e^{2πi/d}` and `e^{−2πi(q+1)/d} = e^{−2πiq/d} * e^{−2πi/d}`).
   File `BLTAudit/EdgePeriodicity.lean`.
   - Done 2026-11-21 05:19 UTC at ea468fb: `aR_add_period_q`, `aR_add_period_r`, `aQ_add_period_q`, `aQ_add_period_r`, `mag_add_period_mul_twist`, `norm_twist_factor`, `mag_twist_cancel`, `unit_mul_mul_conj`, `mul_conj_of_norm_eq_one`. Each periodicity is proved as an equality of the complex numbers under `Complex.arg`. The two factor identities of the hint are proved only in the combined form `mag d (r + d) * e^{-2πi(q+1)/d} = mag d r * e^{-2πiq/d}` (`mag_add_period_mul_twist`, for `0 < d`); shifts by integer multiples of `d` are not stated.
-- [ ] B2b. Plaquette identity (L3): for a unit-modulus `ζ : ℤ × ℤ → ℂ` (in particular under
+- [x] B2b. Plaquette identity (L3): for a unit-modulus `ζ : ℤ × ℤ → ℂ` (in particular under
   `IsTwisted d ζ`) and integers `q r`, there is `n : ℤ` with
   `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` (`exp (a * I) = w` for each
   unit edge phase `w` with `a = arg w`; the four phases multiply to
   `mag d r * conj (mag d (r + 1)) = e^{−2πi/d²}`; then `Complex.exp_eq_exp_iff_exists_int`). Neither
   the gluing nor `0 < d` is needed. File `BLTAudit/PlaquetteCharge.lean`.
+  - Done 2026-11-21 10:20 UTC at 6533028: `plaquette_identity`, `plaquette_identity_of_isTwisted`, `arg_add_arg_sub_of_mul_eq`, `exists_int_of_exp_mul_I_eq`, `exp_arg_mul_I_of_norm_eq_one`, `mag_succ`, `plaquette_phase_algebra`, `norm_mul_conj_eq_one`. The right side is stated as `-(2 * π / d ^ 2) + 2 * π * n`. The integer `n` is only shown to exist for each `(q, r)`; it is not defined as a function of the plaquette. The phase product is used in the form `mag d (r + 1) = mag d r * exp ((2π / d²) * I)` (`mag_succ`), not with `conj (mag d (r + 1))`. Uses `norm_mag` of B1 and `mul_conj_of_norm_eq_one` of B2a.
 - [ ] B3. Total charge one (L4): for `IsTwisted d ζ` with `0 < d`, the plaquette integers of B2 over
   `0 ≤ q, r < d` sum to `1` (the oriented edge sums telescope by the periodicity of B2).
   File `BLTAudit/TotalCharge.lean`.
