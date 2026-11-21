@@ -128,13 +128,14 @@ systems and no Zak transform.
   corrected identity and record the difference in the docstring and in a note under this item.
   File `BLTAudit/ZakEnergyIdentity.lean`. (split into A7a, A7b, A7c)
   - Split 2026-11-21: three separate steps (the two halves of `energy` in Zak coordinates, the array `ζ` across the two seams, the sum over `ZMod d` as a sum over `range d` with the assembly), about 190 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakEnergyIdentity.lean` is now the file of A7c. The three statements below passed a numerical check for `d ≤ 6` on 2026-11-21.
-- [ ] A7a. Energy in Zak coordinates, with no array `ζ`: for `f g : ZMod (d * d) → ℂ` and
+- [x] A7a. Energy in Zak coordinates, with no array `ζ`: for `f g : ZMod (d * d) → ℂ` and
   `q r : ZMod d`, `zak (f - g) q r = zak f q r - zak g q r`;
   `∑ j, ‖diffOp f j‖ ^ 2 = ∑ q, ∑ r, ‖zak f q r - zak (transl f) q r‖ ^ 2` (`parseval_zak` of A3a at
   `f - transl f`); `∑ k, ‖diffOp (dftU f) k‖ ^ 2 = ∑ q, ∑ r, ‖zak f q r - zak (modul f) q r‖ ^ 2`
   (`diffOp_dftU` of A2, `parseval_dftU` of A1, then `parseval_zak` at `f - modul f`); hence
   `energy f = ∑ q, ∑ r, (‖zak f q r - zak (transl f) q r‖ ^ 2 + ‖zak f q r - zak (modul f) q r‖ ^ 2)`,
   all sums over `q r : ZMod d`. File `BLTAudit/EnergyZakCoordinates.lean`.
+  - Done 2026-11-21 01:39 UTC at f9d12f1: `energy_eq_sum_zak`, `sum_norm_sq_diffOp_eq_zak`, `sum_norm_sq_diffOp_dftU_eq_zak`, `zak_sub`
 - [ ] A7b. The array `ζ` across the two seams: let `f : ZMod (d * d) → ℂ` and `ζ : ℤ × ℤ → ℂ` satisfy
   `ζ (q, r) = d * zak f q r` for naturals `q r < d`, `ζ (q + d, r) = ζ (q, r)` and
   `ζ (q, r + d) = Complex.exp (-2πi q / d) * ζ (q, r)` for integers `q r` (`shift_q` and `shift_r` of
