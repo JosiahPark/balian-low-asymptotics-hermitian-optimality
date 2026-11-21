@@ -198,8 +198,9 @@ systems and no Zak transform.
   `gaussZak x y = 2^{1/4} e^{−πx²} * jacobiTheta₂ (y − x * I) I` (Mathlib's convention is
   `jacobiTheta₂ z τ = ∑ exp (2πi n z + πi n² τ)`). File `BLTAudit/ZakTheta.lean`.
   - Done 2026-11-21 16:36 UTC at 6b1be5d: `gaussZak_eq_theta`, `summable_gaussZak_term`, `hasSum_gaussZak_term`, `gaussZak_eq_gauss_mul_theta`, `hasSum_gaussZak_term_theta`, `gaussZak_term_eq`, `gaussZak_term_aux`, `ofReal_mul_exp_mul_exp_eq`. The constant is the real number `(2 : ℝ) ^ ((1 : ℝ) / 4) * Real.exp (-Real.pi * x ^ 2)` (that is, `gauss x`) cast to `ℂ`, and the theta function is taken at `z = y - x * I`, `τ = I`. Both statements follow from the termwise identity `gaussZak_term_eq` (complete the square) and Mathlib's `hasSum_jacobiTheta₂_term`; `hasSum_gaussZak_term` says that the series sums to `gaussZak x y`. Continuity or differentiability of `gaussZak` is not stated.
-- [ ] C2. Quasi-periodicity (U1): `gaussZak (x + 1) y = exp (2πi y) * gaussZak x y` and
+- [x] C2. Quasi-periodicity (U1): `gaussZak (x + 1) y = exp (2πi y) * gaussZak x y` and
   `gaussZak x (y + 1) = gaussZak x y`. File `BLTAudit/ZakGluing.lean`.
+  - Done 2026-11-21 16:58 UTC at 2f275d1: `gaussZak_add_one_left`, `gaussZak_add_one_right`, `gaussZak_term_shift`, `exp_two_pi_int_mul_add_one`. The factor is stated as `Complex.exp (2 * π * I * y)`. Both statements are proved termwise from `hasSum_gaussZak_term` of C1 (in `x` after the reindexing `r = s + 1`); the theta representation itself is not used. Shifts by other integers are not stated, nor that the samples of `gaussZak` on a grid satisfy the gluing of `IsTwisted`.
 - [ ] C3. The Zak zero (A10, first part): `gaussZak (1/2) (1/2) = 0`, by pairing `r ↔ 1 − r` in the sum.
   File `BLTAudit/ZakZero.lean`.
 - [ ] C4. Conformality at the zero (A10): `exp (πx²) * gaussZak x y` is a holomorphic function of
