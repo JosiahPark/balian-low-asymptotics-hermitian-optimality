@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 23:18 UTC at commit `5981bcecbe0b`.
+Checked 2026-11-21 23:23 UTC at commit `a21c7ef1eb57`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 225 of 225
+- Theorems verified with standard axioms only: 233 of 233
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -100,6 +100,14 @@ Checked 2026-11-21 23:18 UTC at commit `5981bcecbe0b`.
 | BLTAudit/GroundExists.lean | `BLT.unitSphereR_nonempty` | verified (standard axioms only) |
 | BLTAudit/GroundExists.lean | `BLT.exists_minimizer_quadR` | verified (standard axioms only) |
 | BLTAudit/GroundExists.lean | `BLT.exists_minimizer` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.quadR_abs_le` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.isGround_abs` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.isGround_ne_zero` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.quadR_eq_sum_mul_gStdR` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.gStdR_comb` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.ne_zero_of_eig` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.isGround_unique` | verified (standard axioms only) |
+| BLTAudit/GroundState.lean | `BLT.ground_state` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |

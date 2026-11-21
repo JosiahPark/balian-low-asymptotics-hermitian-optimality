@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 23:18 UTC",
-  "commit": "5981bcecbe0baaa01241b92f986b63a70eba0846",
+  "checked_at": "2026-11-21 23:23 UTC",
+  "commit": "a21c7ef1eb570e823dbae2824cf647a153ec96ce",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 225,
-  "verified": 225,
+  "theorems": 233,
+  "verified": 233,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -904,6 +904,86 @@
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.exists_minimizer",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.quadR_abs_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.isGround_abs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.isGround_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.quadR_eq_sum_mul_gStdR",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.gStdR_comb",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.ne_zero_of_eig",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.isGround_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GroundState.lean",
+      "theorem": "BLT.ground_state",
       "axioms": [
         "propext",
         "Classical.choice",
