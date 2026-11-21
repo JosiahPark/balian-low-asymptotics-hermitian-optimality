@@ -163,10 +163,22 @@ systems and no Zak transform.
   `zakEnergy d ζ = ∑ q r < d, (4 sin²(aR ζ q r / 2) + 4 sin²(aQ d ζ q r / 2))`.
   File `BLTAudit/EdgeEnergy.lean`.
   - Done 2026-11-21 03:54 UTC at ffa15cb: `zakEnergy_eq_sum_sin_sq`, `zakEnergy_eq_sum_sin_sq_of_isTwisted`, `norm_sub_sq_eq_four_sin_sq`, `norm_sub_one_sq_of_norm_eq_one`, `norm_mag`, `norm_sq_edgeR`, `norm_sq_edgeQ`. Only unit modulus is used. The sum is over naturals `q r < d`, as in the definition of `zakEnergy`; the paper's sum over `q, r (mod d)` is the same once the periodicity of B2 is known.
-- [ ] B2. Plaquette identity (L3): for `IsTwisted d ζ` with `0 < d`, the edge numbers `aQ d ζ` and
+- [-] B2. Plaquette identity (L3): for `IsTwisted d ζ` with `0 < d`, the edge numbers `aQ d ζ` and
   `aR ζ` are `d`-periodic in `q` and in `r`, and
   `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` for some `n : ℤ`.
-  File `BLTAudit/PlaquetteCharge.lean`.
+  File `BLTAudit/PlaquetteCharge.lean`. (split into B2a, B2b)
+  - Split 2026-11-21: two separate steps (four periodicity statements, two of which need the twist factors and the magnetic factor to cancel across the seam, and the plaquette identity through the product of the four edge phases), about 215 lines in all, too large for one file of about 150 lines. A draft was written but not committed, and no Lean file is on main; `BLTAudit/PlaquetteCharge.lean` is now the file of B2b.
+- [ ] B2a. Periodic edge numbers: for `IsTwisted d ζ` and integers `q r`, `aR ζ (q + d) r = aR ζ q r`,
+  `aR ζ q (r + d) = aR ζ q r`, `aQ d ζ (q + d) r = aQ d ζ q r` and, if `0 < d`,
+  `aQ d ζ q (r + d) = aQ d ζ q r` (in `r` the twist factor `e^{−2πiq/d}` meets its conjugate; for `aQ`,
+  `mag d (r + d) = mag d r * e^{2πi/d}` and `e^{−2πi(q+1)/d} = e^{−2πiq/d} * e^{−2πi/d}`).
+  File `BLTAudit/EdgePeriodicity.lean`.
+- [ ] B2b. Plaquette identity (L3): for a unit-modulus `ζ : ℤ × ℤ → ℂ` (in particular under
+  `IsTwisted d ζ`) and integers `q r`, there is `n : ℤ` with
+  `aQ d ζ q r + aR ζ (q+1) r − aQ d ζ q (r+1) − aR ζ q r = −2π/d² + 2π n` (`exp (a * I) = w` for each
+  unit edge phase `w` with `a = arg w`; the four phases multiply to
+  `mag d r * conj (mag d (r + 1)) = e^{−2πi/d²}`; then `Complex.exp_eq_exp_iff_exists_int`). Neither
+  the gluing nor `0 < d` is needed. File `BLTAudit/PlaquetteCharge.lean`.
 - [ ] B3. Total charge one (L4): for `IsTwisted d ζ` with `0 < d`, the plaquette integers of B2 over
   `0 ≤ q, r < d` sum to `1` (the oriented edge sums telescope by the periodicity of B2).
   File `BLTAudit/TotalCharge.lean`.
