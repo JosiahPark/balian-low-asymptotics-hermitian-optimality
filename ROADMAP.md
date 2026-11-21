@@ -147,11 +147,12 @@ systems and no Zak transform.
   `‖mag d r * ζ (q + 1, r) - ζ (q, r)‖ ^ 2 = d ^ 2 * ‖zak f q r - zak (modul f) q r‖ ^ 2`.
   File `BLTAudit/ZakSeams.lean`.
   - Done 2026-11-21 01:57 UTC at 0abbc79: `zeta_r_succ`, `mag_mul_zeta_q_succ`, `norm_sq_zeta_r_edge`, `norm_sq_zeta_q_edge`, `stdAddChar_neg_natCast`, `zmod_val_natCast_of_lt`, `norm_sq_natCast_mul`. The gluing enters as two explicit hypotheses with the statements of `shift_q` and `shift_r`, not as `IsTwisted`; that an array `ζ` with the three properties exists is not stated.
-- [ ] A7c. The identity, the statement of A7: `∑ q : ZMod d, F q = ∑ k ∈ range d, F (k : ZMod d)` for
+- [x] A7c. The identity, the statement of A7: `∑ q : ZMod d, F q = ∑ k ∈ range d, F (k : ZMod d)` for
   `F : ZMod d → ℝ`; hence, under the hypotheses of A7b, `d ^ 2 * energy f = zakEnergy d ζ` (A7a, the
   reindexing in both variables, then A7b edge by edge). If a convention still fails in Lean, prove the
   corrected identity and record the difference in the docstring and in a note under this item.
   File `BLTAudit/ZakEnergyIdentity.lean`.
+  - Done 2026-11-21 02:08 UTC at 1c05ccb: `zak_energy_identity`, `zak_energy_identity_of_isTwisted`, `sum_sum_zmod_eq_sum_range`, `sum_zmod_eq_sum_range`. No convention failed: the identity holds as stated in A7, with `ζ (q, r) = d * zak f q r` assumed for naturals `q r < d` and the gluing as the two hypotheses of A7b or as `IsTwisted d ζ`. That such an array `ζ` exists for a given `f` is not stated.
 
 ## B. Discrete phase topology
 
