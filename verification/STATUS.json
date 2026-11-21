@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 20:30 UTC",
-  "commit": "9d6b0cdb7b9a59a26cafba849be15b75ce166b1e",
+  "checked_at": "2026-11-21 20:42 UTC",
+  "commit": "e924783f26ba47376a68467cd665ad8727c9c607",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 170,
-  "verified": 170,
+  "theorems": 177,
+  "verified": 177,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1413,6 +1413,76 @@
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.hasSum_deriv_gaussZak_fst_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.gauss_add_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.exp_neg_two_pi_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.zakA0Coeff_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.zakA0Coeff_succ_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.zakA0Coeff_succ_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.strictAnti_zakA0Coeff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakDerivTerms.lean",
+      "theorem": "BLT.hasSum_zakA0_re_coeff",
       "axioms": [
         "propext",
         "Classical.choice",

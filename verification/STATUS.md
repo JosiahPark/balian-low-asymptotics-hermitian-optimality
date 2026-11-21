@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 20:30 UTC at commit `9d6b0cdb7b9a`.
+Checked 2026-11-21 20:42 UTC at commit `e924783f26ba`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 170 of 170
+- Theorems verified with standard axioms only: 177 of 177
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -151,6 +151,13 @@ Checked 2026-11-21 20:30 UTC at commit `9d6b0cdb7b9a`.
 | BLTAudit/ZakDerivSeries.lean | `BLT.summable_zakA0_term` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.zakA0_eq_tsum` | verified (standard axioms only) |
 | BLTAudit/ZakDerivSeries.lean | `BLT.hasSum_deriv_gaussZak_fst_zero` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.gauss_add_one` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.exp_neg_two_pi_lt` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.zakA0Coeff_pos` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.zakA0Coeff_succ_lt` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.zakA0Coeff_succ_le` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.strictAnti_zakA0Coeff` | verified (standard axioms only) |
+| BLTAudit/ZakDerivTerms.lean | `BLT.hasSum_zakA0_re_coeff` | verified (standard axioms only) |
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.sum_zmod_eq_sum_range` | verified (standard axioms only) |
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.sum_sum_zmod_eq_sum_range` | verified (standard axioms only) |
 | BLTAudit/ZakEnergyIdentity.lean | `BLT.zak_energy_identity` | verified (standard axioms only) |
