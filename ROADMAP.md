@@ -212,11 +212,12 @@ systems and no Zak transform.
   `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)`, and this alternating series has strictly
   decreasing terms, so `A₀ ≠ 0`. File `BLTAudit/ZakDerivNonzero.lean`. (split into C5a, C5b, C5c, C5d)
   - Split 2026-11-21: four separate steps (the series of `A₀` over `ℤ` from Mathlib's series of `jacobiTheta₂'`, its folding to a series over `ℕ` by pairing `n ↔ 1 − n`, the positivity and strict decrease of the terms, the alternating-series bound with the conclusion), about 400 lines in all, too large for one file of about 150 lines. Nothing was attempted and no Lean file was written; `BLTAudit/ZakDerivNonzero.lean` is now the file of C5d. The four statements below passed a numerical check on 2026-11-21 (`zakA0 ≈ −3.38769`).
-- [ ] C5a. Series of `A₀` over `ℤ`: with `zakA0` of C4 (so that `∂ₓ gaussZak = zakA0` at `(1/2, 1/2)`),
+- [x] C5a. Series of `A₀` over `ℤ`: with `zakA0` of C4 (so that `∂ₓ gaussZak = zakA0` at `(1/2, 1/2)`),
   `HasSum (fun n : ℤ => 2 * π * n * (gauss (1/2 − n) * Complex.exp (2πi n (1/2)))) zakA0` in `ℂ`: the
   summand is `2πn` times the summand of `gaussZak (1/2) (1/2)` (Mathlib's `hasSum_jacobiTheta₂'_term`
   with `jacobiTheta₂'_term n z τ = 2πi n * jacobiTheta₂_term n z τ`, multiplied by
   `gauss (1/2) * (−I)`, then `gaussZak_term_eq` of C1). File `BLTAudit/ZakDerivSeries.lean`.
+  - Done 2026-11-21 18:18 UTC at c80ecaa: `hasSum_zakA0`, `hasSum_deriv_gaussZak_fst_zero`, `summable_zakA0_term`, `zakA0_eq_tsum`, `zakA0_term_eq`, `hasSum_thetaDerivTerm`, `thetaDerivTerm_eq`. The summand is stated as `2 * π * n * (gauss (1/2 − n) * Complex.exp (2 * π * I * n * (1/2)))`, with `π`, `n` and the `1/2` of the exponent cast to `ℂ` (the `1/2` is a real number cast to `ℂ`, as in the summand of `gaussZak`). The series is Mathlib's series of `jacobiTheta₂'` at `1/2 − (1/2) * I`, multiplied by `gauss (1/2) * (−I)`; it is not obtained by differentiating the series of `gaussZak` term by term. `hasSum_deriv_gaussZak_fst_zero` is the same series with the sum written `deriv (fun s : ℝ => gaussZak s (1/2)) (1/2)` (`hasDerivAt_gaussZak_fst_zero` of C4). `Complex.exp (2πi n (1/2)) = (−1) ^ n` is not stated (C5b). Uses `gaussZak_term_eq` of C1 and `im_I_pos` of C4.
 - [ ] C5b. Folding to a series over `ℕ`: `Complex.exp (2πi n (1/2)) = (−1) ^ n` for `n : ℤ`, and
   `HasSum (fun k : ℕ => −(4π) * ((−1) ^ k * ((k + 1/2) * gauss (k + 1/2)))) zakA0`, each term a real
   number cast to `ℂ`; that is, `A₀ = −4π ∑_{k ≥ 0} (−1)^k (k + 1/2) gauss (k + 1/2)` (reindex the series
