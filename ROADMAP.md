@@ -201,8 +201,9 @@ systems and no Zak transform.
 - [x] C2. Quasi-periodicity (U1): `gaussZak (x + 1) y = exp (2πi y) * gaussZak x y` and
   `gaussZak x (y + 1) = gaussZak x y`. File `BLTAudit/ZakGluing.lean`.
   - Done 2026-11-21 16:58 UTC at 2f275d1: `gaussZak_add_one_left`, `gaussZak_add_one_right`, `gaussZak_term_shift`, `exp_two_pi_int_mul_add_one`. The factor is stated as `Complex.exp (2 * π * I * y)`. Both statements are proved termwise from `hasSum_gaussZak_term` of C1 (in `x` after the reindexing `r = s + 1`); the theta representation itself is not used. Shifts by other integers are not stated, nor that the samples of `gaussZak` on a grid satisfy the gluing of `IsTwisted`.
-- [ ] C3. The Zak zero (A10, first part): `gaussZak (1/2) (1/2) = 0`, by pairing `r ↔ 1 − r` in the sum.
+- [x] C3. The Zak zero (A10, first part): `gaussZak (1/2) (1/2) = 0`, by pairing `r ↔ 1 − r` in the sum.
   File `BLTAudit/ZakZero.lean`.
+  - Done 2026-11-21 17:19 UTC at 4803e98: `gaussZak_half_half`, `gaussZak_half_term_reflect`, `exp_reflect_half`, `gauss_neg`, `gauss_pos`, `jacobiTheta_zakZero`. Proved by reindexing the series of C1 (`hasSum_gaussZak_term`) with `r ↦ 1 − r` (`Equiv.subLeft 1` on `ℤ`): at `x = y = 1/2` the summand at `1 − r` is minus the summand at `r`, so the sum equals its own negative. `jacobiTheta_zakZero` is the same zero in Mathlib's notation, `jacobiTheta₂ (1/2 − (1/2) * I) I = 0` (through `gaussZak_eq_gauss_mul_theta` of C1; the two numbers `1/2` are real numbers cast to `ℂ`). That `(1/2, 1/2)` is the only zero in the unit square, that the zero is simple, and the zeros at the other half-integer points are not stated.
 - [ ] C4. Conformality at the zero (A10): `exp (πx²) * gaussZak x y` is a holomorphic function of
   `y − x * I` (from C1), hence `∂_y gaussZak = I * ∂_x gaussZak` at `(1/2, 1/2)`.
   File `BLTAudit/ZakConformal.lean`.
