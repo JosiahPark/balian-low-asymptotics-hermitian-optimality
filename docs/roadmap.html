@@ -218,6 +218,15 @@ function model(s) {
     if (it.status === "open" && (s.results || []).some(r => it.files.includes(r[0]))) it.status = "written";
     it.short = CFG.short[it.id] || it.names.find(n => n.length > 5 || /[_.]/.test(n)) || trunc(it.text.replace(/`/g, "").replace(/\s*\(.*$/, ""), 22);
   }
+  // A split item (`- [-] X. ... (split into Xa, Xb)`) whose sub-items are all ticked counts as done.
+  for (let changed = true; changed;) {
+    changed = false;
+    for (const it of R.items) {
+      const sp = it.status === "skipped" && it.text.match(/\(split into ([^)]+)\)/);
+      const subs = sp ? sp[1].split(",").map(x => x.trim()).filter(Boolean) : [];
+      if (subs.length && subs.every(x => byId[x] && byId[x].status === "done")) { it.status = "done"; it.viaSplit = subs; changed = true; }
+    }
+  }
   const next = R.items.find(it => it.band !== "Done" && it.status === "open");
   if (next) next.next = true;
   // dependencies: configured ones, plus a parent item for split items (A3a needs nothing extra, but inherits A3's)
@@ -340,6 +349,7 @@ function select(id, scroll) {
     <p style="margin-top:10px">${md(it.text)}</p>
     ${it.notes.map((n, k) => noteHtml(n, it.depth[k] || 0)).join("")}
     ${it.next ? `<div class="note plain">The hourly task takes this item on its next run: it is the first open item, after any item already written, not counting skipped items.</div>` : ""}
+    ${it.viaSplit ? `<div class="note plain">Done through its sub-items ${esc(it.viaSplit.join(", "))}, each ticked after CI compiled it; their notes say exactly what each one states.</div>` : ""}
     ${it.status === "decision" ? `<div class="note plain">This is Josiah's decision; the hourly task skips it.</div>` : ""}
     ${it.files.length ? `<h3>Files</h3><div class="refs">${it.files.map(f => `<a class="ref" href="https://github.com/${REPO}/blob/main/${esc(f)}" target="_blank" rel="noopener">${esc(f)}</a>`).join("")}</div>` : ""}
     ${thmList(it)}
