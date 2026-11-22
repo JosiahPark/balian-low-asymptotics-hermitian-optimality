@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 01:09 UTC at commit `4e44a533ce4f`.
+Checked 2026-11-22 01:29 UTC at commit `20f3344a37de`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 264 of 264
+- Theorems verified with standard axioms only: 270 of 270
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -169,6 +169,12 @@ Checked 2026-11-22 01:09 UTC at commit `4e44a533ce4f`.
 | BLTAudit/RealQuadForm.lean | `BLT.quadR_smul` | verified (standard axioms only) |
 | BLTAudit/RealQuadForm.lean | `BLT.quadR_expand` | verified (standard axioms only) |
 | BLTAudit/RealQuadForm.lean | `BLT.sum_sq_expand` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.tendsto_log_nat` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.tendsto_inv_log_nat` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.tendsto_log_div_self` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.tendsto_loglog_div_log` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.tendsto_div_log_of_bounds` | verified (standard axioms only) |
+| BLTAudit/RelativeOptimality.lean | `BLT.relative_optimality` | verified (standard axioms only) |
 | BLTAudit/Statements.lean | `BLT.scaledEnergy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Statements.lean | `BLT.bddBelow_scaledEnergy` | verified (standard axioms only) |
 | BLTAudit/Statements.lean | `BLT.aMin_nonneg` | verified (standard axioms only) |

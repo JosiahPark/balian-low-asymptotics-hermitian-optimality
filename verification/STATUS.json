@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 01:09 UTC",
-  "commit": "4e44a533ce4ff6006d1bf610473c541e7e6f5b5e",
+  "checked_at": "2026-11-22 01:29 UTC",
+  "commit": "20f3344a37deade743ffc9fcc31e297c3065e9e2",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 264,
-  "verified": 264,
+  "theorems": 270,
+  "verified": 270,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1594,6 +1594,66 @@
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.sum_sq_expand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.tendsto_log_nat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.tendsto_inv_log_nat",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.tendsto_log_div_self",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.tendsto_loglog_div_log",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.tendsto_div_log_of_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/RelativeOptimality.lean",
+      "theorem": "BLT.relative_optimality",
       "axioms": [
         "propext",
         "Classical.choice",
