@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 00:41 UTC at commit `e59f6ae5a7af`.
+Checked 2026-11-22 01:01 UTC at commit `3cf8c2cfc279`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 260 of 260
+- Theorems verified with standard axioms only: 264 of 264
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -169,6 +169,10 @@ Checked 2026-11-22 00:41 UTC at commit `e59f6ae5a7af`.
 | BLTAudit/RealQuadForm.lean | `BLT.quadR_smul` | verified (standard axioms only) |
 | BLTAudit/RealQuadForm.lean | `BLT.quadR_expand` | verified (standard axioms only) |
 | BLTAudit/RealQuadForm.lean | `BLT.sum_sq_expand` | verified (standard axioms only) |
+| BLTAudit/Statements.lean | `BLT.scaledEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/Statements.lean | `BLT.bddBelow_scaledEnergy` | verified (standard axioms only) |
+| BLTAudit/Statements.lean | `BLT.aMin_nonneg` | verified (standard axioms only) |
+| BLTAudit/Statements.lean | `BLT.aMin_le` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_modul` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.transl_dftU` | verified (standard axioms only) |
 | BLTAudit/TimeFrequency.lean | `BLT.dftU_sub` | verified (standard axioms only) |

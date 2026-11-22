@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 00:41 UTC",
-  "commit": "e59f6ae5a7af70b2358e9c59d096de367ff03108",
+  "checked_at": "2026-11-22 01:01 UTC",
+  "commit": "3cf8c2cfc279ebfad41572b27864fdac3aa1aaff",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 260,
-  "verified": 260,
+  "theorems": 264,
+  "verified": 264,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1594,6 +1594,46 @@
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.sum_sq_expand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Statements.lean",
+      "theorem": "BLT.scaledEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Statements.lean",
+      "theorem": "BLT.bddBelow_scaledEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Statements.lean",
+      "theorem": "BLT.aMin_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Statements.lean",
+      "theorem": "BLT.aMin_le",
       "axioms": [
         "propext",
         "Classical.choice",
