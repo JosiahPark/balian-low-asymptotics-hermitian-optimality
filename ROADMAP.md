@@ -333,6 +333,52 @@ analytic halves enter as named hypotheses, and Lean checks what follows from the
   File `BLTAudit/MainConditional.lean`.
   - Done 2026-11-22 01:30 UTC at 018bb61: `main_conditional`, `main_bounds`, `aSeq_eq`, `ASeq_eq`. The two named hypotheses are the fields `HU` and `HL` of the structure `MainHypotheses f C₁ C₂` (defined in this file, with docstrings tagged [HU] and [HL]); neither is proved, so Theorem 1.1 is not proved: `main_conditional` derives its shape (the two-sided bound, `aMin d / log d → 2π`, and `scaledEnergy (f d) / aMin d → 1`) from [HU] and [HL] only. `aSeq d` and `ASeq f d`, defined in this file, are `aMin d` and `scaledEnergy (f d)` of F1 as real sequences, `0` at `d = 0`. [HU] is assumed for all large `d`; the paper's use of `f_d` along odd `d` is not modelled.
 
+## G. Toward [HU] and [HL]: one-run model steps
+
+§3.2–§3.3 and §4.1–§4.3. Model statements of single steps in the proofs of (U4), (U14) and (L19), each
+small enough for one file. None of them proves [HU] or [HL], and F4 keeps both as named hypotheses.
+
+- [ ] G1. Edge-angle comparison (L10): `edge_angle_sq_le`: for real `a η` with `|a| ≤ η` and `η ≤ 1`,
+  `a ^ 2 ≤ (1 + η ^ 2) * (4 * Real.sin (a / 2) ^ 2)`; hence for a finset `s` and `a : ι → ℝ` with
+  `|a e| ≤ η ≤ 1` on `s`, `∑ e ∈ s, a e ^ 2 ≤ (1 + η ^ 2) * ∑ e ∈ s, 4 * Real.sin (a e / 2) ^ 2`
+  (`four_sin_half_sq` of B4 gives `4 sin²(a/2) = 2 − 2 cos a`, and Mathlib's `Real.cos_bound` gives
+  `cos a ≤ 1 − a²/2 + (5/96) a⁴` for `|a| ≤ 1`; then `(1 + η²)(1 − (5/48) a²) ≥ 1` when `a² ≤ η² ≤ 1`).
+  The paper's constant `C` is `1` here. File `BLTAudit/EdgeAngleComparison.lean`.
+- [ ] G2. Defect count (L5), (L14): `defect_count`: for `0 ≤ η ≤ π`,
+  `4 / π ^ 2 * η ^ 2 ≤ 4 * Real.sin (η / 2) ^ 2` (Mathlib's `Real.mul_le_sin` at `η / 2`); for finsets,
+  `(L.biUnion inc).card ≤ 2 * L.card` when every `inc e` with `e ∈ L` has at most two elements
+  (`Finset.card_biUnion_le`); hence for real `d ≥ 2`, `η = 1 / Real.log d`,
+  `(L.card : ℝ) * (4 * Real.sin (η / 2) ^ 2) ≤ A` (the form of `card_large_edges_mul_le_zakEnergy` of B4)
+  and `A ≤ C₀ * Real.log d`, `10 * ((L.biUnion inc).card : ℝ) ≤ 5 * π ^ 2 * C₀ * Real.log d ^ 3`: the bound
+  `S₀ ≤ C₂ (log d)³` of (L14) with `C₂ = 5π² C₀`, in the form that `lower_bound_arithmetic` of E5 takes.
+  Which edges are large and which plaquettes they meet is not modelled. File `BLTAudit/DefectCount.lean`.
+- [ ] G3. Discrete Stokes on a rectangle, the rectangular case of the computation in (L12):
+  `stokes_rect`: for `bq br : ℤ → ℤ → ℝ`, integers `q₀ r₀` and naturals `m n`,
+  `∑ i ∈ range m, ∑ j ∈ range n, (bq (q₀+i) (r₀+j) + br (q₀+i+1) (r₀+j) − bq (q₀+i) (r₀+j+1) − br (q₀+i) (r₀+j))`
+  `= ∑ i ∈ range m, (bq (q₀+i) r₀ − bq (q₀+i) (r₀+n)) + ∑ j ∈ range n, (br (q₀+m) (r₀+j) − br q₀ (r₀+j))`
+  (telescope in each variable, `Finset.sum_range_sub`); hence if `aq ar : ℤ → ℤ → ℝ` and `n : ℤ → ℤ → ℤ`
+  satisfy (L3), `aq q r + ar (q+1) r − aq q (r+1) − ar q r = −2π/d² + 2π * n q r` with `d : ℕ`, on the
+  plaquettes of the rectangle, then for the local gauge `A′q q r = 2π (r − c) / d²`, `A′r = 0` (any real
+  `c`, as in (L7)) the boundary sum of `bq = aq − A′q`, `br = ar` equals
+  `2π * ∑ i ∈ range m, ∑ j ∈ range n, n (q₀+i) (r₀+j)`. The cellular chain of a disk, the degree of the
+  interpolated map and Lemma 4.2 itself are not attempted. File `BLTAudit/DiscreteStokes.lean`.
+- [ ] G4. Cell step of the singular Riemann sum (U10): `inv_sq_cell`: for `z w : ℂ` and `0 < h` with
+  `4 * h ≤ ‖z‖` and `‖w − z‖ ≤ h`, `|(‖w‖ ^ 2)⁻¹ − (‖z‖ ^ 2)⁻¹| ≤ 4 * h / ‖z‖ ^ 3` (`‖w‖` lies between
+  `3‖z‖/4` and `5‖z‖/4`); hence for a measurable `Q ⊆ Metric.closedBall z h` with `volume Q < ⊤`,
+  `|∫ w in Q, (‖w‖ ^ 2)⁻¹ − (volume Q).toReal * (‖z‖ ^ 2)⁻¹| ≤ 4 * h / ‖z‖ ^ 3 * (volume Q).toReal`
+  (the zero `z₀` of (U10) is moved to `0`; a grid square of side `h` centred at `z` lies in
+  `closedBall z h` and has measure `h²`). The shell count, the strips at the two circles and (U10) itself
+  are not attempted. File `BLTAudit/SingularCell.lean`.
+- [ ] G5. Transfer estimate (U14), abstract form: `transfer_estimate`: in a normed additive group `V`,
+  for additive maps `S₁ S₂ : V →+ V` with `‖S₁ x‖ = ‖x‖` and `‖S₂ x‖ = ‖x‖` for all `x`, put
+  `E v = ‖S₁ v − v‖ ^ 2 + ‖S₂ v − v‖ ^ 2`; then `E δ ≤ 8 * ‖δ‖ ^ 2` and
+  `|E (u + δ) − E u| ≤ 2 * Real.sqrt (E u) * Real.sqrt (E δ) + E δ` (from
+  `|‖x‖ − ‖y‖| ≤ ‖x + y‖ ≤ ‖x‖ + ‖y‖` in each component and Cauchy–Schwarz in `ℝ²`); hence if
+  `E u ≤ K * L`, `‖δ‖ ^ 2 ≤ K * h ^ 2 * L`, `0 ≤ K`, `0 ≤ L` and `0 ≤ h ≤ 1`, then
+  `|E (u + δ) − E u| ≤ (4 * Real.sqrt 2 + 8) * K * h * L`, the shape `O(h log(1/h))` of (U14) with
+  `L = log (1/h)`. The twisted shifts of (U3), the bound (U13) on `‖W − U‖` and (U4) are not attempted.
+  File `BLTAudit/TransferEstimate.lean`.
+
 ## Not attempted here
 
 - Uniqueness and simplicity of the Gaussian Zak zero in the unit square (Jacobi triple product, Appendix A.3), unless Mathlib already has the triple product.
