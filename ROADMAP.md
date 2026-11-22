@@ -286,22 +286,27 @@ systems and no Zak transform.
 §4.2–§4.3. One-variable and model versions of the steps of Theorem 4.1; the degree lemma on the twisted
 torus and the ball growth as a whole are listed under "Not attempted here".
 
-- [ ] E1. Circle energy: if `θ` is `C¹` on `[0, 2π]` and `θ (2π) − θ 0 = 2π Q`, then
+- [x] E1. Circle energy: if `θ` is `C¹` on `[0, 2π]` and `θ (2π) − θ 0 = 2π Q`, then
   `2π Q² ≤ ∫ φ in 0..2π, (deriv θ φ) ^ 2` (expand `∫ (θ' − Q)² ≥ 0`). File `BLTAudit/CircleEnergy.lean`.
-- [ ] E2. Annulus logarithm (L13): for `0 < r < s` and `g` interval-integrable on `[r, s]` with
+  - Done 2026-11-22 00:21 UTC at c1c8eca: `circle_energy`, `interval_energy_lower`, `integral_sq_sub_const`. "`θ` is `C¹` on `[0, 2π]`" is read as: `θ : ℝ → ℝ` is differentiable at every point of the closed interval and `deriv θ` is continuous on it. `interval_energy_lower` is the same bound on any `[a, b]` with `a ≤ b`: `(b − a) Q² ≤ ∫ x in a..b, (deriv θ x) ^ 2` when `θ b − θ a = (b − a) Q`. `Q` is any real number.
+- [x] E2. Annulus logarithm (L13): for `0 < r < s` and `g` interval-integrable on `[r, s]` with
   `2π Q² ≤ g ρ` there, `2π Q² * log (s / r) ≤ ∫ ρ in r..s, g ρ / ρ`. File `BLTAudit/AnnulusEnergy.lean`.
-- [ ] E3. Bilinear interpolation (L8)–(L10) with zero gauge error: for corner values
+  - Done 2026-11-22 00:25 UTC at 0cf0fcb: `annulus_energy`, `annulus_log_lower`, `integral_const_mul_inv`, `inv_continuousOn_of_pos`. `annulus_log_lower` is the same bound with any real constant `c` in place of `2π Q²`; the lower bound `c ≤ g ρ` is assumed on the closed interval `[r, s]`.
+- [x] E3. Bilinear interpolation (L8)–(L10) with zero gauge error: for corner values
   `θ₀₀ θ₁₀ θ₀₁ θ₁₁` and the bilinear interpolant `θ` on `[0,1]²`,
   `(∂ₓθ)² + (∂ᵧθ)² ≤ W x y := (1−y) b_bot² + y b_top² + (1−x) b_left² + x b_right²`, and
   `∫∫ W = (b_bot² + b_top² + b_left² + b_right²) / 2`. File `BLTAudit/BilinearInterp.lean`.
-- [ ] E4. Ball merging (§4.3): in a real normed space, if `‖c₁ − c₂‖ ≤ r₁ + r₂` with `0 < r₁`, `0 < r₂`,
+  - Done 2026-11-22 00:30 UTC at be37af2: `bilinInterp_energy`, `bilinInterp_grad_le`, `integral_bilinW`, `integral_zero_one_affine`, `sq_convex_comb_le`, `hasDerivAt_bilinInterp_x`, `hasDerivAt_bilinInterp_y`, `bilinInterp_corners`. `bilinInterp` and `bilinW` are defined in this file, with `b_bot = θ₁₀ − θ₀₀`, `b_top = θ₁₁ − θ₀₁`, `b_left = θ₀₁ − θ₀₀`, `b_right = θ₁₁ − θ₁₀`. `∂ₓθ` and `∂ᵧθ` are `deriv` of the one-variable slices, and `∫∫ W` is the iterated interval integral `∫ y in 0..1, ∫ x in 0..1, W x y`.
+- [x] E4. Ball merging (§4.3): in a real normed space, if `‖c₁ − c₂‖ ≤ r₁ + r₂` with `0 < r₁`, `0 < r₂`,
   then `c = c₁ + (r₂ / (r₁ + r₂)) • (c₂ − c₁)` has `‖c − c₁‖ ≤ r₂`, `‖c − c₂‖ ≤ r₁`,
   `ball c₁ r₁ ∪ ball c₂ r₂ ⊆ ball c (r₁ + r₂)`, and `r₁ − ‖x − c₁‖ ≤ (r₁ + r₂) − ‖x − c‖` for all `x`.
   File `BLTAudit/BallMerge.lean`.
-- [ ] E5. Final arithmetic of Theorem 4.1, (L17)–(L19), from named real hypotheses only: for real
+  - Done 2026-11-22 00:35 UTC at 3a0dc8f: `ball_merge`, `ball_union_subset_merge`, `merge_margin_left`, `merge_margin_right`, `norm_sub_le_of_left`, `norm_mergeCenter_sub_left`, `norm_mergeCenter_sub_right`. The center `c` is `mergeCenter c₁ c₂ r₁ r₂`, defined in this file as in the item. `merge_margin_right` is the same margin inequality for the second ball, `r₂ − ‖x − c₂‖ ≤ (r₁ + r₂) − ‖x − c‖`.
+- [x] E5. Final arithmetic of Theorem 4.1, (L17)–(L19), from named real hypotheses only: for real
   `d ≥ 3` and `0 ≤ C`, if `2π log T ≤ (1 + C / log d) * A + K`, `T = d / √(log d) / S₀`,
   `0 < S₀ ≤ C₂ (log d)³` and `A ≤ C₀ log d`, then
   `2π log d − 7π log (log d) − (2π log C₂ + C * C₀ + K) ≤ A`. File `BLTAudit/LowerBoundArithmetic.lean`.
+  - Done 2026-11-22 00:35 UTC at e59f6ae: `lower_bound_arithmetic`, `log_T_eq`, `pos_of_le_mul_pow`, `log_S₀_le`, `div_mul_le_of_le_mul`. The four inputs of the item are hypotheses of `lower_bound_arithmetic` (`hT`, `hTdef`, `hS₀` with `hS`, `hA`); `0 < C₂` is derived from `0 < S₀ ≤ C₂ (log d)³`. Nothing about where these inputs come from is proved.
 
 ## F. Assembly: Theorem 1.1 from named hypotheses
 
