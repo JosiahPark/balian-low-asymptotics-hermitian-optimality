@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 00:28 UTC at commit `0cf0fcb2dbda`.
+Checked 2026-11-22 00:33 UTC at commit `be37af23ffaf`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 240 of 240
+- Theorems verified with standard axioms only: 248 of 248
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -19,6 +19,14 @@ Checked 2026-11-22 00:28 UTC at commit `0cf0fcb2dbda`.
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.energy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.zakEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.bilinInterp_corners` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.hasDerivAt_bilinInterp_x` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.hasDerivAt_bilinInterp_y` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.sq_convex_comb_le` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.bilinInterp_grad_le` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.integral_zero_one_affine` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.integral_bilinW` | verified (standard axioms only) |
+| BLTAudit/BilinearInterp.lean | `BLT.bilinInterp_energy` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.integral_sq_sub_const` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.interval_energy_lower` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.circle_energy` | verified (standard axioms only) |

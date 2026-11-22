@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 00:28 UTC",
-  "commit": "0cf0fcb2dbda3a203baefd4bd3a97225fd642c77",
+  "checked_at": "2026-11-22 00:33 UTC",
+  "commit": "be37af23ffafd5555aef9ce662cc75049229d70c",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 240,
-  "verified": 240,
+  "theorems": 248,
+  "verified": 248,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -94,6 +94,86 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.bilinInterp_corners",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.hasDerivAt_bilinInterp_x",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.hasDerivAt_bilinInterp_y",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.sq_convex_comb_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.bilinInterp_grad_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.integral_zero_one_affine",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.integral_bilinW",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BilinearInterp.lean",
+      "theorem": "BLT.bilinInterp_energy",
       "axioms": [
         "propext",
         "Classical.choice",
