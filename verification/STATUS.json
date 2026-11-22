@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 01:29 UTC",
-  "commit": "20f3344a37deade743ffc9fcc31e297c3065e9e2",
+  "checked_at": "2026-11-22 01:36 UTC",
+  "commit": "018bb61e05b52920645560af2a2469ff615b4fa9",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 270,
-  "verified": 270,
+  "theorems": 276,
+  "verified": 276,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1212,6 +1212,26 @@
       "status": "verified (standard axioms only)"
     },
     {
+      "file": "BLTAudit/LimitConstant.lean",
+      "theorem": "BLT.limit_constant_of_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LimitConstant.lean",
+      "theorem": "BLT.limit_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.log_T_eq",
       "axioms": [
@@ -1254,6 +1274,46 @@
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.lower_bound_arithmetic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainConditional.lean",
+      "theorem": "BLT.aSeq_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainConditional.lean",
+      "theorem": "BLT.ASeq_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainConditional.lean",
+      "theorem": "BLT.main_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainConditional.lean",
+      "theorem": "BLT.main_conditional",
       "axioms": [
         "propext",
         "Classical.choice",

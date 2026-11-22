@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 01:29 UTC at commit `20f3344a37de`.
+Checked 2026-11-22 01:36 UTC at commit `018bb61e05b5`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 270 of 270
+- Theorems verified with standard axioms only: 276 of 276
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -130,11 +130,17 @@ Checked 2026-11-22 01:29 UTC at commit `20f3344a37de`.
 | BLTAudit/GroundState.lean | `BLT.ne_zero_of_eig` | verified (standard axioms only) |
 | BLTAudit/GroundState.lean | `BLT.isGround_unique` | verified (standard axioms only) |
 | BLTAudit/GroundState.lean | `BLT.ground_state` | verified (standard axioms only) |
+| BLTAudit/LimitConstant.lean | `BLT.limit_constant_of_bounds` | verified (standard axioms only) |
+| BLTAudit/LimitConstant.lean | `BLT.limit_constant` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.log_T_eq` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.pos_of_le_mul_pow` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.log_S₀_le` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.div_mul_le_of_le_mul` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.lower_bound_arithmetic` | verified (standard axioms only) |
+| BLTAudit/MainConditional.lean | `BLT.aSeq_eq` | verified (standard axioms only) |
+| BLTAudit/MainConditional.lean | `BLT.ASeq_eq` | verified (standard axioms only) |
+| BLTAudit/MainConditional.lean | `BLT.main_bounds` | verified (standard axioms only) |
+| BLTAudit/MainConditional.lean | `BLT.main_conditional` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
