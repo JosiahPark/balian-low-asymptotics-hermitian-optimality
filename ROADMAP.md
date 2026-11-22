@@ -313,10 +313,11 @@ torus and the ball growth as a whole are listed under "Not attempted here".
 §5. The statement layer and the last step of the proof, in the style of a hypothesis ledger: the two
 analytic halves enter as named hypotheses, and Lean checks what follows from them.
 
-- [ ] F1. Statement layer: `Admissible f` (the vectors `gabor f n m`, `n m < d`, are orthonormal for
+- [x] F1. Statement layer: `Admissible f` (the vectors `gabor f n m`, `n m < d`, are orthonormal for
   `ip`), `scaledEnergy f = d ^ 2 * energy f` and `aMin d = ⨅ f : {f // Admissible f}, scaledEnergy f`,
   with `0 ≤ aMin d` and `aMin d ≤ scaledEnergy f` for admissible `f`. Definitions and these two facts
   only. File `BLTAudit/Statements.lean`.
+  - Done 2026-11-22 01:01 UTC at 3cf8c2c: `aMin_nonneg`, `aMin_le`, `bddBelow_scaledEnergy`, `scaledEnergy_nonneg`. `Admissible f` is the orthonormality hypothesis of A5c, for naturals `n m n' m' < d`; `aMin d` is Mathlib's `iInf` on `ℝ`, which is `0` for an empty family. That admissible windows exist, that the infimum is attained, and the link with `‖zak f q r‖ = 1 / d` (A4d, A5c) are not stated.
 - [ ] F2. Relative optimality from two named bounds (§5): for real sequences `A a : ℕ → ℝ` with
   `a d ≤ A d`, `[HU] A d ≤ 2π log d + C₁` and `[HL] 2π log d − 7π log (log d) − C₂ ≤ a d` for all large
   `d`, conclude `0 ≤ A d − a d ≤ 7π log (log d) + C₁ + C₂` eventually and
