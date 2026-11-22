@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 00:33 UTC",
-  "commit": "be37af23ffafd5555aef9ce662cc75049229d70c",
+  "checked_at": "2026-11-22 00:41 UTC",
+  "commit": "e59f6ae5a7af70b2358e9c59d096de367ff03108",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 248,
-  "verified": 248,
+  "theorems": 260,
+  "verified": 260,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -44,6 +44,76 @@
     {
       "file": "BLTAudit/AnnulusEnergy.lean",
       "theorem": "BLT.annulus_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.norm_mergeCenter_sub_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.norm_mergeCenter_sub_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.norm_sub_le_of_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.merge_margin_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.merge_margin_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.ball_union_subset_merge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/BallMerge.lean",
+      "theorem": "BLT.ball_merge",
       "axioms": [
         "propext",
         "Classical.choice",
@@ -1134,6 +1204,56 @@
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.ground_state",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.log_T_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.pos_of_le_mul_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.log_S\u2080_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.div_mul_le_of_le_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundArithmetic.lean",
+      "theorem": "BLT.lower_bound_arithmetic",
       "axioms": [
         "propext",
         "Classical.choice",

@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 00:33 UTC at commit `be37af23ffaf`.
+Checked 2026-11-22 00:41 UTC at commit `e59f6ae5a7af`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 248 of 248
+- Theorems verified with standard axioms only: 260 of 260
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -14,6 +14,13 @@ Checked 2026-11-22 00:33 UTC at commit `be37af23ffaf`.
 | BLTAudit/AnnulusEnergy.lean | `BLT.integral_const_mul_inv` | verified (standard axioms only) |
 | BLTAudit/AnnulusEnergy.lean | `BLT.annulus_log_lower` | verified (standard axioms only) |
 | BLTAudit/AnnulusEnergy.lean | `BLT.annulus_energy` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.norm_mergeCenter_sub_left` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.norm_mergeCenter_sub_right` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.norm_sub_le_of_left` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.merge_margin_left` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.merge_margin_right` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.ball_union_subset_merge` | verified (standard axioms only) |
+| BLTAudit/BallMerge.lean | `BLT.ball_merge` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.transl_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.diffOp_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
@@ -123,6 +130,11 @@ Checked 2026-11-22 00:33 UTC at commit `be37af23ffaf`.
 | BLTAudit/GroundState.lean | `BLT.ne_zero_of_eig` | verified (standard axioms only) |
 | BLTAudit/GroundState.lean | `BLT.isGround_unique` | verified (standard axioms only) |
 | BLTAudit/GroundState.lean | `BLT.ground_state` | verified (standard axioms only) |
+| BLTAudit/LowerBoundArithmetic.lean | `BLT.log_T_eq` | verified (standard axioms only) |
+| BLTAudit/LowerBoundArithmetic.lean | `BLT.pos_of_le_mul_pow` | verified (standard axioms only) |
+| BLTAudit/LowerBoundArithmetic.lean | `BLT.log_S₀_le` | verified (standard axioms only) |
+| BLTAudit/LowerBoundArithmetic.lean | `BLT.div_mul_le_of_le_mul` | verified (standard axioms only) |
+| BLTAudit/LowerBoundArithmetic.lean | `BLT.lower_bound_arithmetic` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
