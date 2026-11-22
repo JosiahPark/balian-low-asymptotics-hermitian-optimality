@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-21 23:30 UTC at commit `2fdd980874cb`.
+Checked 2026-11-22 00:24 UTC at commit `c1c8eca70b10`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 233 of 233
+- Theorems verified with standard axioms only: 236 of 236
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -15,6 +15,9 @@ Checked 2026-11-21 23:30 UTC at commit `2fdd980874cb`.
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.energy_nonneg` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.zakEnergy_nonneg` | verified (standard axioms only) |
+| BLTAudit/CircleEnergy.lean | `BLT.integral_sq_sub_const` | verified (standard axioms only) |
+| BLTAudit/CircleEnergy.lean | `BLT.interval_energy_lower` | verified (standard axioms only) |
+| BLTAudit/CircleEnergy.lean | `BLT.circle_energy` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_one_sq_of_norm_eq_one` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_sq_eq_four_sin_sq` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_mag` | verified (standard axioms only) |

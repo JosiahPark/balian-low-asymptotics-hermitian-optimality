@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-21 23:30 UTC",
-  "commit": "2fdd980874cb1f899e692b808655c47cedbad5b8",
+  "checked_at": "2026-11-22 00:24 UTC",
+  "commit": "c1c8eca70b106d322f24212c5b14b98923ff204f",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 233,
-  "verified": 233,
+  "theorems": 236,
+  "verified": 236,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -54,6 +54,36 @@
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/CircleEnergy.lean",
+      "theorem": "BLT.integral_sq_sub_const",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/CircleEnergy.lean",
+      "theorem": "BLT.interval_energy_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/CircleEnergy.lean",
+      "theorem": "BLT.circle_energy",
       "axioms": [
         "propext",
         "Classical.choice",
