@@ -1,16 +1,56 @@
 {
-  "checked_at": "2026-11-22 00:24 UTC",
-  "commit": "c1c8eca70b106d322f24212c5b14b98923ff204f",
+  "checked_at": "2026-11-22 00:28 UTC",
+  "commit": "0cf0fcb2dbda3a203baefd4bd3a97225fd642c77",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 236,
-  "verified": 236,
+  "theorems": 240,
+  "verified": 240,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
   "tautologies": [],
   "results": [
+    {
+      "file": "BLTAudit/AnnulusEnergy.lean",
+      "theorem": "BLT.inv_continuousOn_of_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/AnnulusEnergy.lean",
+      "theorem": "BLT.integral_const_mul_inv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/AnnulusEnergy.lean",
+      "theorem": "BLT.annulus_log_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/AnnulusEnergy.lean",
+      "theorem": "BLT.annulus_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.transl_apply",

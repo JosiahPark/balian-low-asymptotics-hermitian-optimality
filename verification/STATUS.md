@@ -1,15 +1,19 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 00:24 UTC at commit `c1c8eca70b10`.
+Checked 2026-11-22 00:28 UTC at commit `0cf0fcb2dbda`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 236 of 236
+- Theorems verified with standard axioms only: 240 of 240
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
 
 | file | theorem | status |
 |---|---|---|
+| BLTAudit/AnnulusEnergy.lean | `BLT.inv_continuousOn_of_pos` | verified (standard axioms only) |
+| BLTAudit/AnnulusEnergy.lean | `BLT.integral_const_mul_inv` | verified (standard axioms only) |
+| BLTAudit/AnnulusEnergy.lean | `BLT.annulus_log_lower` | verified (standard axioms only) |
+| BLTAudit/AnnulusEnergy.lean | `BLT.annulus_energy` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.transl_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.diffOp_apply` | verified (standard axioms only) |
 | BLTAudit/Basic.lean | `BLT.modul_apply` | verified (standard axioms only) |
