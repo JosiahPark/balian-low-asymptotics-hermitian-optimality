@@ -318,17 +318,20 @@ analytic halves enter as named hypotheses, and Lean checks what follows from the
   with `0 ≤ aMin d` and `aMin d ≤ scaledEnergy f` for admissible `f`. Definitions and these two facts
   only. File `BLTAudit/Statements.lean`.
   - Done 2026-11-22 01:01 UTC at 3cf8c2c: `aMin_nonneg`, `aMin_le`, `bddBelow_scaledEnergy`, `scaledEnergy_nonneg`. `Admissible f` is the orthonormality hypothesis of A5c, for naturals `n m n' m' < d`; `aMin d` is Mathlib's `iInf` on `ℝ`, which is `0` for an empty family. That admissible windows exist, that the infimum is attained, and the link with `‖zak f q r‖ = 1 / d` (A4d, A5c) are not stated.
-- [ ] F2. Relative optimality from two named bounds (§5): for real sequences `A a : ℕ → ℝ` with
+- [x] F2. Relative optimality from two named bounds (§5): for real sequences `A a : ℕ → ℝ` with
   `a d ≤ A d`, `[HU] A d ≤ 2π log d + C₁` and `[HL] 2π log d − 7π log (log d) − C₂ ≤ a d` for all large
   `d`, conclude `0 ≤ A d − a d ≤ 7π log (log d) + C₁ + C₂` eventually and
   `Tendsto (fun d => A d / a d) atTop (𝓝 1)`. File `BLTAudit/RelativeOptimality.lean`.
-- [ ] F3. The limit constant from the same two bounds: if eventually
+  - Done 2026-11-22 01:25 UTC at 20f3344: `relative_optimality`, `tendsto_div_log_of_bounds`, `tendsto_loglog_div_log`, `tendsto_log_div_self`, `tendsto_inv_log_nat`, `tendsto_log_nat`. "For all large `d`" is `∀ᶠ d in atTop` on `ℕ`, with `log d` the real logarithm of `(d : ℝ)`; `a d ≤ A d` is also assumed only for large `d`. `A d / a d → 1` is proved through `A d / log d → 2π` and `a d / log d → 2π` (`tendsto_div_log_of_bounds`, reused by F3). [HU] and [HL] are hypotheses of the theorem; neither is proved.
+- [x] F3. The limit constant from the same two bounds: if eventually
   `2π log d − 7π log (log d) − C ≤ a d ≤ 2π log d + C`, then
   `Tendsto (fun d => a d / log d) atTop (𝓝 (2π))`. File `BLTAudit/LimitConstant.lean`.
-- [ ] F4. Conditional main theorem: combine F1–F3 into one statement about `aMin` and a candidate family
+  - Done 2026-11-22 01:29 UTC at b8cc459: `limit_constant`, `limit_constant_of_bounds`. Both follow from `tendsto_div_log_of_bounds` of F2 with `C₁ = C₂ = C`; the two bounds are hypotheses.
+- [x] F4. Conditional main theorem: combine F1–F3 into one statement about `aMin` and a candidate family
   `f_d`, whose only hypotheses are `[HU]` (the trial bound (U4) with (U14)) and `[HL]` (the lower bound
   (L19)), each a named structure field tagged `/-- [HU] ... -/`, `/-- [HL] ... -/`.
   File `BLTAudit/MainConditional.lean`.
+  - Done 2026-11-22 01:30 UTC at 018bb61: `main_conditional`, `main_bounds`, `aSeq_eq`, `ASeq_eq`. The two named hypotheses are the fields `HU` and `HL` of the structure `MainHypotheses f C₁ C₂` (defined in this file, with docstrings tagged [HU] and [HL]); neither is proved, so Theorem 1.1 is not proved: `main_conditional` derives its shape (the two-sided bound, `aMin d / log d → 2π`, and `scaledEnergy (f d) / aMin d → 1`) from [HU] and [HL] only. `aSeq d` and `ASeq f d`, defined in this file, are `aMin d` and `scaledEnergy (f d)` of F1 as real sequences, `0` at `d = 0`. [HU] is assumed for all large `d`; the paper's use of `f_d` along odd `d` is not modelled.
 
 ## Not attempted here
 
