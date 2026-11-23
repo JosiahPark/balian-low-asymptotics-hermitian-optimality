@@ -387,6 +387,10 @@ lower bound, before the oscillator approximation; and a final statement aligned 
 actual candidate `f_d`, odd `d` only, and its `2π log d + O(1)` energy recorded separately). F4 stays
 as it was; H3 is the ledger to shrink from now on. Its five inputs are [HZ], [HV], [HL] (enough
 for the milestone) and [HN], [HE] (for `f_d`).
+After H4–H10 (2026-11-23) the ledger reads: milestone from [HZ], [HV] (equivalently a bound on
+`zakEnergy d (zakExt d (gaussPhase d))`, H5) and [HLζ] (Theorem 4.1 for twisted arrays, H4); for `f_d`
+add [HA] (uniform Zak approximation, H10, which with [HZ] gives [HN]) and [HE]. Under [HZ],
+`|F(x,y)| ≥ c · dist((x,y), z₀)` on the square (H7) and `|F| ≥ c/(2d)` on the odd grid (H9) are proved.
 
 - [x] H1. Inverse Zak transform and windows with a prescribed Zak array: `zakEquiv`, `zakInv`,
   `zak_zakInv` (`Z (Z⁻¹ G) = G`), `ph`, `norm_ph`, `zakInv_admissible` (a unit-modulus array `u` gives
@@ -407,32 +411,71 @@ for the milestone) and [HN], [HE] (for `f_d`).
   the bounds on `a_d`, `0 ≤ d² E(f_d) − a_d ≤ 7π log log d + O(1)`, both limits along odd `d`).
   File `BLTAudit/MainOdd.lean`.
   - Done 2026-11-23 02:43 UTC at 2d31964 (verified 295/295). Nothing here proves the milestone, Theorem 1.1 or Theorem 4.1: all five inputs are named hypotheses.
-- [ ] H4. [HL] in Zak coordinates: `lowerBound_of_zak`: let [HLζ] be the statement "for every `K`
+- [x] H4. [HL] in Zak coordinates: `lowerBound_of_zak`: let [HLζ] be the statement "for every `K`
   there are `C`, `D` such that for `d ≥ D` every `ζ` with `IsTwisted d ζ` and
   `zakEnergy d ζ ≤ K log d` has `2π log d − 7π log log d − C ≤ zakEnergy d ζ`" (Theorem 4.1 exactly as
   §4 states it); prove `[HLζ] → LowerBoundHyp`. For admissible `f`, build `ζ` from `d * zak f` by the
   two gluing rules (define `zakExt d u : ℤ × ℤ → ℂ` by `q ↦ q mod d` and the factor
   `exp (−2πi q ⌊r/d⌋ / d)`), show `IsTwisted d (zakExt ...)` using A5c (unit modulus), and use
   `zak_energy_identity_of_isTwisted` of A7c. File `BLTAudit/LowerBoundZak.lean`.
-- [ ] H5. [HV] as a statement about the explicit phase array: `scaledEnergy_zakInv`: for
+  - Done 2026-11-23 03:07 UTC at a11b7e1 (verified 309/309): `zakExt`, `twistFactor`, `isTwisted_zakExt`, `zakExt_of_lt`, `scaledEnergy_eq_zakEnergy`, `ZakLowerBoundHyp`, `lowerBound_of_zak`. The input [HL] of H3 may now be replaced by [HLζ].
+- [x] H5. [HV] as a statement about the explicit phase array: `scaledEnergy_zakInv`: for
   unit-modulus `u`, `scaledEnergy (zakInv (fun q r => d⁻¹ * u q r)) = zakEnergy d (zakExt d u)` (H1,
   H4's `zakExt`, A7c); hence `vortex` of H3 is equivalent to a bound on
   `zakEnergy d (zakExt d (gaussPhase d))`, with no Fourier transform left. `vortex_iff_zakEnergy`.
   File `BLTAudit/GaussVortexZak.lean`.
-- [ ] H6. Linear lower bound near the zero, the local half of `|F(z)| ≥ c |z − z₀|`: from C4 and C5
+  - Done 2026-11-23 03:07 UTC at a11b7e1 (verified 309/309): `scaledEnergy_zakInv`, `gaussCand_scaledEnergy_eq`, `vortex_iff_zakEnergy`, `zakEnergy_eq_sum_range`.
+- [x] H6. Linear lower bound near the zero, the local half of `|F(z)| ≥ c |z − z₀|`: from C4 and C5
   (`hasDerivAt_gaussZak_fst`, `deriv_gaussZak_fst_zero_ne_zero`), there are `ρ > 0`, `c > 0` with
   `c * ‖(x − 1/2, y − 1/2)‖ ≤ ‖gaussZak x y‖` for `‖(x − 1/2, y − 1/2)‖ ≤ ρ` (differentiability of the
   holomorphic `Θ` of C4 at the zero, `HasDerivAt.isLittleO`). `gaussZak_ge_linear_near_zero`.
   File `BLTAudit/GaussLinearNearZero.lean`.
-- [ ] H7. The global half under [HZ]: `gaussZak_ge_linear`: assuming `GaussZeroUnique`, there is
+  - Done 2026-11-23 03:12 UTC at 95e8ecc (verified 317/317): `zakZeroPt`, `thetaI`, `thetaI_zakZeroPt`, `thetaI'_zakZeroPt_ne_zero`, `thetaI_ge_linear_near_zero`, `gauss_ge_of_abs_le`, `gaussZak_ge_linear_near_zero`, `norm_sub_zakZeroPt_sq`. The bound is stated with `‖(y − x i) − z₀‖` in `ℂ`; the constant is `(‖θ'(z₀)‖/2) · 2^{1/4} e^{−4π}`.
+- [x] H7. The global half under [HZ]: `gaussZak_ge_linear`: assuming `GaussZeroUnique`, there is
   `c > 0` with `c * dist (x, y) (1/2, 1/2) ≤ ‖gaussZak x y‖` on `[0,1]²` (continuity of `gaussZak`
   from C1, compactness of `[0,1]² \ ball z₀ ρ`, H6 inside the ball; points with `x = 1` or `y = 1`
   through C2). File `BLTAudit/GaussLinearGlobal.lean`.
-- [ ] H8. [HZ] as a statement about `jacobiTheta₂`: `gaussZeroUnique_iff_theta`: by C1,
+  - Done 2026-11-23 03:21 UTC at c453ac5 (verified 329/329): `gaussZak_ne_zero_of_closed`, `continuous_gaussZak_pair`, `continuous_thetaI`, `continuous_gauss`, `norm_sub_zakZeroPt_le_two`, `gaussZak_ge_linear`. On the closed square `[0,1]²`, with `GaussZeroUnique` as the hypothesis.
+- [x] H8. [HZ] as a statement about `jacobiTheta₂`: `gaussZeroUnique_iff_theta`: by C1,
   `GaussZeroUnique` holds iff `jacobiTheta₂ z I ≠ 0` for every `z = y − x I` with `x y ∈ [0,1)`,
   `(x, y) ≠ (1/2, 1/2)` (the prefactor `gauss x` is positive, `gauss_pos` of C3). This isolates the
   Jacobi-triple-product input as a single statement about Mathlib's theta function.
   File `BLTAudit/GaussZeroTheta.lean`.
+  - Done 2026-11-23 03:21 UTC at c453ac5 (verified 329/329): `gaussZak_eq_zero_iff`, `gaussZeroUnique_iff_theta`, `jacobiTheta₂_zakZeroPt`. Stated with `¬ (x = 1/2 ∧ y = 1/2)`.
+- [x] H9. The grid lower bound under [HZ]: `odd_grid_abs_sub_half` (`|a/d − 1/2| ≥ 1/(2d)` for odd `d`),
+  `odd_grid_norm_sub_zakZeroPt`, `gaussZak_grid_lower` (there is `c > 0` with `c/(2d) ≤ |F(r/d, (−q)/d)|`
+  for every odd `d` and all `q r`), the quantitative form of `gaussZak_grid_ne_zero` of H2.
+  File `BLTAudit/GaussGridLower.lean`.
+  - Done 2026-11-23 03:27 UTC at 56398d6 (verified 332/332). The constant is `1/2` in place of the paper's `1/√2`.
+- [x] H10. [HN] from the uniform Zak approximation: structure `ZakApproxHyp C` ([HA]: for large odd `d`
+  there is `c_d ≠ 0` with `‖c_d⁻¹ · d · zak g_d q r − F(r/d, (−q)/d)‖ ≤ C/d²`, Lemma 3.1 with (3.4));
+  `nonvanish_of_approx : [HZ] → [HA] → nonvanish`, `hermiteHyp_of_approx`.
+  File `BLTAudit/NonvanishFromApprox.lean`.
+  - Done 2026-11-23 03:31 UTC at 10fe472 (verified 334/334). The input [HN] of H3 is now replaced by [HA] (plus [HZ]).
+- [ ] H11. Phase perturbation: `norm_ph_sub_ph_le`: for `a b : ℂ` with `b ≠ 0`,
+  `‖ph a − ph b‖ ≤ 2 * ‖a − b‖ / ‖b‖` (write `ph a − ph b = (a − b)/‖a‖ + b (1/‖a‖ − 1/‖b‖)` and use
+  `|‖a‖ − ‖b‖| ≤ ‖a − b‖`; the case `a = 0` gives `‖ph a − ph b‖ = 1 ≤ 2‖b‖/‖b‖`). Hence
+  `norm_ph_sub_ph_le_of_approx`: if `‖a − b‖ ≤ ε` and `m ≤ ‖b‖` with `0 < m`, then
+  `‖ph a − ph b‖ ≤ 2 ε / m`; and `ph_mul_pos`: `ph (c * a) = ph c * ph a` for `c ≠ 0`, so a nonzero
+  scalar `c_d` changes `ph` by a constant unimodular factor. File `BLTAudit/PhasePerturbation.lean`.
+- [ ] H12. Energy of a constant phase change: `zakEnergy_const_mul`: for unimodular `u₀`,
+  `zakEnergy d (fun p => u₀ * ζ p) = zakEnergy d ζ` (`‖u₀ (a − b)‖ = ‖a − b‖` edge by edge); and
+  `scaledEnergy_const_mul` for windows: `scaledEnergy (fun j => u₀ * f j) = scaledEnergy f`. Hence
+  the scalar `c_d` of [HA] does not change the energy of `hermiteCand d`. File `BLTAudit/EnergyConstPhase.lean`.
+- [ ] H13. Zak-energy comparison, the concrete form of G5 for twisted arrays: `zakEnergy_sqrt_sub_le`:
+  for `ζ ζ' : ℤ × ℤ → ℂ`, `|√(zakEnergy d ζ) − √(zakEnergy d ζ')| ≤ √(zakEnergy d (ζ − ζ'))` (the energy is
+  the squared `ℓ²` norm of the edge-difference vector, which is linear in `ζ`; triangle inequality for
+  the `ℓ²` norm on `Fin (2 d²) → ℂ` or `EuclideanSpace`), and `zakEnergy_le_eight_sum`:
+  `zakEnergy d δ ≤ 8 * ∑ q ∈ range (d+1), ∑ r ∈ range (d+1), ‖δ (q, r)‖ ^ 2` from `‖a − b‖² ≤ 2‖a‖² + 2‖b‖²`
+  (`mag` is unimodular). File `BLTAudit/ZakEnergyCompare.lean`.
+- [ ] H14. [HE] from [HV], [HA], [HZ] and a named pointwise phase bound: with `W = ph (d · zak g_d)` and
+  `U = gaussPhase d`, H11 and H9 give `‖W q r − U q r‖ ≤ (4 C/c) / d` for large odd `d`; combine with
+  H12, H13 and `vortex` to show `|scaledEnergy (hermiteCand d) − 2π log d| ≤ C'` requires the
+  `O(h √log d)` bound on `‖W − U‖_{ℓ²}` (dyadic summation, §3.2). State that bound as the named input
+  `[HW] : ∑ q r, ‖W q r − U q r‖² ≤ C h² log d` and prove `energy_asymp_of_W : [HV] → [HW] → [HA] →
+  [HZ] → energy_asymp` (the field [HE] of H3), using H13 and `√(a) ≤ √(2π log d + C)`. The lower half
+  `2π log d − C ≤ scaledEnergy (hermiteCand d)` comes from `milestone_odd_bounds` and `aMin_le` of F1.
+  File `BLTAudit/EnergyFromTransfer.lean`.
 
 ## Not attempted here
 
