@@ -1,11 +1,11 @@
 import BLTAudit.LowerBoundZak
+import BLTAudit.EdgeEnergy
 
 /-!
 # H12–H13. Comparing Zak energies: constant phases, sums, and the `ℓ²` bound
 
 For arrays on `ℤ²` and the twisted continuation `zakExt` of H4. Proved here:
 
-* `norm_mag`: the magnetic multiplier is unimodular;
 * `zakExt_add`, `zakExt_const_mul`, `zakExt_neg`: `zakExt` is linear in the array;
 * `zakEnergy_const_mul` (H12): a constant unimodular factor does not change `zakEnergy`;
 * `sq_norm_add_le_mul`: `‖x + y‖² ≤ (1 + t) ‖x‖² + (1 + t⁻¹) ‖y‖²` for `t > 0`;
@@ -27,17 +27,6 @@ open scoped Real
 namespace BLT
 
 variable {d : ℕ} [NeZero d]
-
-theorem norm_mag (r : ℤ) : ‖mag d r‖ = 1 := by
-  unfold mag
-  have h : 2 * Real.pi * Complex.I * (r : ℂ) / ((d : ℂ) ^ 2) =
-      ((2 * Real.pi * r / (d : ℝ) ^ 2 : ℝ) : ℂ) * Complex.I := by
-    push_cast
-    ring
-  rw [h]
-  first
-    | exact Complex.norm_exp_ofReal_mul_I _
-    | simp [Complex.norm_exp]
 
 theorem zakExt_add (u v : ZMod d → ZMod d → ℂ) :
     zakExt d (fun q r => u q r + v q r) = fun p => zakExt d u p + zakExt d v p := by
