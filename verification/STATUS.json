@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22 03:33 UTC",
-  "commit": "8b12b66753542bcf0a443aff1724d3395eebf625",
+  "checked_at": "2026-11-23 02:43 UTC",
+  "commit": "2d319647ab9e7d222215343ef03e20bac6d716f3",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 276,
-  "verified": 276,
+  "theorems": 295,
+  "verified": 295,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -244,6 +244,96 @@
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.bilinInterp_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.hermiteFam_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.groundR_sq_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.groundR_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.groundR_min",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.hermiteCand_admissible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.val_div_lt_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.val_div_ne_half",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.gaussZak_grid_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/Candidates.lean",
+      "theorem": "BLT.gaussCand_admissible",
       "axioms": [
         "propext",
         "Classical.choice",
@@ -1314,6 +1404,56 @@
     {
       "file": "BLTAudit/MainConditional.lean",
       "theorem": "BLT.main_conditional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainOdd.lean",
+      "theorem": "BLT.exists_le_log",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainOdd.lean",
+      "theorem": "BLT.tendsto_odd_of_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainOdd.lean",
+      "theorem": "BLT.milestone_odd_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainOdd.lean",
+      "theorem": "BLT.milestone_odd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/MainOdd.lean",
+      "theorem": "BLT.main_odd_conditional",
       "axioms": [
         "propext",
         "Classical.choice",
@@ -2553,6 +2693,56 @@
     {
       "file": "BLTAudit/ZakGluing.lean",
       "theorem": "BLT.gaussZak_add_one_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakInverse.lean",
+      "theorem": "BLT.zakInv_zakIndex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakInverse.lean",
+      "theorem": "BLT.zak_zakInv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakInverse.lean",
+      "theorem": "BLT.norm_ph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakInverse.lean",
+      "theorem": "BLT.zakInv_admissible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/ZakInverse.lean",
+      "theorem": "BLT.le_aMin_of_forall",
       "axioms": [
         "propext",
         "Classical.choice",

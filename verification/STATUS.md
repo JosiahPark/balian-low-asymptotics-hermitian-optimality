@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-22 03:33 UTC at commit `8b12b6675354`.
+Checked 2026-11-23 02:43 UTC at commit `2d319647ab9e`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 276 of 276
+- Theorems verified with standard axioms only: 295 of 295
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -34,6 +34,15 @@ Checked 2026-11-22 03:33 UTC at commit `8b12b6675354`.
 | BLTAudit/BilinearInterp.lean | `BLT.integral_zero_one_affine` | verified (standard axioms only) |
 | BLTAudit/BilinearInterp.lean | `BLT.integral_bilinW` | verified (standard axioms only) |
 | BLTAudit/BilinearInterp.lean | `BLT.bilinInterp_energy` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.hermiteFam_eq` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.groundR_sq_sum` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.groundR_pos` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.groundR_min` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.hermiteCand_admissible` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.val_div_lt_one` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.val_div_ne_half` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.gaussZak_grid_ne_zero` | verified (standard axioms only) |
+| BLTAudit/Candidates.lean | `BLT.gaussCand_admissible` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.integral_sq_sub_const` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.interval_energy_lower` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.circle_energy` | verified (standard axioms only) |
@@ -141,6 +150,11 @@ Checked 2026-11-22 03:33 UTC at commit `8b12b6675354`.
 | BLTAudit/MainConditional.lean | `BLT.ASeq_eq` | verified (standard axioms only) |
 | BLTAudit/MainConditional.lean | `BLT.main_bounds` | verified (standard axioms only) |
 | BLTAudit/MainConditional.lean | `BLT.main_conditional` | verified (standard axioms only) |
+| BLTAudit/MainOdd.lean | `BLT.exists_le_log` | verified (standard axioms only) |
+| BLTAudit/MainOdd.lean | `BLT.tendsto_odd_of_bounds` | verified (standard axioms only) |
+| BLTAudit/MainOdd.lean | `BLT.milestone_odd_bounds` | verified (standard axioms only) |
+| BLTAudit/MainOdd.lean | `BLT.milestone_odd` | verified (standard axioms only) |
+| BLTAudit/MainOdd.lean | `BLT.main_odd_conditional` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |
@@ -265,6 +279,11 @@ Checked 2026-11-22 03:33 UTC at commit `8b12b6675354`.
 | BLTAudit/ZakGluing.lean | `BLT.gaussZak_term_shift` | verified (standard axioms only) |
 | BLTAudit/ZakGluing.lean | `BLT.gaussZak_add_one_left` | verified (standard axioms only) |
 | BLTAudit/ZakGluing.lean | `BLT.gaussZak_add_one_right` | verified (standard axioms only) |
+| BLTAudit/ZakInverse.lean | `BLT.zakInv_zakIndex` | verified (standard axioms only) |
+| BLTAudit/ZakInverse.lean | `BLT.zak_zakInv` | verified (standard axioms only) |
+| BLTAudit/ZakInverse.lean | `BLT.norm_ph` | verified (standard axioms only) |
+| BLTAudit/ZakInverse.lean | `BLT.zakInv_admissible` | verified (standard axioms only) |
+| BLTAudit/ZakInverse.lean | `BLT.le_aMin_of_forall` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.zmod_val_natCast_of_lt` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.norm_sq_natCast_mul` | verified (standard axioms only) |
 | BLTAudit/ZakSeams.lean | `BLT.stdAddChar_neg_natCast` | verified (standard axioms only) |
