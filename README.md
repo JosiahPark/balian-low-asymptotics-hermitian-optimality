@@ -1,4 +1,4 @@
-# Finite Balian–Low: paper and Lean verification
+# Sharp finite Balian–Low asymptotics for finite Hermite Gabor windows
 
 This repository holds the note
 [*Relative asymptotic optimality of finite Hermite Gabor windows*](relative_asymptotic_optimality.pdf)
