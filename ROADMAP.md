@@ -338,12 +338,13 @@ analytic halves enter as named hypotheses, and Lean checks what follows from the
 §3.2–§3.3 and §4.1–§4.3. Model statements of single steps in the proofs of (U4), (U14) and (L19), each
 small enough for one file. None of them proves [HU] or [HL], and F4 keeps both as named hypotheses.
 
-- [ ] G1. Edge-angle comparison (L10): `edge_angle_sq_le`: for real `a η` with `|a| ≤ η` and `η ≤ 1`,
+- [x] G1. Edge-angle comparison (L10): `edge_angle_sq_le`: for real `a η` with `|a| ≤ η` and `η ≤ 1`,
   `a ^ 2 ≤ (1 + η ^ 2) * (4 * Real.sin (a / 2) ^ 2)`; hence for a finset `s` and `a : ι → ℝ` with
   `|a e| ≤ η ≤ 1` on `s`, `∑ e ∈ s, a e ^ 2 ≤ (1 + η ^ 2) * ∑ e ∈ s, 4 * Real.sin (a e / 2) ^ 2`
   (`four_sin_half_sq` of B4 gives `4 sin²(a/2) = 2 − 2 cos a`, and Mathlib's `Real.cos_bound` gives
   `cos a ≤ 1 − a²/2 + (5/96) a⁴` for `|a| ≤ 1`; then `(1 + η²)(1 − (5/48) a²) ≥ 1` when `a² ≤ η² ≤ 1`).
   The paper's constant `C` is `1` here. File `BLTAudit/EdgeAngleComparison.lean`.
+  - Done 2026-11-23 04:10 UTC at 098586a: `edge_angle_sq_le`, `sum_edge_angle_sq_le`, `weighted_edge_angle_sq_le`, `edge_angle_sq_le_self`, `sq_sub_quartic_le_four_sin_half_sq`, `cos_le_quartic` (verified 363/363). Proved with `C = 1` as stated; `weighted_edge_angle_sq_le` (weights `0 ≤ w e ≤ 1`, the coefficients with which (L8) counts an edge) and `edge_angle_sq_le_self` (`η = |a|`) are extra. (L10) itself, which edges are good, and the identification of `∑ 4 sin²(a_e/2)` with `zakEnergy` are not stated. Uses `four_sin_half_sq` of B4 and Mathlib's `Real.cos_bound`.
 - [ ] G2. Defect count (L5), (L14): `defect_count`: for `0 ≤ η ≤ π`,
   `4 / π ^ 2 * η ^ 2 ≤ 4 * Real.sin (η / 2) ^ 2` (Mathlib's `Real.mul_le_sin` at `η / 2`); for finsets,
   `(L.biUnion inc).card ≤ 2 * L.card` when every `inc e` with `e ∈ L` has at most two elements
