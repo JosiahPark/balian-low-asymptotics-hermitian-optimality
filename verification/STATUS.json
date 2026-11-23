@@ -1,371 +1,12 @@
 {
-  "checked_at": "2026-11-23 03:53 UTC",
-  "commit": "764b6fe360e7532a67220563ae5a9bcf8c0c5a68",
-  "all_verified": false,
+  "checked_at": "2026-11-23 03:58 UTC",
+  "commit": "ec9f03f21c3f7aff3812cbe42c53579361bb2d93",
+  "all_verified": true,
   "build_ok": true,
-  "lean_exit_code": 1,
-  "theorems": 358,
-  "verified": 0,
-  "problems": [
-    "BLT.inv_continuousOn_of_pos",
-    "BLT.integral_const_mul_inv",
-    "BLT.annulus_log_lower",
-    "BLT.annulus_energy",
-    "BLT.norm_mergeCenter_sub_left",
-    "BLT.norm_mergeCenter_sub_right",
-    "BLT.norm_sub_le_of_left",
-    "BLT.merge_margin_left",
-    "BLT.merge_margin_right",
-    "BLT.ball_union_subset_merge",
-    "BLT.ball_merge",
-    "BLT.transl_apply",
-    "BLT.diffOp_apply",
-    "BLT.modul_apply",
-    "BLT.energy_nonneg",
-    "BLT.zakEnergy_nonneg",
-    "BLT.bilinInterp_corners",
-    "BLT.hasDerivAt_bilinInterp_x",
-    "BLT.hasDerivAt_bilinInterp_y",
-    "BLT.sq_convex_comb_le",
-    "BLT.bilinInterp_grad_le",
-    "BLT.integral_zero_one_affine",
-    "BLT.integral_bilinW",
-    "BLT.bilinInterp_energy",
-    "BLT.hermiteFam_eq",
-    "BLT.groundR_sq_sum",
-    "BLT.groundR_pos",
-    "BLT.groundR_min",
-    "BLT.hermiteCand_admissible",
-    "BLT.val_div_lt_one",
-    "BLT.val_div_ne_half",
-    "BLT.gaussZak_grid_ne_zero",
-    "BLT.gaussCand_admissible",
-    "BLT.integral_sq_sub_const",
-    "BLT.interval_energy_lower",
-    "BLT.circle_energy",
-    "BLT.norm_sub_one_sq_of_norm_eq_one",
-    "BLT.norm_sub_sq_eq_four_sin_sq",
-    "BLT.norm_mag",
-    "BLT.norm_sq_edgeR",
-    "BLT.norm_sq_edgeQ",
-    "BLT.zakEnergy_eq_sum_sin_sq",
-    "BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted",
-    "BLT.mul_conj_of_norm_eq_one",
-    "BLT.unit_mul_mul_conj",
-    "BLT.mag_twist_cancel",
-    "BLT.norm_twist_factor",
-    "BLT.mag_add_period_mul_twist",
-    "BLT.aR_add_period_q",
-    "BLT.aR_add_period_r",
-    "BLT.aQ_add_period_q",
-    "BLT.aQ_add_period_r",
-    "BLT.hermiteCand_scaledEnergy_eq",
-    "BLT.zakEnergy_compare",
-    "BLT.div_le_of_le_two_pi_log",
-    "BLT.energy_close_arith",
-    "BLT.energy_asymp_of_transfer",
-    "BLT.gaussianTrialHyp_of_transfer",
-    "BLT.hermiteHyp_of_transfer",
-    "BLT.main_odd_reduced",
-    "BLT.zak_sub",
-    "BLT.sum_norm_sq_diffOp_eq_zak",
-    "BLT.sum_norm_sq_diffOp_dftU_eq_zak",
-    "BLT.energy_eq_sum_zak",
-    "BLT.stdAddChar_natCast",
-    "BLT.zak_modul",
-    "BLT.zak_transl_of_lt",
-    "BLT.zak_transl_seam",
-    "BLT.zakIndex_lt",
-    "BLT.zakIndex_injective",
-    "BLT.zakIndex_bijective",
-    "BLT.zak_eq_dftU",
-    "BLT.parseval_zak",
-    "BLT.sum_stdAddChar_inversion",
-    "BLT.sum_sum_stdAddChar_inversion",
-    "BLT.sum_sum_ite_zero",
-    "BLT.fourier_uniqueness_two",
-    "BLT.sum_zmod_add_one",
-    "BLT.complex_norm_sub_sq",
-    "BLT.stdAddChar_eq_exp_ofReal",
-    "BLT.norm_sq_one_sub_stdAddChar",
-    "BLT.sum_norm_sq_diffOp_dftU",
-    "BLT.sum_norm_sq_diffOp",
-    "BLT.sum_re_conj_mul_sub_one",
-    "BLT.sum_im_conj_mul_sub_one",
-    "BLT.re_ip_gStd",
-    "BLT.im_ip_gStd",
-    "BLT.energy_eq_re_ip_gStd",
-    "BLT.gStd_eigvec_zero_succ",
-    "BLT.gStd_eigvec_eq_zero_of_zero",
-    "BLT.gStd_eigvec_pos",
-    "BLT.gStd_eigvec_pos'",
-    "BLT.ip_zero_right",
-    "BLT.ip_sum_smul_right",
-    "BLT.linearIndependent_of_ip_orthonormal",
-    "BLT.linearIndependent_gabor",
-    "BLT.span_gabor_eq_top",
-    "BLT.transl_iterate_apply",
-    "BLT.modul_iterate_apply",
-    "BLT.gabor_apply",
-    "BLT.zakIndex_add_natCast_mul",
-    "BLT.stdAddChar_natCast_mul_self",
-    "BLT.stdAddChar_mul_zakIndex",
-    "BLT.gabor_zakIndex",
-    "BLT.ip_gabor_eq_sum_zak",
-    "BLT.ip_gabor_val_zero",
-    "BLT.odd_grid_abs_sub_half",
-    "BLT.odd_grid_norm_sub_zakZeroPt",
-    "BLT.gaussZak_grid_lower",
-    "BLT.gaussZak_ne_zero_of_lt",
-    "BLT.gaussZak_one_left",
-    "BLT.gaussZak_one_right",
-    "BLT.gaussZak_ne_zero_of_closed",
-    "BLT.continuous_gauss",
-    "BLT.continuous_thetaI",
-    "BLT.continuous_gaussZak_pair",
-    "BLT.norm_sub_zakZeroPt_le_two",
-    "BLT.gaussZak_ge_linear",
-    "BLT.gaussZak_eq_gauss_mul_thetaI",
-    "BLT.thetaI_zakZeroPt",
-    "BLT.thetaI'_zakZeroPt_ne_zero",
-    "BLT.hasDerivAt_thetaI",
-    "BLT.thetaI_ge_linear_near_zero",
-    "BLT.gauss_ge_of_abs_le",
-    "BLT.gaussZak_ge_linear_near_zero",
-    "BLT.norm_sub_zakZeroPt_sq",
-    "BLT.scaledEnergy_zakInv",
-    "BLT.gaussCand_scaledEnergy_eq",
-    "BLT.vortex_iff_zakEnergy",
-    "BLT.zakEnergy_eq_sum_range",
-    "BLT.gaussZak_eq_zero_iff",
-    "BLT.gaussZeroUnique_iff_theta",
-    "BLT.jacobiTheta\u2082_zakZeroPt",
-    "BLT.abs_aR_le_pi",
-    "BLT.abs_aQ_le_pi",
-    "BLT.int_eq_zero_of_four_small",
-    "BLT.plaquette_int_eq_zero_of_small",
-    "BLT.plaquetteCharge_eq_zero_of_small",
-    "BLT.four_sin_half_sq",
-    "BLT.four_sin_half_sq_le_of_le_abs",
-    "BLT.card_filter_mul_le_sum",
-    "BLT.zakEnergy_eq_sum_product",
-    "BLT.card_largeEdgesR_mul_le",
-    "BLT.card_largeEdgesQ_mul_le",
-    "BLT.card_large_edges_mul_le_zakEnergy",
-    "BLT.card_large_edges_le_div",
-    "BLT.quadR_lower",
-    "BLT.eq_zero_of_forall_quad_nonneg",
-    "BLT.cross_eq",
-    "BLT.gStdR_eq_of_min",
-    "BLT.ground_eigen",
-    "BLT.continuous_quadR",
-    "BLT.isCompact_unitSphereR",
-    "BLT.unitSphereR_nonempty",
-    "BLT.exists_minimizer_quadR",
-    "BLT.exists_minimizer",
-    "BLT.quadR_abs_le",
-    "BLT.isGround_abs",
-    "BLT.isGround_ne_zero",
-    "BLT.quadR_eq_sum_mul_gStdR",
-    "BLT.gStdR_comb",
-    "BLT.ne_zero_of_eig",
-    "BLT.isGround_unique",
-    "BLT.ground_state",
-    "BLT.limit_constant_of_bounds",
-    "BLT.limit_constant",
-    "BLT.log_T_eq",
-    "BLT.pos_of_le_mul_pow",
-    "BLT.log_S\u2080_le",
-    "BLT.div_mul_le_of_le_mul",
-    "BLT.lower_bound_arithmetic",
-    "BLT.norm_twistFactor",
-    "BLT.twistFactor_shift_q",
-    "BLT.twistFactor_shift_k",
-    "BLT.zakExt_shift_q",
-    "BLT.zakExt_shift_r",
-    "BLT.norm_zakExt",
-    "BLT.isTwisted_zakExt",
-    "BLT.zakExt_of_lt",
-    "BLT.scaledEnergy_eq_zakEnergy",
-    "BLT.lowerBound_of_zak",
-    "BLT.aSeq_eq",
-    "BLT.ASeq_eq",
-    "BLT.main_bounds",
-    "BLT.main_conditional",
-    "BLT.exists_le_log",
-    "BLT.tendsto_odd_of_bounds",
-    "BLT.milestone_odd_bounds",
-    "BLT.milestone_odd",
-    "BLT.main_odd_conditional",
-    "BLT.nonvanish_of_approx",
-    "BLT.hermiteHyp_of_approx",
-    "BLT.hasDerivAt_oscPhi",
-    "BLT.hasDerivAt_oscPhiD",
-    "BLT.hasDerivAt_oscPsi",
-    "BLT.hasDerivAt_oscPsiD",
-    "BLT.oscPhi_eigen",
-    "BLT.oscPsi_eigen",
-    "BLT.oscPhi_eigenfunction",
-    "BLT.oscPsi_eigenfunction",
-    "BLT.gauss_eq_mul_oscPhi",
-    "BLT.const_mul_oscPhi_eigenfunction",
-    "BLT.const_mul_oscPsi_eigenfunction",
-    "BLT.re_conj_mul_le_norm_mul",
-    "BLT.re_ofReal_mul_conj_mul",
-    "BLT.re_conj_mul_self",
-    "BLT.perron_step",
-    "BLT.quadFormRe_norm",
-    "BLT.quadFormRe_norm_le",
-    "BLT.energy_le_of_norm",
-    "BLT.energy_norm_le",
-    "BLT.ph_zero",
-    "BLT.norm_ph_le_one",
-    "BLT.ph_mul",
-    "BLT.ph_natCast_mul",
-    "BLT.norm_ph_sub_ph_le",
-    "BLT.norm_ph_sub_ph_le_of_approx",
-    "BLT.exp_arg_mul_I_of_norm_eq_one",
-    "BLT.exists_int_of_exp_mul_I_eq",
-    "BLT.arg_add_arg_sub_of_mul_eq",
-    "BLT.mag_succ",
-    "BLT.plaquette_phase_algebra",
-    "BLT.norm_mul_conj_eq_one",
-    "BLT.plaquette_identity",
-    "BLT.plaquette_identity_of_isTwisted",
-    "BLT.energy_ofReal",
-    "BLT.gStd_ofReal",
-    "BLT.sum_quad",
-    "BLT.sum_sq_smul",
-    "BLT.quadR_smul",
-    "BLT.quadR_expand",
-    "BLT.sum_sq_expand",
-    "BLT.tendsto_log_nat",
-    "BLT.tendsto_inv_log_nat",
-    "BLT.tendsto_log_div_self",
-    "BLT.tendsto_loglog_div_log",
-    "BLT.tendsto_div_log_of_bounds",
-    "BLT.relative_optimality",
-    "BLT.scaledEnergy_nonneg",
-    "BLT.bddBelow_scaledEnergy",
-    "BLT.aMin_nonneg",
-    "BLT.aMin_le",
-    "BLT.transl_modul",
-    "BLT.transl_dftU",
-    "BLT.dftU_sub",
-    "BLT.diffOp_dftU",
-    "BLT.plaquetteCharge_eq_of_identity",
-    "BLT.plaquetteCharge_spec",
-    "BLT.sum_range_int_telescope",
-    "BLT.sum_range_aQ_r_edge",
-    "BLT.sum_range_aR_q_edge",
-    "BLT.sum_plaquette_edges_eq_zero",
-    "BLT.sum_range_const_add_mul",
-    "BLT.sum_sum_range_const_add_mul",
-    "BLT.sum_plaquette_int_eq_one",
-    "BLT.total_charge_one",
-    "BLT.sum_stdAddChar_mul",
-    "BLT.conj_stdAddChar",
-    "BLT.dft_norm_sq",
-    "BLT.sum_conj_stdAddChar_mul",
-    "BLT.ip_dftU",
-    "BLT.parseval_dftU",
-    "BLT.im_I_pos",
-    "BLT.exp_mul_gaussZak",
-    "BLT.exp_mul_gaussZak_holomorphic",
-    "BLT.hasDerivAt_gauss",
-    "BLT.hasDerivAt_gaussZak_snd",
-    "BLT.hasDerivAt_gaussZak_fst",
-    "BLT.hasDerivAt_gaussZak_fst_zero",
-    "BLT.hasDerivAt_gaussZak_snd_zero",
-    "BLT.deriv_gaussZak_snd_zero",
-    "BLT.dftU_shift",
-    "BLT.zak_correlation",
-    "BLT.zak_correlation_of_norm",
-    "BLT.natCast_zmod_eq_iff_of_lt",
-    "BLT.ip_eq_sum_zakIndex",
-    "BLT.ip_gabor_eq_sum",
-    "BLT.ip_gabor_of_zak_norm",
-    "BLT.zmod_val_eq_zero_iff",
-    "BLT.zak_norm_of_ip_gabor",
-    "BLT.ip_gabor_orthonormal_iff_zak_norm",
-    "BLT.norm_natCast_mul_zak_eq_one_iff",
-    "BLT.ip_gabor_orthonormal_iff_unit_modulus",
-    "BLT.exp_nat_mul_pi_I",
-    "BLT.exp_half_int",
-    "BLT.exp_half_succ",
-    "BLT.exp_half_neg",
-    "BLT.hasSum_zakA0Term",
-    "BLT.zakA0Term_fold",
-    "BLT.hasSum_zakA0_nat",
-    "BLT.zakA0_eq_tsum_nat",
-    "BLT.hasSum_zakA0_re",
-    "BLT.hasSum_pairs",
-    "BLT.le_hasSum_alternating",
-    "BLT.hasSum_alternating_zakA0Coeff",
-    "BLT.zakA0_re_le",
-    "BLT.zakA0_re_neg",
-    "BLT.zakA0_ne_zero",
-    "BLT.deriv_gaussZak_fst_zero_ne_zero",
-    "BLT.deriv_gaussZak_snd_zero_ne_zero",
-    "BLT.thetaDerivTerm_eq",
-    "BLT.hasSum_thetaDerivTerm",
-    "BLT.zakA0_term_eq",
-    "BLT.hasSum_zakA0",
-    "BLT.summable_zakA0_term",
-    "BLT.zakA0_eq_tsum",
-    "BLT.hasSum_deriv_gaussZak_fst_zero",
-    "BLT.gauss_add_one",
-    "BLT.exp_neg_two_pi_lt",
-    "BLT.zakA0Coeff_pos",
-    "BLT.zakA0Coeff_succ_lt",
-    "BLT.zakA0Coeff_succ_le",
-    "BLT.strictAnti_zakA0Coeff",
-    "BLT.hasSum_zakA0_re_coeff",
-    "BLT.norm_mag",
-    "BLT.zakExt_add",
-    "BLT.zakExt_const_mul",
-    "BLT.zakExt_neg",
-    "BLT.zakEnergy_const_mul",
-    "BLT.sq_norm_add_le_mul",
-    "BLT.zakEnergy_add_le",
-    "BLT.sq_norm_sub_le",
-    "BLT.norm_zakExt_eq",
-    "BLT.zakEnergy_zakExt_le",
-    "BLT.sum_zmod_eq_sum_range",
-    "BLT.sum_sum_zmod_eq_sum_range",
-    "BLT.zak_energy_identity",
-    "BLT.zak_energy_identity_of_isTwisted",
-    "BLT.exp_two_pi_int_mul_add_one",
-    "BLT.gaussZak_term_shift",
-    "BLT.gaussZak_add_one_left",
-    "BLT.gaussZak_add_one_right",
-    "BLT.zakInv_zakIndex",
-    "BLT.zak_zakInv",
-    "BLT.norm_ph",
-    "BLT.zakInv_admissible",
-    "BLT.le_aMin_of_forall",
-    "BLT.zmod_val_natCast_of_lt",
-    "BLT.norm_sq_natCast_mul",
-    "BLT.stdAddChar_neg_natCast",
-    "BLT.zeta_r_succ",
-    "BLT.mag_mul_zeta_q_succ",
-    "BLT.norm_sq_zeta_r_edge",
-    "BLT.norm_sq_zeta_q_edge",
-    "BLT.ofReal_mul_exp_mul_exp_eq",
-    "BLT.gaussZak_term_aux",
-    "BLT.gaussZak_term_eq",
-    "BLT.hasSum_gaussZak_term_theta",
-    "BLT.summable_gaussZak_term",
-    "BLT.gaussZak_eq_gauss_mul_theta",
-    "BLT.gaussZak_eq_theta",
-    "BLT.hasSum_gaussZak_term",
-    "BLT.gauss_neg",
-    "BLT.gauss_pos",
-    "BLT.exp_reflect_half",
-    "BLT.gaussZak_half_term_reflect",
-    "BLT.gaussZak_half_half",
-    "BLT.jacobiTheta_zakZero"
-  ],
+  "lean_exit_code": 0,
+  "theorems": 357,
+  "verified": 357,
+  "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
   "tautologies": [],
@@ -373,2150 +14,3570 @@
     {
       "file": "BLTAudit/AnnulusEnergy.lean",
       "theorem": "BLT.inv_continuousOn_of_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/AnnulusEnergy.lean",
       "theorem": "BLT.integral_const_mul_inv",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/AnnulusEnergy.lean",
       "theorem": "BLT.annulus_log_lower",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/AnnulusEnergy.lean",
       "theorem": "BLT.annulus_energy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.norm_mergeCenter_sub_left",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.norm_mergeCenter_sub_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.norm_sub_le_of_left",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.merge_margin_left",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.merge_margin_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.ball_union_subset_merge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BallMerge.lean",
       "theorem": "BLT.ball_merge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.transl_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.diffOp_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.modul_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.energy_nonneg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Basic.lean",
       "theorem": "BLT.zakEnergy_nonneg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.bilinInterp_corners",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.hasDerivAt_bilinInterp_x",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.hasDerivAt_bilinInterp_y",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.sq_convex_comb_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.bilinInterp_grad_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.integral_zero_one_affine",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.integral_bilinW",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/BilinearInterp.lean",
       "theorem": "BLT.bilinInterp_energy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.hermiteFam_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.groundR_sq_sum",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.groundR_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.groundR_min",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.hermiteCand_admissible",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.val_div_lt_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.val_div_ne_half",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.gaussZak_grid_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Candidates.lean",
       "theorem": "BLT.gaussCand_admissible",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/CircleEnergy.lean",
       "theorem": "BLT.integral_sq_sub_const",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/CircleEnergy.lean",
       "theorem": "BLT.interval_energy_lower",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/CircleEnergy.lean",
       "theorem": "BLT.circle_energy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.norm_sub_one_sq_of_norm_eq_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.norm_sub_sq_eq_four_sin_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.norm_mag",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.norm_sq_edgeR",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.norm_sq_edgeQ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.zakEnergy_eq_sum_sin_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgeEnergy.lean",
       "theorem": "BLT.zakEnergy_eq_sum_sin_sq_of_isTwisted",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.mul_conj_of_norm_eq_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.unit_mul_mul_conj",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.mag_twist_cancel",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.norm_twist_factor",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.mag_add_period_mul_twist",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.aR_add_period_q",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.aR_add_period_r",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.aQ_add_period_q",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EdgePeriodicity.lean",
       "theorem": "BLT.aQ_add_period_r",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.hermiteCand_scaledEnergy_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.zakEnergy_compare",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.div_le_of_le_two_pi_log",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.energy_close_arith",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.energy_asymp_of_transfer",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.gaussianTrialHyp_of_transfer",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.hermiteHyp_of_transfer",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyFromTransfer.lean",
       "theorem": "BLT.main_odd_reduced",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyZakCoordinates.lean",
       "theorem": "BLT.zak_sub",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyZakCoordinates.lean",
       "theorem": "BLT.sum_norm_sq_diffOp_eq_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyZakCoordinates.lean",
       "theorem": "BLT.sum_norm_sq_diffOp_dftU_eq_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/EnergyZakCoordinates.lean",
       "theorem": "BLT.energy_eq_sum_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakModulation.lean",
       "theorem": "BLT.stdAddChar_natCast",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakModulation.lean",
       "theorem": "BLT.zak_modul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakTranslation.lean",
       "theorem": "BLT.zak_transl_of_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakTranslation.lean",
       "theorem": "BLT.zak_transl_seam",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.zakIndex_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.zakIndex_injective",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.zakIndex_bijective",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.zak_eq_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FiniteZakUnitary.lean",
       "theorem": "BLT.parseval_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FourierUniqueness.lean",
       "theorem": "BLT.sum_stdAddChar_inversion",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FourierUniqueness.lean",
       "theorem": "BLT.sum_sum_stdAddChar_inversion",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FourierUniqueness.lean",
       "theorem": "BLT.sum_sum_ite_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/FourierUniqueness.lean",
       "theorem": "BLT.fourier_uniqueness_two",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.sum_zmod_add_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.complex_norm_sub_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.stdAddChar_eq_exp_ofReal",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.norm_sq_one_sub_stdAddChar",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.sum_norm_sq_diffOp_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.sum_norm_sq_diffOp",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.sum_re_conj_mul_sub_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.sum_im_conj_mul_sub_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.re_ip_gStd",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.im_ip_gStd",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStandardForm.lean",
       "theorem": "BLT.energy_eq_re_ip_gStd",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStdPositive.lean",
       "theorem": "BLT.gStd_eigvec_zero_succ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStdPositive.lean",
       "theorem": "BLT.gStd_eigvec_eq_zero_of_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStdPositive.lean",
       "theorem": "BLT.gStd_eigvec_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GStdPositive.lean",
       "theorem": "BLT.gStd_eigvec_pos'",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborBasis.lean",
       "theorem": "BLT.ip_zero_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborBasis.lean",
       "theorem": "BLT.ip_sum_smul_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborBasis.lean",
       "theorem": "BLT.linearIndependent_of_ip_orthonormal",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborBasis.lean",
       "theorem": "BLT.linearIndependent_gabor",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborBasis.lean",
       "theorem": "BLT.span_gabor_eq_top",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborFormula.lean",
       "theorem": "BLT.transl_iterate_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborFormula.lean",
       "theorem": "BLT.modul_iterate_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborFormula.lean",
       "theorem": "BLT.gabor_apply",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakCoordinates.lean",
       "theorem": "BLT.zakIndex_add_natCast_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakCoordinates.lean",
       "theorem": "BLT.stdAddChar_natCast_mul_self",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakCoordinates.lean",
       "theorem": "BLT.stdAddChar_mul_zakIndex",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakCoordinates.lean",
       "theorem": "BLT.gabor_zakIndex",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakModulus.lean",
       "theorem": "BLT.ip_gabor_eq_sum_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaborZakModulus.lean",
       "theorem": "BLT.ip_gabor_val_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussGridLower.lean",
       "theorem": "BLT.odd_grid_abs_sub_half",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussGridLower.lean",
       "theorem": "BLT.odd_grid_norm_sub_zakZeroPt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussGridLower.lean",
       "theorem": "BLT.gaussZak_grid_lower",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.gaussZak_ne_zero_of_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.gaussZak_one_left",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.gaussZak_one_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.gaussZak_ne_zero_of_closed",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.continuous_gauss",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.continuous_thetaI",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.continuous_gaussZak_pair",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.norm_sub_zakZeroPt_le_two",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearGlobal.lean",
       "theorem": "BLT.gaussZak_ge_linear",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.gaussZak_eq_gauss_mul_thetaI",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.thetaI_zakZeroPt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.thetaI'_zakZeroPt_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.hasDerivAt_thetaI",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.thetaI_ge_linear_near_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.gauss_ge_of_abs_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.gaussZak_ge_linear_near_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.norm_sub_zakZeroPt_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussVortexZak.lean",
       "theorem": "BLT.scaledEnergy_zakInv",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussVortexZak.lean",
       "theorem": "BLT.gaussCand_scaledEnergy_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussVortexZak.lean",
       "theorem": "BLT.vortex_iff_zakEnergy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussVortexZak.lean",
       "theorem": "BLT.zakEnergy_eq_sum_range",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussZeroTheta.lean",
       "theorem": "BLT.gaussZak_eq_zero_iff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussZeroTheta.lean",
       "theorem": "BLT.gaussZeroUnique_iff_theta",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GaussZeroTheta.lean",
       "theorem": "BLT.jacobiTheta\u2082_zakZeroPt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.abs_aR_le_pi",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.abs_aQ_le_pi",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.int_eq_zero_of_four_small",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.plaquette_int_eq_zero_of_small",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.plaquetteCharge_eq_zero_of_small",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.four_sin_half_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.four_sin_half_sq_le_of_le_abs",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_filter_mul_le_sum",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.zakEnergy_eq_sum_product",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_largeEdgesR_mul_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_largeEdgesQ_mul_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_large_edges_mul_le_zakEnergy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.card_large_edges_le_div",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.quadR_lower",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.eq_zero_of_forall_quad_nonneg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.cross_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.gStdR_eq_of_min",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundEigen.lean",
       "theorem": "BLT.ground_eigen",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.continuous_quadR",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.isCompact_unitSphereR",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.unitSphereR_nonempty",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.exists_minimizer_quadR",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundExists.lean",
       "theorem": "BLT.exists_minimizer",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.quadR_abs_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.isGround_abs",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.isGround_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.quadR_eq_sum_mul_gStdR",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.gStdR_comb",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.ne_zero_of_eig",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.isGround_unique",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/GroundState.lean",
       "theorem": "BLT.ground_state",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LimitConstant.lean",
       "theorem": "BLT.limit_constant_of_bounds",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LimitConstant.lean",
       "theorem": "BLT.limit_constant",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.log_T_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.pos_of_le_mul_pow",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.log_S\u2080_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.div_mul_le_of_le_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.lower_bound_arithmetic",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.norm_twistFactor",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.twistFactor_shift_q",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.twistFactor_shift_k",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.zakExt_shift_q",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.zakExt_shift_r",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.norm_zakExt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.isTwisted_zakExt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.zakExt_of_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.scaledEnergy_eq_zakEnergy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/LowerBoundZak.lean",
       "theorem": "BLT.lowerBound_of_zak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainConditional.lean",
       "theorem": "BLT.aSeq_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainConditional.lean",
       "theorem": "BLT.ASeq_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainConditional.lean",
       "theorem": "BLT.main_bounds",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainConditional.lean",
       "theorem": "BLT.main_conditional",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.exists_le_log",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.tendsto_odd_of_bounds",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.milestone_odd_bounds",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.milestone_odd",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.main_odd_conditional",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/NonvanishFromApprox.lean",
       "theorem": "BLT.nonvanish_of_approx",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/NonvanishFromApprox.lean",
       "theorem": "BLT.hermiteHyp_of_approx",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.hasDerivAt_oscPhi",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.hasDerivAt_oscPhiD",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.hasDerivAt_oscPsi",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.hasDerivAt_oscPsiD",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.oscPhi_eigen",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.oscPsi_eigen",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.oscPhi_eigenfunction",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.oscPsi_eigenfunction",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.gauss_eq_mul_oscPhi",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.const_mul_oscPhi_eigenfunction",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/OscillatorGaussian.lean",
       "theorem": "BLT.const_mul_oscPsi_eigenfunction",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.re_conj_mul_le_norm_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.re_ofReal_mul_conj_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.re_conj_mul_self",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.perron_step",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.quadFormRe_norm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.quadFormRe_norm_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.energy_le_of_norm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PerronStep.lean",
       "theorem": "BLT.energy_norm_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.ph_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.norm_ph_le_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.ph_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.ph_natCast_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.norm_ph_sub_ph_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PhasePerturbation.lean",
       "theorem": "BLT.norm_ph_sub_ph_le_of_approx",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.exp_arg_mul_I_of_norm_eq_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.exists_int_of_exp_mul_I_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.arg_add_arg_sub_of_mul_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.mag_succ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.plaquette_phase_algebra",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.norm_mul_conj_eq_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.plaquette_identity",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/PlaquetteCharge.lean",
       "theorem": "BLT.plaquette_identity_of_isTwisted",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.energy_ofReal",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.gStd_ofReal",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.sum_quad",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.sum_sq_smul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.quadR_smul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.quadR_expand",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RealQuadForm.lean",
       "theorem": "BLT.sum_sq_expand",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.tendsto_log_nat",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.tendsto_inv_log_nat",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.tendsto_log_div_self",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.tendsto_loglog_div_log",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.tendsto_div_log_of_bounds",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/RelativeOptimality.lean",
       "theorem": "BLT.relative_optimality",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Statements.lean",
       "theorem": "BLT.scaledEnergy_nonneg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Statements.lean",
       "theorem": "BLT.bddBelow_scaledEnergy",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Statements.lean",
       "theorem": "BLT.aMin_nonneg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/Statements.lean",
       "theorem": "BLT.aMin_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TimeFrequency.lean",
       "theorem": "BLT.transl_modul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TimeFrequency.lean",
       "theorem": "BLT.transl_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TimeFrequency.lean",
       "theorem": "BLT.dftU_sub",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TimeFrequency.lean",
       "theorem": "BLT.diffOp_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.plaquetteCharge_eq_of_identity",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.plaquetteCharge_spec",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_range_int_telescope",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_range_aQ_r_edge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_range_aR_q_edge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_plaquette_edges_eq_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_range_const_add_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_sum_range_const_add_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.sum_plaquette_int_eq_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/TotalCharge.lean",
       "theorem": "BLT.total_charge_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.sum_stdAddChar_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.conj_stdAddChar",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.dft_norm_sq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.sum_conj_stdAddChar_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.ip_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/UnitaryDFT.lean",
       "theorem": "BLT.parseval_dftU",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.im_I_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.exp_mul_gaussZak",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.exp_mul_gaussZak_holomorphic",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.hasDerivAt_gauss",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.hasDerivAt_gaussZak_snd",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.hasDerivAt_gaussZak_fst",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.hasDerivAt_gaussZak_fst_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.hasDerivAt_gaussZak_snd_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakConformal.lean",
       "theorem": "BLT.deriv_gaussZak_snd_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCorrelation.lean",
       "theorem": "BLT.dftU_shift",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCorrelation.lean",
       "theorem": "BLT.zak_correlation",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCorrelation.lean",
       "theorem": "BLT.zak_correlation_of_norm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterion.lean",
       "theorem": "BLT.natCast_zmod_eq_iff_of_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterion.lean",
       "theorem": "BLT.ip_eq_sum_zakIndex",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterion.lean",
       "theorem": "BLT.ip_gabor_eq_sum",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterion.lean",
       "theorem": "BLT.ip_gabor_of_zak_norm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.zmod_val_eq_zero_iff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.zak_norm_of_ip_gabor",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.ip_gabor_orthonormal_iff_zak_norm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.norm_natCast_mul_zak_eq_one_iff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakCriterionConverse.lean",
       "theorem": "BLT.ip_gabor_orthonormal_iff_unit_modulus",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.exp_nat_mul_pi_I",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.exp_half_int",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.exp_half_succ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.exp_half_neg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.hasSum_zakA0Term",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.zakA0Term_fold",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.hasSum_zakA0_nat",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.zakA0_eq_tsum_nat",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivFold.lean",
       "theorem": "BLT.hasSum_zakA0_re",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.hasSum_pairs",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.le_hasSum_alternating",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.hasSum_alternating_zakA0Coeff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.zakA0_re_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.zakA0_re_neg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.zakA0_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.deriv_gaussZak_fst_zero_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivNonzero.lean",
       "theorem": "BLT.deriv_gaussZak_snd_zero_ne_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.thetaDerivTerm_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.hasSum_thetaDerivTerm",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.zakA0_term_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.hasSum_zakA0",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.summable_zakA0_term",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.zakA0_eq_tsum",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivSeries.lean",
       "theorem": "BLT.hasSum_deriv_gaussZak_fst_zero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.gauss_add_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.exp_neg_two_pi_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.zakA0Coeff_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.zakA0Coeff_succ_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.zakA0Coeff_succ_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.strictAnti_zakA0Coeff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakDerivTerms.lean",
       "theorem": "BLT.hasSum_zakA0_re_coeff",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
-    },
-    {
-      "file": "BLTAudit/ZakEnergyCompare.lean",
-      "theorem": "BLT.norm_mag",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakExt_add",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakExt_const_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakExt_neg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakEnergy_const_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.sq_norm_add_le_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakEnergy_add_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.sq_norm_sub_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.norm_zakExt_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyCompare.lean",
       "theorem": "BLT.zakEnergy_zakExt_le",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyIdentity.lean",
       "theorem": "BLT.sum_zmod_eq_sum_range",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyIdentity.lean",
       "theorem": "BLT.sum_sum_zmod_eq_sum_range",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyIdentity.lean",
       "theorem": "BLT.zak_energy_identity",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakEnergyIdentity.lean",
       "theorem": "BLT.zak_energy_identity_of_isTwisted",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakGluing.lean",
       "theorem": "BLT.exp_two_pi_int_mul_add_one",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakGluing.lean",
       "theorem": "BLT.gaussZak_term_shift",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakGluing.lean",
       "theorem": "BLT.gaussZak_add_one_left",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakGluing.lean",
       "theorem": "BLT.gaussZak_add_one_right",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakInverse.lean",
       "theorem": "BLT.zakInv_zakIndex",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakInverse.lean",
       "theorem": "BLT.zak_zakInv",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakInverse.lean",
       "theorem": "BLT.norm_ph",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakInverse.lean",
       "theorem": "BLT.zakInv_admissible",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakInverse.lean",
       "theorem": "BLT.le_aMin_of_forall",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.zmod_val_natCast_of_lt",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.norm_sq_natCast_mul",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.stdAddChar_neg_natCast",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.zeta_r_succ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.mag_mul_zeta_q_succ",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.norm_sq_zeta_r_edge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakSeams.lean",
       "theorem": "BLT.norm_sq_zeta_q_edge",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.ofReal_mul_exp_mul_exp_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.gaussZak_term_aux",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.gaussZak_term_eq",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.hasSum_gaussZak_term_theta",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.summable_gaussZak_term",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.gaussZak_eq_gauss_mul_theta",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.gaussZak_eq_theta",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakTheta.lean",
       "theorem": "BLT.hasSum_gaussZak_term",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.gauss_neg",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.gauss_pos",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.exp_reflect_half",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.gaussZak_half_term_reflect",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.gaussZak_half_half",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     },
     {
       "file": "BLTAudit/ZakZero.lean",
       "theorem": "BLT.jacobiTheta_zakZero",
-      "axioms": null,
-      "status": "NOT CHECKED (name not found by Lean)"
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
     }
   ]
 }
