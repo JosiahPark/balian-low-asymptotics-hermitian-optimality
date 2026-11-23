@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 03:21 UTC at commit `c453ac50a6ab`.
+Checked 2026-11-23 03:27 UTC at commit `56398d6e155a`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 329 of 329
+- Theorems verified with standard axioms only: 332 of 332
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -108,6 +108,9 @@ Checked 2026-11-23 03:21 UTC at commit `c453ac50a6ab`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/GaussGridLower.lean | `BLT.odd_grid_abs_sub_half` | verified (standard axioms only) |
+| BLTAudit/GaussGridLower.lean | `BLT.odd_grid_norm_sub_zakZeroPt` | verified (standard axioms only) |
+| BLTAudit/GaussGridLower.lean | `BLT.gaussZak_grid_lower` | verified (standard axioms only) |
 | BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_ne_zero_of_lt` | verified (standard axioms only) |
 | BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_one_left` | verified (standard axioms only) |
 | BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_one_right` | verified (standard axioms only) |

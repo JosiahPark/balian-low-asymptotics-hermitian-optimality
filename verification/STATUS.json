@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 03:21 UTC",
-  "commit": "c453ac50a6abc508b36fd29a1530136e7a88bc59",
+  "checked_at": "2026-11-23 03:27 UTC",
+  "commit": "56398d6e155a54e98b7089783b51790b357d03fa",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 329,
-  "verified": 329,
+  "theorems": 332,
+  "verified": 332,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -984,6 +984,36 @@
     {
       "file": "BLTAudit/GaborZakModulus.lean",
       "theorem": "BLT.ip_gabor_val_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussGridLower.lean",
+      "theorem": "BLT.odd_grid_abs_sub_half",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussGridLower.lean",
+      "theorem": "BLT.odd_grid_norm_sub_zakZeroPt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussGridLower.lean",
+      "theorem": "BLT.gaussZak_grid_lower",
       "axioms": [
         "propext",
         "Classical.choice",
