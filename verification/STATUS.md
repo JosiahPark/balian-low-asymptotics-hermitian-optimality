@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 03:27 UTC at commit `56398d6e155a`.
+Checked 2026-11-23 03:31 UTC at commit `10fe472deeb2`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 332 of 332
+- Theorems verified with standard axioms only: 334 of 334
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -192,6 +192,8 @@ Checked 2026-11-23 03:27 UTC at commit `56398d6e155a`.
 | BLTAudit/MainOdd.lean | `BLT.milestone_odd_bounds` | verified (standard axioms only) |
 | BLTAudit/MainOdd.lean | `BLT.milestone_odd` | verified (standard axioms only) |
 | BLTAudit/MainOdd.lean | `BLT.main_odd_conditional` | verified (standard axioms only) |
+| BLTAudit/NonvanishFromApprox.lean | `BLT.nonvanish_of_approx` | verified (standard axioms only) |
+| BLTAudit/NonvanishFromApprox.lean | `BLT.hermiteHyp_of_approx` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhi` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPhiD` | verified (standard axioms only) |
 | BLTAudit/OscillatorGaussian.lean | `BLT.hasDerivAt_oscPsi` | verified (standard axioms only) |

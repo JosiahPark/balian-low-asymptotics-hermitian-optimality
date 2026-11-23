@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 03:27 UTC",
-  "commit": "56398d6e155a54e98b7089783b51790b357d03fa",
+  "checked_at": "2026-11-23 03:31 UTC",
+  "commit": "10fe472deeb257e18d36705e22fd996e6cd66230",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 332,
-  "verified": 332,
+  "theorems": 334,
+  "verified": 334,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -1824,6 +1824,26 @@
     {
       "file": "BLTAudit/MainOdd.lean",
       "theorem": "BLT.main_odd_conditional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/NonvanishFromApprox.lean",
+      "theorem": "BLT.nonvanish_of_approx",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/NonvanishFromApprox.lean",
+      "theorem": "BLT.hermiteHyp_of_approx",
       "axioms": [
         "propext",
         "Classical.choice",
