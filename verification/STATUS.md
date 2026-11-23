@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 03:07 UTC at commit `a11b7e1298a0`.
+Checked 2026-11-23 03:12 UTC at commit `95e8ecc64890`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 309 of 309
+- Theorems verified with standard axioms only: 317 of 317
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -108,6 +108,14 @@ Checked 2026-11-23 03:07 UTC at commit `a11b7e1298a0`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.gaussZak_eq_gauss_mul_thetaI` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.thetaI_zakZeroPt` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.thetaI'_zakZeroPt_ne_zero` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.hasDerivAt_thetaI` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.thetaI_ge_linear_near_zero` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.gauss_ge_of_abs_le` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.gaussZak_ge_linear_near_zero` | verified (standard axioms only) |
+| BLTAudit/GaussLinearNearZero.lean | `BLT.norm_sub_zakZeroPt_sq` | verified (standard axioms only) |
 | BLTAudit/GaussVortexZak.lean | `BLT.scaledEnergy_zakInv` | verified (standard axioms only) |
 | BLTAudit/GaussVortexZak.lean | `BLT.gaussCand_scaledEnergy_eq` | verified (standard axioms only) |
 | BLTAudit/GaussVortexZak.lean | `BLT.vortex_iff_zakEnergy` | verified (standard axioms only) |

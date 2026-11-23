@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 03:07 UTC",
-  "commit": "a11b7e1298a0059ad64cac835071daf23edbfccf",
+  "checked_at": "2026-11-23 03:12 UTC",
+  "commit": "95e8ecc6489005fc04a697bdc4df8e4601a1d33f",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 309,
-  "verified": 309,
+  "theorems": 317,
+  "verified": 317,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -984,6 +984,86 @@
     {
       "file": "BLTAudit/GaborZakModulus.lean",
       "theorem": "BLT.ip_gabor_val_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.gaussZak_eq_gauss_mul_thetaI",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.thetaI_zakZeroPt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.thetaI'_zakZeroPt_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.hasDerivAt_thetaI",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.thetaI_ge_linear_near_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.gauss_ge_of_abs_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.gaussZak_ge_linear_near_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearNearZero.lean",
+      "theorem": "BLT.norm_sub_zakZeroPt_sq",
       "axioms": [
         "propext",
         "Classical.choice",
