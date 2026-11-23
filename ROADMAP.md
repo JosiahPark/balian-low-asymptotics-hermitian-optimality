@@ -379,6 +379,61 @@ small enough for one file. None of them proves [HU] or [HL], and F4 keeps both a
   `L = log (1/h)`. The twisted shifts of (U3), the bound (U13) on `‖W − U‖` and (U4) are not attempted.
   File `BLTAudit/TransferEstimate.lean`.
 
+## H. The milestone along odd `d` and the actual candidate
+
+Added 2026-11-23 at the author's request (interactive session, not the hourly task). Goal: the
+milestone `a_d / log d → 2π` along odd `d` from the Gaussian trial upper bound and the universal
+lower bound, before the oscillator approximation; and a final statement aligned with the paper (the
+actual candidate `f_d`, odd `d` only, and its `2π log d + O(1)` energy recorded separately). F4 stays
+as it was; H3 is the ledger to shrink from now on. Its five inputs are [HZ], [HV], [HL] (enough
+for the milestone) and [HN], [HE] (for `f_d`).
+
+- [x] H1. Inverse Zak transform and windows with a prescribed Zak array: `zakEquiv`, `zakInv`,
+  `zak_zakInv` (`Z (Z⁻¹ G) = G`), `ph`, `norm_ph`, `zakInv_admissible` (a unit-modulus array `u` gives
+  the admissible window `Z⁻¹ (d⁻¹ u)`), `le_aMin_of_forall`. File `BLTAudit/ZakInverse.lean`.
+  - Done 2026-11-23 02:43 UTC at 2d31964 (verified 295/295).
+- [x] H2. The actual windows: `groundR` (the positive unit ground vector of D4c, with
+  `groundR_sq_sum`, `groundR_pos`, `groundR_min`), `hermiteCand d = Z⁻¹ (d⁻¹ ph (Z g_d))`, `hermiteFam`,
+  `gaussPhase`, `gaussCand`; `hermiteCand_admissible` (no zero of `Z g_d` ⇒ admissible),
+  `GaussZeroUnique`, `gaussZak_grid_ne_zero` and `gaussCand_admissible` (odd `d` and [HZ] ⇒
+  admissible). File `BLTAudit/Candidates.lean`. A numerical check of these exact definitions gave
+  `d² E − 2π log d = 0.29, 0.15, 0.047, −0.020, −0.037` at `d = 5, 7, 11, 21, 31` for both windows.
+  - Done 2026-11-23 02:43 UTC at 2d31964 (verified 295/295).
+- [x] H3. The odd-`d` ledger: structures `GaussianTrialHyp C` (fields [HZ] `zero_unique`, [HV]
+  `vortex`), `LowerBoundHyp` ([HL], Theorem 4.1 window by window under `scaledEnergy f ≤ K log d`),
+  `HermiteHyp C` ([HN] `nonvanish`, [HE] `energy_asymp`); `tendsto_odd_of_bounds`,
+  `milestone_odd_bounds`, `milestone_odd` (`aSeq (2k+1) / log (2k+1) → 2π` from [HZ], [HV], [HL]
+  only), `main_odd_conditional` (adds [HN], [HE]: `f_d` admissible, `|d² E(f_d) − 2π log d| ≤ C_H`,
+  the bounds on `a_d`, `0 ≤ d² E(f_d) − a_d ≤ 7π log log d + O(1)`, both limits along odd `d`).
+  File `BLTAudit/MainOdd.lean`.
+  - Done 2026-11-23 02:43 UTC at 2d31964 (verified 295/295). Nothing here proves the milestone, Theorem 1.1 or Theorem 4.1: all five inputs are named hypotheses.
+- [ ] H4. [HL] in Zak coordinates: `lowerBound_of_zak`: let [HLζ] be the statement "for every `K`
+  there are `C`, `D` such that for `d ≥ D` every `ζ` with `IsTwisted d ζ` and
+  `zakEnergy d ζ ≤ K log d` has `2π log d − 7π log log d − C ≤ zakEnergy d ζ`" (Theorem 4.1 exactly as
+  §4 states it); prove `[HLζ] → LowerBoundHyp`. For admissible `f`, build `ζ` from `d * zak f` by the
+  two gluing rules (define `zakExt d u : ℤ × ℤ → ℂ` by `q ↦ q mod d` and the factor
+  `exp (−2πi q ⌊r/d⌋ / d)`), show `IsTwisted d (zakExt ...)` using A5c (unit modulus), and use
+  `zak_energy_identity_of_isTwisted` of A7c. File `BLTAudit/LowerBoundZak.lean`.
+- [ ] H5. [HV] as a statement about the explicit phase array: `scaledEnergy_zakInv`: for
+  unit-modulus `u`, `scaledEnergy (zakInv (fun q r => d⁻¹ * u q r)) = zakEnergy d (zakExt d u)` (H1,
+  H4's `zakExt`, A7c); hence `vortex` of H3 is equivalent to a bound on
+  `zakEnergy d (zakExt d (gaussPhase d))`, with no Fourier transform left. `vortex_iff_zakEnergy`.
+  File `BLTAudit/GaussVortexZak.lean`.
+- [ ] H6. Linear lower bound near the zero, the local half of `|F(z)| ≥ c |z − z₀|`: from C4 and C5
+  (`hasDerivAt_gaussZak_fst`, `deriv_gaussZak_fst_zero_ne_zero`), there are `ρ > 0`, `c > 0` with
+  `c * ‖(x − 1/2, y − 1/2)‖ ≤ ‖gaussZak x y‖` for `‖(x − 1/2, y − 1/2)‖ ≤ ρ` (differentiability of the
+  holomorphic `Θ` of C4 at the zero, `HasDerivAt.isLittleO`). `gaussZak_ge_linear_near_zero`.
+  File `BLTAudit/GaussLinearNearZero.lean`.
+- [ ] H7. The global half under [HZ]: `gaussZak_ge_linear`: assuming `GaussZeroUnique`, there is
+  `c > 0` with `c * dist (x, y) (1/2, 1/2) ≤ ‖gaussZak x y‖` on `[0,1]²` (continuity of `gaussZak`
+  from C1, compactness of `[0,1]² \ ball z₀ ρ`, H6 inside the ball; points with `x = 1` or `y = 1`
+  through C2). File `BLTAudit/GaussLinearGlobal.lean`.
+- [ ] H8. [HZ] as a statement about `jacobiTheta₂`: `gaussZeroUnique_iff_theta`: by C1,
+  `GaussZeroUnique` holds iff `jacobiTheta₂ z I ≠ 0` for every `z = y − x I` with `x y ∈ [0,1)`,
+  `(x, y) ≠ (1/2, 1/2)` (the prefactor `gauss x` is positive, `gauss_pos` of C3). This isolates the
+  Jacobi-triple-product input as a single statement about Mathlib's theta function.
+  File `BLTAudit/GaussZeroTheta.lean`.
+
 ## Not attempted here
 
 - Uniqueness and simplicity of the Gaussian Zak zero in the unit square (Jacobi triple product, Appendix A.3), unless Mathlib already has the triple product.
