@@ -391,6 +391,8 @@ After H4–H10 (2026-11-23) the ledger reads: milestone from [HZ], [HV] (equival
 `zakEnergy d (zakExt d (gaussPhase d))`, H5) and [HLζ] (Theorem 4.1 for twisted arrays, H4); for `f_d`
 add [HA] (uniform Zak approximation, H10, which with [HZ] gives [HN]) and [HE]. Under [HZ],
 `|F(x,y)| ≥ c · dist((x,y), z₀)` on the square (H7) and `|F| ≥ c/(2d)` on the odd grid (H9) are proved.
+After H11–H14: `main_odd_reduced` derives Theorem 1.1 along odd `d` for `f_d` from [HZ], [HA], [HV₂]
+(two-sided (3.3) for the explicit Gaussian phase array), [HW] (an `ℓ²` bound on `W − u₀ U`) and [HLζ].
 
 - [x] H1. Inverse Zak transform and windows with a prescribed Zak array: `zakEquiv`, `zakInv`,
   `zak_zakInv` (`Z (Z⁻¹ G) = G`), `ph`, `norm_ph`, `zakInv_admissible` (a unit-modulus array `u` gives
@@ -452,23 +454,26 @@ add [HA] (uniform Zak approximation, H10, which with [HZ] gives [HN]) and [HE]. 
   `nonvanish_of_approx : [HZ] → [HA] → nonvanish`, `hermiteHyp_of_approx`.
   File `BLTAudit/NonvanishFromApprox.lean`.
   - Done 2026-11-23 03:31 UTC at 10fe472 (verified 334/334). The input [HN] of H3 is now replaced by [HA] (plus [HZ]).
-- [ ] H11. Phase perturbation: `norm_ph_sub_ph_le`: for `a b : ℂ` with `b ≠ 0`,
+- [x] H11. Phase perturbation: `norm_ph_sub_ph_le`: for `a b : ℂ` with `b ≠ 0`,
   `‖ph a − ph b‖ ≤ 2 * ‖a − b‖ / ‖b‖` (write `ph a − ph b = (a − b)/‖a‖ + b (1/‖a‖ − 1/‖b‖)` and use
   `|‖a‖ − ‖b‖| ≤ ‖a − b‖`; the case `a = 0` gives `‖ph a − ph b‖ = 1 ≤ 2‖b‖/‖b‖`). Hence
   `norm_ph_sub_ph_le_of_approx`: if `‖a − b‖ ≤ ε` and `m ≤ ‖b‖` with `0 < m`, then
   `‖ph a − ph b‖ ≤ 2 ε / m`; and `ph_mul_pos`: `ph (c * a) = ph c * ph a` for `c ≠ 0`, so a nonzero
   scalar `c_d` changes `ph` by a constant unimodular factor. File `BLTAudit/PhasePerturbation.lean`.
-- [ ] H12. Energy of a constant phase change: `zakEnergy_const_mul`: for unimodular `u₀`,
+  - Done 2026-11-23 03:58 UTC at ec9f03f (verified 357/357): `ph_zero`, `norm_ph_le_one`, `ph_mul` (for all `c a`, not only `c ≠ 0`), `ph_natCast_mul`, `norm_ph_sub_ph_le`, `norm_ph_sub_ph_le_of_approx`.
+- [x] H12. Energy of a constant phase change: `zakEnergy_const_mul`: for unimodular `u₀`,
   `zakEnergy d (fun p => u₀ * ζ p) = zakEnergy d ζ` (`‖u₀ (a − b)‖ = ‖a − b‖` edge by edge); and
   `scaledEnergy_const_mul` for windows: `scaledEnergy (fun j => u₀ * f j) = scaledEnergy f`. Hence
   the scalar `c_d` of [HA] does not change the energy of `hermiteCand d`. File `BLTAudit/EnergyConstPhase.lean`.
-- [ ] H13. Zak-energy comparison, the concrete form of G5 for twisted arrays: `zakEnergy_sqrt_sub_le`:
+  - Done 2026-11-23 03:58 UTC at ec9f03f (verified 357/357), in `BLTAudit/ZakEnergyCompare.lean` together with H13: `zakEnergy_const_mul`, `zakExt_const_mul`, `zakExt_add`, `zakExt_neg`. The window form `scaledEnergy_const_mul` was not needed and is not stated.
+- [x] H13. Zak-energy comparison, the concrete form of G5 for twisted arrays: `zakEnergy_sqrt_sub_le`:
   for `ζ ζ' : ℤ × ℤ → ℂ`, `|√(zakEnergy d ζ) − √(zakEnergy d ζ')| ≤ √(zakEnergy d (ζ − ζ'))` (the energy is
   the squared `ℓ²` norm of the edge-difference vector, which is linear in `ζ`; triangle inequality for
   the `ℓ²` norm on `Fin (2 d²) → ℂ` or `EuclideanSpace`), and `zakEnergy_le_eight_sum`:
   `zakEnergy d δ ≤ 8 * ∑ q ∈ range (d+1), ∑ r ∈ range (d+1), ‖δ (q, r)‖ ^ 2` from `‖a − b‖² ≤ 2‖a‖² + 2‖b‖²`
   (`mag` is unimodular). File `BLTAudit/ZakEnergyCompare.lean`.
-- [ ] H14. [HE] from [HV], [HA], [HZ] and a named pointwise phase bound: with `W = ph (d · zak g_d)` and
+  - Done 2026-11-23 03:58 UTC at ec9f03f (verified 357/357): `sq_norm_add_le_mul` (`‖x+y‖² ≤ (1+t)‖x‖² + (1+t⁻¹)‖y‖²`), `zakEnergy_add_le` (the same for `zakEnergy`, in place of the square-root triangle inequality), `sq_norm_sub_le`, `norm_zakExt_eq`, `zakEnergy_zakExt_le` (`A(zakExt u) ≤ 8 ∑ ‖u‖²` over `ZMod d`, not over `range (d+1)`). `norm_mag` is reused from `BLTAudit/EdgeEnergy.lean`.
+- [x] H14. [HE] from [HV], [HA], [HZ] and a named pointwise phase bound: with `W = ph (d · zak g_d)` and
   `U = gaussPhase d`, H11 and H9 give `‖W q r − U q r‖ ≤ (4 C/c) / d` for large odd `d`; combine with
   H12, H13 and `vortex` to show `|scaledEnergy (hermiteCand d) − 2π log d| ≤ C'` requires the
   `O(h √log d)` bound on `‖W − U‖_{ℓ²}` (dyadic summation, §3.2). State that bound as the named input
@@ -476,6 +481,24 @@ add [HA] (uniform Zak approximation, H10, which with [HZ] gives [HN]) and [HE]. 
   [HZ] → energy_asymp` (the field [HE] of H3), using H13 and `√(a) ≤ √(2π log d + C)`. The lower half
   `2π log d − C ≤ scaledEnergy (hermiteCand d)` comes from `milestone_odd_bounds` and `aMin_le` of F1.
   File `BLTAudit/EnergyFromTransfer.lean`.
+  - Done 2026-11-23 03:58 UTC at ec9f03f (verified 357/357): `hermiteCand_scaledEnergy_eq`, `zakEnergy_compare`, `div_le_of_le_two_pi_log`, `energy_close_arith`, structure `TransferHyp C₁ C` ([HV₂] `vortex2`: two-sided (3.3) for the Gaussian phase; [HW] `phase_l2`: `∃ u₀` unimodular with `∑ ‖ph (zak g_d) − u₀ U‖² ≤ C log d / d²`), `energy_asymp_of_transfer` ([HV₂] + [HW] → [HE] with constant `3C₁ + 4π + 32|C|`; [HA] and [HZ] are not needed for this step), `gaussianTrialHyp_of_transfer`, `hermiteHyp_of_transfer`, `main_odd_reduced` (Theorem 1.1 along odd `d` for `f_d` from [HZ], [HA], [HV₂], [HW], [HLζ]). The one-sided [HV] of H3 is not enough for [HE]: the lower half needs (3.3) two-sided. A numerical check with `u₀ = 1` gives `d² ∑ ‖W − U‖² / log d ≈ 6e-5, 3e-5, 2.2e-5` at `d = 5, 15, 41`.
+
+- [ ] H15. The Gaussian phase near the zero, the first step of (3.3): `gaussPhase_near_zero`: with
+  `z = y − x i` and `V(z) = ph (z − z₀)`, there are a unimodular `κ`, `ρ > 0` and `K` with
+  `‖ph (gaussZak x y) − κ · V(z)‖ ≤ K ‖z − z₀‖` for `0 < ‖z − z₀‖ < ρ` (`V` or its conjugate)
+  (from `thetaI_ge_linear_near_zero` of H6, `norm_ph_sub_ph_le` of H11 and the second-order Taylor bound
+  of `θ` at `z₀`, `HasDerivAt` of `θ'`). Fix the exact unimodular constant and the orientation (`V` or
+  its conjugate) by a numerical check first and record it in the docstring.
+  File `BLTAudit/GaussPhaseNearZero.lean`.
+- [ ] H16. The lattice sum of the model vortex, the main term of (3.3): `vortex_grid_sum`: for odd `d`,
+  the Zak energy of the pure model phase `V` sampled on the odd grid around `z₀` (with the gauge of
+  `zakExt`) restricted to the annulus `4h ≤ |z − z₀| ≤ R` equals `2π log (R/(4h)) + O(1)`; first state
+  and prove only the cell step `inv_sq_cell` of G4 and the shell count `#{grid points with
+  ρ ≤ |z − z₀| < 2ρ} ≤ C (ρ/h)²`. File `BLTAudit/VortexGridSum.lean`.
+- [ ] H17. [HW] from [HA], [HZ] and a pointwise phase bound with the `1/r` profile: state
+  [HWpt] `‖ph (zak g_d q r) − u₀ U q r‖ ≤ K h² / dist(grid point, z₀)` and prove
+  `phase_l2_of_pointwise : [HWpt] → [HW]` from the dyadic count `∑_{grid} h²/dist² ≤ C log d` (the same
+  shell count as H16). File `BLTAudit/PhaseL2FromPointwise.lean`.
 
 ## Not attempted here
 
