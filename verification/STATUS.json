@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 03:58 UTC",
-  "commit": "ec9f03f21c3f7aff3812cbe42c53579361bb2d93",
+  "checked_at": "2026-11-23 04:10 UTC",
+  "commit": "098586a659435e68eec4c167fb3100cdc7180587",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 357,
-  "verified": 357,
+  "theorems": 363,
+  "verified": 363,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -364,6 +364,66 @@
     {
       "file": "BLTAudit/CircleEnergy.lean",
       "theorem": "BLT.circle_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.cos_le_quartic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.sq_sub_quartic_le_four_sin_half_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.edge_angle_sq_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.edge_angle_sq_le_self",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.sum_edge_angle_sq_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/EdgeAngleComparison.lean",
+      "theorem": "BLT.weighted_edge_angle_sq_le",
       "axioms": [
         "propext",
         "Classical.choice",

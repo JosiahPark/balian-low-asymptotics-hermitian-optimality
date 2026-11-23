@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 03:58 UTC at commit `ec9f03f21c3f`.
+Checked 2026-11-23 04:10 UTC at commit `098586a65943`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 357 of 357
+- Theorems verified with standard axioms only: 363 of 363
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -46,6 +46,12 @@ Checked 2026-11-23 03:58 UTC at commit `ec9f03f21c3f`.
 | BLTAudit/CircleEnergy.lean | `BLT.integral_sq_sub_const` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.interval_energy_lower` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.circle_energy` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.cos_le_quartic` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.sq_sub_quartic_le_four_sin_half_sq` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.edge_angle_sq_le` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.edge_angle_sq_le_self` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.sum_edge_angle_sq_le` | verified (standard axioms only) |
+| BLTAudit/EdgeAngleComparison.lean | `BLT.weighted_edge_angle_sq_le` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_one_sq_of_norm_eq_one` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_sub_sq_eq_four_sin_sq` | verified (standard axioms only) |
 | BLTAudit/EdgeEnergy.lean | `BLT.norm_mag` | verified (standard axioms only) |
