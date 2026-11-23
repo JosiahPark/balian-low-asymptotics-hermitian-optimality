@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 03:12 UTC at commit `95e8ecc64890`.
+Checked 2026-11-23 03:21 UTC at commit `c453ac50a6ab`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 317 of 317
+- Theorems verified with standard axioms only: 329 of 329
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -108,6 +108,15 @@ Checked 2026-11-23 03:12 UTC at commit `95e8ecc64890`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_ne_zero_of_lt` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_one_left` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_one_right` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_ne_zero_of_closed` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.continuous_gauss` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.continuous_thetaI` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.continuous_gaussZak_pair` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.norm_sub_zakZeroPt_le_two` | verified (standard axioms only) |
+| BLTAudit/GaussLinearGlobal.lean | `BLT.gaussZak_ge_linear` | verified (standard axioms only) |
 | BLTAudit/GaussLinearNearZero.lean | `BLT.gaussZak_eq_gauss_mul_thetaI` | verified (standard axioms only) |
 | BLTAudit/GaussLinearNearZero.lean | `BLT.thetaI_zakZeroPt` | verified (standard axioms only) |
 | BLTAudit/GaussLinearNearZero.lean | `BLT.thetaI'_zakZeroPt_ne_zero` | verified (standard axioms only) |
@@ -120,6 +129,9 @@ Checked 2026-11-23 03:12 UTC at commit `95e8ecc64890`.
 | BLTAudit/GaussVortexZak.lean | `BLT.gaussCand_scaledEnergy_eq` | verified (standard axioms only) |
 | BLTAudit/GaussVortexZak.lean | `BLT.vortex_iff_zakEnergy` | verified (standard axioms only) |
 | BLTAudit/GaussVortexZak.lean | `BLT.zakEnergy_eq_sum_range` | verified (standard axioms only) |
+| BLTAudit/GaussZeroTheta.lean | `BLT.gaussZak_eq_zero_iff` | verified (standard axioms only) |
+| BLTAudit/GaussZeroTheta.lean | `BLT.gaussZeroUnique_iff_theta` | verified (standard axioms only) |
+| BLTAudit/GaussZeroTheta.lean | `BLT.jacobiTheta₂_zakZeroPt` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.abs_aR_le_pi` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.abs_aQ_le_pi` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.int_eq_zero_of_four_small` | verified (standard axioms only) |

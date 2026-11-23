@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 03:12 UTC",
-  "commit": "95e8ecc6489005fc04a697bdc4df8e4601a1d33f",
+  "checked_at": "2026-11-23 03:21 UTC",
+  "commit": "c453ac50a6abc508b36fd29a1530136e7a88bc59",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 317,
-  "verified": 317,
+  "theorems": 329,
+  "verified": 329,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -992,6 +992,96 @@
       "status": "verified (standard axioms only)"
     },
     {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.gaussZak_ne_zero_of_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.gaussZak_one_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.gaussZak_one_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.gaussZak_ne_zero_of_closed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.continuous_gauss",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.continuous_thetaI",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.continuous_gaussZak_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.norm_sub_zakZeroPt_le_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussLinearGlobal.lean",
+      "theorem": "BLT.gaussZak_ge_linear",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
       "file": "BLTAudit/GaussLinearNearZero.lean",
       "theorem": "BLT.gaussZak_eq_gauss_mul_thetaI",
       "axioms": [
@@ -1104,6 +1194,36 @@
     {
       "file": "BLTAudit/GaussVortexZak.lean",
       "theorem": "BLT.zakEnergy_eq_sum_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussZeroTheta.lean",
+      "theorem": "BLT.gaussZak_eq_zero_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussZeroTheta.lean",
+      "theorem": "BLT.gaussZeroUnique_iff_theta",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussZeroTheta.lean",
+      "theorem": "BLT.jacobiTheta\u2082_zakZeroPt",
       "axioms": [
         "propext",
         "Classical.choice",
