@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 02:50 UTC at commit `906378fac9e0`.
+Checked 2026-11-23 03:07 UTC at commit `a11b7e1298a0`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 295 of 295
+- Theorems verified with standard axioms only: 309 of 309
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -108,6 +108,10 @@ Checked 2026-11-23 02:50 UTC at commit `906378fac9e0`.
 | BLTAudit/GaborZakCoordinates.lean | `BLT.gabor_zakIndex` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_eq_sum_zak` | verified (standard axioms only) |
 | BLTAudit/GaborZakModulus.lean | `BLT.ip_gabor_val_zero` | verified (standard axioms only) |
+| BLTAudit/GaussVortexZak.lean | `BLT.scaledEnergy_zakInv` | verified (standard axioms only) |
+| BLTAudit/GaussVortexZak.lean | `BLT.gaussCand_scaledEnergy_eq` | verified (standard axioms only) |
+| BLTAudit/GaussVortexZak.lean | `BLT.vortex_iff_zakEnergy` | verified (standard axioms only) |
+| BLTAudit/GaussVortexZak.lean | `BLT.zakEnergy_eq_sum_range` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.abs_aR_le_pi` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.abs_aQ_le_pi` | verified (standard axioms only) |
 | BLTAudit/GoodPlaquette.lean | `BLT.int_eq_zero_of_four_small` | verified (standard axioms only) |
@@ -146,6 +150,16 @@ Checked 2026-11-23 02:50 UTC at commit `906378fac9e0`.
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.log_S₀_le` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.div_mul_le_of_le_mul` | verified (standard axioms only) |
 | BLTAudit/LowerBoundArithmetic.lean | `BLT.lower_bound_arithmetic` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.norm_twistFactor` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.twistFactor_shift_q` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.twistFactor_shift_k` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.zakExt_shift_q` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.zakExt_shift_r` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.norm_zakExt` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.isTwisted_zakExt` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.zakExt_of_lt` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.scaledEnergy_eq_zakEnergy` | verified (standard axioms only) |
+| BLTAudit/LowerBoundZak.lean | `BLT.lowerBound_of_zak` | verified (standard axioms only) |
 | BLTAudit/MainConditional.lean | `BLT.aSeq_eq` | verified (standard axioms only) |
 | BLTAudit/MainConditional.lean | `BLT.ASeq_eq` | verified (standard axioms only) |
 | BLTAudit/MainConditional.lean | `BLT.main_bounds` | verified (standard axioms only) |

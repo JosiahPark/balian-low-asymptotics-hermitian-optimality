@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 02:50 UTC",
-  "commit": "906378fac9e01a09dac04c05d94eadcfab5a50be",
+  "checked_at": "2026-11-23 03:07 UTC",
+  "commit": "a11b7e1298a0059ad64cac835071daf23edbfccf",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 295,
-  "verified": 295,
+  "theorems": 309,
+  "verified": 309,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -992,6 +992,46 @@
       "status": "verified (standard axioms only)"
     },
     {
+      "file": "BLTAudit/GaussVortexZak.lean",
+      "theorem": "BLT.scaledEnergy_zakInv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussVortexZak.lean",
+      "theorem": "BLT.gaussCand_scaledEnergy_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussVortexZak.lean",
+      "theorem": "BLT.vortex_iff_zakEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/GaussVortexZak.lean",
+      "theorem": "BLT.zakEnergy_eq_sum_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
       "file": "BLTAudit/GoodPlaquette.lean",
       "theorem": "BLT.abs_aR_le_pi",
       "axioms": [
@@ -1364,6 +1404,106 @@
     {
       "file": "BLTAudit/LowerBoundArithmetic.lean",
       "theorem": "BLT.lower_bound_arithmetic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.norm_twistFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.twistFactor_shift_q",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.twistFactor_shift_k",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.zakExt_shift_q",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.zakExt_shift_r",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.norm_zakExt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.isTwisted_zakExt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.zakExt_of_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.scaledEnergy_eq_zakEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/LowerBoundZak.lean",
+      "theorem": "BLT.lowerBound_of_zak",
       "axioms": [
         "propext",
         "Classical.choice",
