@@ -345,7 +345,7 @@ small enough for one file. None of them proves [HU] or [HL], and F4 keeps both a
   `cos a ≤ 1 − a²/2 + (5/96) a⁴` for `|a| ≤ 1`; then `(1 + η²)(1 − (5/48) a²) ≥ 1` when `a² ≤ η² ≤ 1`).
   The paper's constant `C` is `1` here. File `BLTAudit/EdgeAngleComparison.lean`.
   - Done 2026-11-23 04:10 UTC at 098586a: `edge_angle_sq_le`, `sum_edge_angle_sq_le`, `weighted_edge_angle_sq_le`, `edge_angle_sq_le_self`, `sq_sub_quartic_le_four_sin_half_sq`, `cos_le_quartic` (verified 363/363). Proved with `C = 1` as stated; `weighted_edge_angle_sq_le` (weights `0 ≤ w e ≤ 1`, the coefficients with which (L8) counts an edge) and `edge_angle_sq_le_self` (`η = |a|`) are extra. (L10) itself, which edges are good, and the identification of `∑ 4 sin²(a_e/2)` with `zakEnergy` are not stated. Uses `four_sin_half_sq` of B4 and Mathlib's `Real.cos_bound`.
-- [ ] G2. Defect count (L5), (L14): `defect_count`: for `0 ≤ η ≤ π`,
+- [x] G2. Defect count (L5), (L14): `defect_count`: for `0 ≤ η ≤ π`,
   `4 / π ^ 2 * η ^ 2 ≤ 4 * Real.sin (η / 2) ^ 2` (Mathlib's `Real.mul_le_sin` at `η / 2`); for finsets,
   `(L.biUnion inc).card ≤ 2 * L.card` when every `inc e` with `e ∈ L` has at most two elements
   (`Finset.card_biUnion_le`); hence for real `d ≥ 2`, `η = 1 / Real.log d`,
@@ -353,6 +353,7 @@ small enough for one file. None of them proves [HU] or [HL], and F4 keeps both a
   and `A ≤ C₀ * Real.log d`, `10 * ((L.biUnion inc).card : ℝ) ≤ 5 * π ^ 2 * C₀ * Real.log d ^ 3`: the bound
   `S₀ ≤ C₂ (log d)³` of (L14) with `C₂ = 5π² C₀`, in the form that `lower_bound_arithmetic` of E5 takes.
   Which edges are large and which plaquettes they meet is not modelled. File `BLTAudit/DefectCount.lean`.
+  - Done 2026-11-26 05:05 UTC at 9307697: `defect_count`, `four_div_pi_sq_mul_sq_le`, `card_biUnion_le_two_mul`, `four_mul_sq_le_pi_sq_mul`, `four_mul_le_pi_sq_mul_log_cube`, `half_le_log_two`, `half_le_log_of_two_le`, `four_mul_card_large_edges_le` (verified 371/371). Proved as stated, with `C₂ = 5π² C₀`. `four_mul_card_large_edges_le` is extra: for a unit-modulus `ζ`, a natural `d ≥ 2` and `zakEnergy d ζ ≤ C₀ * Real.log d`, the large edges of B4 at `η = 1 / Real.log d` satisfy `4 * #{large edges} ≤ π² C₀ (log d)³`, the middle inequality of (L5) with `C₁ = π² C₀ / 4`. Only `η_d ≤ π` is used (the paper asks for `η_d < π/4`), so `d ≥ 2` is enough. That each large edge meets at most two plaquettes stays a hypothesis on `inc`. Uses `card_large_edges_mul_le_zakEnergy` of B4 and Mathlib's `Real.mul_le_sin`.
 - [ ] G3. Discrete Stokes on a rectangle, the rectangular case of the computation in (L12):
   `stokes_rect`: for `bq br : ℤ → ℤ → ℝ`, integers `q₀ r₀` and naturals `m n`,
   `∑ i ∈ range m, ∑ j ∈ range n, (bq (q₀+i) (r₀+j) + br (q₀+i+1) (r₀+j) − bq (q₀+i) (r₀+j+1) − br (q₀+i) (r₀+j))`
