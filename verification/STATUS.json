@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-23 04:16 UTC",
-  "commit": "daa186bd3b0d7d91420e5ec0ff8144b334282123",
+  "checked_at": "2026-11-26 05:05 UTC",
+  "commit": "93076973e78d8d035f3d282dd10e9a4dfe329295",
   "all_verified": true,
   "build_ok": true,
   "lean_exit_code": 0,
-  "theorems": 363,
-  "verified": 363,
+  "theorems": 371,
+  "verified": 371,
   "problems": [],
   "skipped_private": [],
   "escape_hatches": [],
@@ -364,6 +364,86 @@
     {
       "file": "BLTAudit/CircleEnergy.lean",
       "theorem": "BLT.circle_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.four_mul_sq_le_pi_sq_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.four_div_pi_sq_mul_sq_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.card_biUnion_le_two_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.half_le_log_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.half_le_log_of_two_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.four_mul_le_pi_sq_mul_log_cube",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.defect_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "status": "verified (standard axioms only)"
+    },
+    {
+      "file": "BLTAudit/DefectCount.lean",
+      "theorem": "BLT.four_mul_card_large_edges_le",
       "axioms": [
         "propext",
         "Classical.choice",

@@ -1,9 +1,9 @@
 # Lean verification status: PASS
 
-Checked 2026-11-23 04:16 UTC at commit `daa186bd3b0d`.
+Checked 2026-11-26 05:05 UTC at commit `93076973e78d`.
 
 - Build: ok
-- Theorems verified with standard axioms only: 363 of 363
+- Theorems verified with standard axioms only: 371 of 371
 - Nothing here proves Theorem 1.1 or Theorem 4.1 of the paper.
 
 ## Theorems
@@ -46,6 +46,14 @@ Checked 2026-11-23 04:16 UTC at commit `daa186bd3b0d`.
 | BLTAudit/CircleEnergy.lean | `BLT.integral_sq_sub_const` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.interval_energy_lower` | verified (standard axioms only) |
 | BLTAudit/CircleEnergy.lean | `BLT.circle_energy` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.four_mul_sq_le_pi_sq_mul` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.four_div_pi_sq_mul_sq_le` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.card_biUnion_le_two_mul` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.half_le_log_two` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.half_le_log_of_two_le` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.four_mul_le_pi_sq_mul_log_cube` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.defect_count` | verified (standard axioms only) |
+| BLTAudit/DefectCount.lean | `BLT.four_mul_card_large_edges_le` | verified (standard axioms only) |
 | BLTAudit/EdgeAngleComparison.lean | `BLT.cos_le_quartic` | verified (standard axioms only) |
 | BLTAudit/EdgeAngleComparison.lean | `BLT.sq_sub_quartic_le_four_sin_half_sq` | verified (standard axioms only) |
 | BLTAudit/EdgeAngleComparison.lean | `BLT.edge_angle_sq_le` | verified (standard axioms only) |
