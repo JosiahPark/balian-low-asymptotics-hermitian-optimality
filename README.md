@@ -6,7 +6,7 @@ This repository holds the note
 it that can be checked today.
 
 [Live roadmap page](https://josiahpark.github.io/balian-low-asymptotics-hermitian-optimality/docs/roadmap.html):
-the interactive map of the work list, with the state of each item and of CI.
+[the interactive map of the work list, with the state of each item and of CI.]
 
 The note's Theorem 1.1: for the critical orthonormal Gabor problem on `ℂ^{d²}`, the minimal rescaled
 difference energy satisfies `2π log d − 7π log log d − C ≤ a_d ≤ 2π log d + C`. So the optimal discrete
